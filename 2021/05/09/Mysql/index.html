@@ -409,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    154
+                    356
                 </div>
                 
 
@@ -437,6 +437,14 @@
 <p>1.1.2: 登录Mysql数据库<br>在命令执行窗口，执行连接并登录Mysql的命令行格式如下：<br>mysql -h hostname -u username-p<br>-h hostname：主机地址，可以用localhost或127.0.0.1<br>-u username：用户名<br>-p表示后面的参数为指定用户的密码<br>ps：不写-h hostname好像也行</p>
 <hr>
 <p>1.1.3: Mysql的相关命令：<br>查看Mysql命令帮助：mysql&gt;help<br>如图所示：<br><img src="E:\myblog\blog\source\_posts\Mysql_images\Mysql_help.png"><br><img src="E:\myblog\blog\source_posts\Mysql_images\Mysql_help.png"></p>
+<hr>
+<p>1.1.4：查看Mysql字符集<br>mysql&gt;SHOW CHARACTER SET;</p>
+<hr>
+<p>1.1.5：设置Mysql字符集</p>
+<p>1.描述字符集的系统变量<br>系统变量名：character_set_server<br>        character_set_client<br>        character_set_connection<br>        character_set_results<br>        character_set_database<br>        character_set_system<br>说明：<br>(character_set_server) 默认的内部操作字符集，标识服务器的字符集。服务器启动时通过该变量设置字符集，当未设置值时，系统默认为latin1.该变量为create database命令提供的默认值。</p>
+<p>(character_set_client) 客户端来源数据使用的字符集，该变量用来决定Mysql如何解释客户端发到服务端的SQL命令。</p>
+<p>(character_set_connection) 连接层字符集。用来决定MYSQL如何处理客户端发来的SQL命令</p>
+<p>(character_set_results) 查询结果字符集。当SQL返回结果时，该变量的值决定了发给客户端的字符编码。</p>
 
                 
             </div>
@@ -1215,7 +1223,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">526</span>&nbsp;字
+                class="white-color">728</span>&nbsp;字
             
             
             
