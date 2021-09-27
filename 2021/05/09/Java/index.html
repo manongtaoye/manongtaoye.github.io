@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-08
+                    2021-09-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7
+                    560
                 </div>
                 
 
@@ -449,7 +449,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h3><h4 id="9-8"><a href="#9-8" class="headerlink" title="9_8"></a>9_8</h4>
+                <h3 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h3><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><hr>
+<h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
+<h2 id="awt中常用组件"><a href="#awt中常用组件" class="headerlink" title="awt中常用组件"></a>awt中常用组件</h2><p>Button 按钮<br>Canvas 画布<br>Checkbox 复选框<br>CheckboxGroup 将多个Checkbox 组合成一组，一组Checkbox中将只有一个会被选中，即全部变成单选框组件<br>Choice 下拉选框<br>Frame 窗口，在GUI程序里通过该类创建窗口<br>Label 标签类，用于放置提示性文本<br>List 列表框组件，可以添加多条项目<br>Panel 不能单独存在容器内，必须存在其他容器中<br>Scrollbar 滚动条组件。如果需要用户输入某个范围内的值，就可以使用滚动条组件，定义一个滚动条时，必须指定它的方向，初始值，滑块的大小，最小值和最大值。<br>ScrollPane 带水平及垂直滚动条的容器<br>TextArea 多行容器<br>TextField 单行文本框</p>
+<h3 id="Dialog-对话框"><a href="#Dialog-对话框" class="headerlink" title="Dialog 对话框"></a>Dialog 对话框</h3><p>Dialog(Frame owner,String title,boolean modal)<br>模式对话框 不可以对父类容器做操作<br>非模式对话框 可以对父类容器做操作</p>
+<h3 id="FileDialog-文件对话框"><a href="#FileDialog-文件对话框" class="headerlink" title="FileDialog 文件对话框"></a>FileDialog 文件对话框</h3><p>FileDialog(Frame parent,String title,int mode)  parent指父窗口 mode指文件对话类型。 例如FileDialog.LOAD,用于打开了文件 FileDialog.SAVE用于保存文件</p>
+<p>String getDirectory()获取被打开或保存文件的绝对路径</p>
+<p>String getFile() 获取被打开或者保存的文件名</p>
+<h2 id="GUI常见事件和事件监听器"><a href="#GUI常见事件和事件监听器" class="headerlink" title="GUI常见事件和事件监听器"></a>GUI常见事件和事件监听器</h2><h3 id="低级事件"><a href="#低级事件" class="headerlink" title="低级事件"></a>低级事件</h3><p>ComponentEvent 组件事件<br>ContainerEvent 容器事件<br>WindowEvent 窗口事件<br>FocusEvent 焦点事件<br>KeyEvent 键盘事件<br>MouseEvent 鼠标事件<br>PaintEvent 组件绘制事件</p>
+<h3 id="高级事件"><a href="#高级事件" class="headerlink" title="高级事件"></a>高级事件</h3><p>ActionEvent 动作事件，党按钮，菜单项被单击，在TextFiled中按Enter时触发<br>AjustmentEvent 调节事件，在滑动条上移动滑块调节数值时触发该事件<br>ItemEvent 选项事件，当用户选中某项，或取消选中某项时触发该事件<br>TextEvent 文本事件，当文本框、文本域中的文本发生改变时触发该事件</p>
+<h3 id="事件监听器"><a href="#事件监听器" class="headerlink" title="事件监听器"></a>事件监听器</h3><p>MouseMotionListener 鼠标移动</p>
+<h2 id="菜单组件"><a href="#菜单组件" class="headerlink" title="菜单组件"></a>菜单组件</h2><p>MenuBar 菜单条，菜单的容器<br>Menu 菜单组件，菜单项的容器，也是MenuItem的子类，所以可以作为菜单项使用<br>PopupMenu 上下文菜单组件（右键菜单组件）<br>MenuItem 菜单项组件<br>CheckboxMenuItem 复选框菜单组件</p>
+
                 
             </div>
             <hr/>
@@ -1264,7 +1275,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">557</span>&nbsp;字
+                class="white-color">1.1k</span>&nbsp;字
             
             
             
