@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mysql, daily">
+    <meta name="keywords" content="JSP, daily">
     <meta name="description" content="日常">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Mysql | 水兽的Blog</title>
+    <title>JSP | 水兽的Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mysql</h1>
+                    <h1 class="description center-align post-title">JSP</h1>
                 </div>
             </div>
         </div>
@@ -390,13 +390,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">学习笔记</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -408,21 +404,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-09
+                    2021-09-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-22
+                    2021-09-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    356
+                    1.3k
                 </div>
                 
 
@@ -449,20 +445,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>little title: 走进Mysql<br>（SQL语句的大小写无所谓）<br>1.1.1: Mysql的启动和停止<br>启动Mysql服务的sql命令如下：<br>NET START mysql55</p>
-<p>停止Mysql服务的命令如下：<br>NET STOP mysql55</p>
+                <p>Page指令<br>language 属性：声明使用的脚本语言<br>extends 属性：表明JSP编译成Servlet的时候继承的类。默认值：HttpJspBase<br>session 属性：表明JSP中是否可以直接使用session对象。默认值：true<br>buffer 属性：表明JSP对用户输出缓冲区大小。默认值：8kb<br>autoFlush属性：如果缓冲区大小溢出，是否自动刷出。默认：true<br>import属性：用于引入java包或者类<br>contentType属性：标明JSP被浏览器解析和打开的时候采用的默认字符集<br>pageEncoding属性：JSP文件及JSP翻译后的Servlet保存到硬盘上采用字符集<br>isErrorPage属性：处理JSP页面异常<br>errorPage属性：处理JSP页面异常<br>isElIgnored属性：通知JSP是否忽略EL语句</p>
 <hr>
-<p>1.1.2: 登录Mysql数据库<br>在命令执行窗口，执行连接并登录Mysql的命令行格式如下：<br>mysql -h hostname -u username-p<br>-h hostname：主机地址，可以用localhost或127.0.0.1<br>-u username：用户名<br>-p表示后面的参数为指定用户的密码<br>ps：不写-h hostname好像也行</p>
-<hr>
-<p>1.1.3: Mysql的相关命令：<br>查看Mysql命令帮助：mysql&gt;help<br>如图所示：<br><img src="../Mysql_images/Mysql_help.png"></p>
-<hr>
-<p>1.1.4：查看Mysql字符集<br>mysql&gt;SHOW CHARACTER SET;</p>
-<hr>
-<p>1.1.5：设置Mysql字符集</p>
-<p>1.描述字符集的系统变量<br>系统变量名：character_set_server<br>        character_set_client<br>        character_set_connection<br>        character_set_results<br>        character_set_database<br>        character_set_system<br>说明：<br>(character_set_server) 默认的内部操作字符集，标识服务器的字符集。服务器启动时通过该变量设置字符集，当未设置值时，系统默认为latin1.该变量为create database命令提供的默认值。</p>
-<p>(character_set_client) 客户端来源数据使用的字符集，该变量用来决定Mysql如何解释客户端发到服务端的SQL命令。</p>
-<p>(character_set_connection) 连接层字符集。用来决定MYSQL如何处理客户端发来的SQL命令</p>
-<p>(character_set_results) 查询结果字符集。当SQL返回结果时，该变量的值决定了发给客户端的字符编码。</p>
+<p>Include 指令属性<br>file属性：指示JSP页面包含页面路径</p>
+<p>taglib 指令<br>taglib 指令用来声明JSP使用了定义的标签，同时引用标签库<br>语法格式如下：<br>&lt;%@ taglib uri=”” prefix=”tagprefix”%&gt;</p>
+<p>内置对象</p>
+<p>request对象的常用方法：</p>
+<p>Object getAttribute(String name)  用来返回指定的属性值，该属性不存在时返回null<br>String getCharacterEncoding() 返回请求中的字符编码方法，可以在response对象中设置<br>String getContentType() 返回在response中定义的内容类型<br>String getContentPath() 返回请求的路径<br>Enumeration getHeaderNames() 返回所有HTTP头的名称集合<br>String getHeader(String name) 返回指定名称的HTTP头的信息<br>String getLocalName() 获取响应请求的服务器端主机名<br>String getLocalAddr() 获取响应请求的服务器端地址<br>String getLocalPort() 获取响应请求的服务器端口<br>String getMethod() 获取客户端向服务器端发送请求的方法（GET、POST）<br>String getParameter(String name) 获取客户端发送给服务器的参数值<br>Enumeration getParameterNames() 返回请求中所有参数的集合<br>String[] getParameterValues(String name) 获取请求中指定参数的所有值<br>String getQueryString() 返回GET方法传递的参数字符串，该方法不分解出单独的参数<br>String getRemoteAddr() 获取发出请求的客户端的IP地址<br>String getRemoteHost() 获取发出请求的客户端主机名<br>String getRealPath(String path) 返回给定虚拟路径的物理路径<br>String getRequestURI() 返回发出请求的服务器端地址，但是不包括请求的参数字符串<br>String getServletPath() 获取客户端所请求的脚本文件的文件路径<br>String getServerName() 返回响应请求的服务器名称或IP地址<br>String getServerPort() 返回响应请求的服务器端主机端口号<br>void setCharacterEncoding(String name) 设置请求的字符串编码格式</p>
+<p>response对象的常用方法：</p>
+<p>void addCookie(Cookie cookie) 创建一个Cookie对象并保存到客户端浏览器<br>void addHeader(String name,String value) 创建一个HTTP头，覆盖同名的旧HTTP头<br>String encodeRedirectURL(String url) 对sendRedirect()方法使用的URL进行编码<br>String encodeURL(String url) 对URL进行编码，回传包含sessionID的URL<br>void flushBuffer() 强制把当前缓冲区域的内容发送到客户端<br>String getCharacterEncoding() 获取响应的字符编码格式<br>void setCharacterEncoding(String charset) 设置响应使用的字符编码格式<br>void setContentLength(int length) 设置响应的BODY长度<br>void setContentType(String type) 设置响应类型<br>void sendRedirect(String url) 用于将对客户端的响应重定向到指定的URL上，这里可以使用相对URL<br>void setBufferSize(int size) 设置以KB为单位的缓冲区大小</p>
+<p>out对象的常用方法：</p>
+<p>void print(object obj) 将指定类型的数据输出到http流，不换行<br>void println(object obj) —换行<br>void clear() 清除缓冲区的数据，不把数据写到客户端<br>void clearBuffer() 清除缓冲区的当前内容，不把数据写到客户端<br>void flush() 输出缓冲区的数据<br>int getBufferSize() 返回缓冲区字节数的大小，如不设置缓冲区则为0<br>boolean isAutoFlush() 返回缓冲区满时，是自动清空还是抛出异常<br>close() 关闭输出流，从而可以强制终止当前界面的剩余部分向浏览器输出</p>
+<p>session对象的常用方法：</p>
+<p>void setAttribute(String name,Object obj) 将obj对象以name名称储存到会话中<br>Object getAttribute(String name) 获取指定名称相关联的session属性值<br>Enumeration getAttributeNames() 取得session对象所有的属性的集合，返回一个枚举类型数据<br>long getCreationTime() 获取session对象的创造时间，单位为毫秒<br>String getId() 获取sessionId的值<br>long getLastAccessedTime() 返回与当前session相关的客户端最后一次访问时间，由1970年1月1日算起，单位为毫秒<br>int getMaxInactiveInterval(int interval) 返回会话总时间，以秒为单位，即session对象的有效时间，当超过这个有效时间，此session被清除<br>void setMaxInactiveInterval(int interval) 设置session对象的有效时间<br>ServletContext getServeletContext() 返回一个该JSP页面对应的ServletContext对象实例<br>boolean isNew() 判断是否由服务器产生一个新的session对象<br>void invalidate() 销毁session对象</p>
+<p>application对象的常用方法：</p>
+<p>application对象实现了用户数据的共享</p>
+<p>void setAttribute(String name,Object obj) 将obj对象以name名称储存到application对象中<br>Object getAttribute(String name) 获取指定名称相关联的application属性值<br>Enumeration getAttribute() 返回所有的application属性</p>
 
                 
             </div>
@@ -489,7 +487,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://manongtaoye.github.io/2021/05/09/Mysql/">https://manongtaoye.github.io/2021/05/09/Mysql/</a>
+                    <a href="https://manongtaoye.github.io/2021/09/29/JSP/">https://manongtaoye.github.io/2021/09/29/JSP/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -526,11 +524,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">学习笔记</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -970,13 +964,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/09/Java/">
+                <a href="/2021/09/29/%E7%A7%BB%E5%8A%A8WEB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="移动WEB">
                         
-                        <span class="card-title">Java</span>
+                        <span class="card-title">移动WEB</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -987,7 +981,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-29
                         </span>
                         <span class="publish-author">
                             
@@ -998,30 +992,22 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/note/">
-                        <span class="chip bg-color">note</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/09/Mysql/">
+                <a href="/2021/05/09/JavaScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Mysql">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
                         
-                        <span class="card-title">Mysql</span>
+                        <span class="card-title">JavaScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1041,15 +1027,6 @@
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">学习笔记</span>
-                    </a>
-                    
                 </div>
                 
             </div>
