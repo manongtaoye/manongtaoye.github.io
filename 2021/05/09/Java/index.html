@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-29
+                    2021-10-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    704
+                    1k
                 </div>
                 
 
@@ -449,11 +449,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h3><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><hr>
-<h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
+                <h3 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h3><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><h2 id="awt编译乱码：-Dfile-encoding-gbk"><a href="#awt编译乱码：-Dfile-encoding-gbk" class="headerlink" title="awt编译乱码：-Dfile.encoding=gbk"></a>awt编译乱码：-Dfile.encoding=gbk</h2><h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
 <h2 id="awt中常用组件"><a href="#awt中常用组件" class="headerlink" title="awt中常用组件"></a>awt中常用组件</h2><p>Button 按钮<br>Canvas 画布<br>Checkbox 复选框<br>CheckboxGroup 将多个Checkbox 组合成一组，一组Checkbox中将只有一个会被选中，即全部变成单选框组件<br>Choice 下拉选框<br>Frame 窗口，在GUI程序里通过该类创建窗口<br>Label 标签类，用于放置提示性文本<br>List 列表框组件，可以添加多条项目<br>Panel 不能单独存在容器内，必须存在其他容器中<br>Scrollbar 滚动条组件。如果需要用户输入某个范围内的值，就可以使用滚动条组件，定义一个滚动条时，必须指定它的方向，初始值，滑块的大小，最小值和最大值。<br>ScrollPane 带水平及垂直滚动条的容器<br>TextArea 多行容器<br>TextField 单行文本框</p>
 <h3 id="Dialog-对话框"><a href="#Dialog-对话框" class="headerlink" title="Dialog 对话框"></a>Dialog 对话框</h3><p>Dialog(Frame owner,String title,boolean modal)<br>模式对话框 不可以对父类容器做操作<br>非模式对话框 可以对父类容器做操作</p>
 <h3 id="FileDialog-文件对话框"><a href="#FileDialog-文件对话框" class="headerlink" title="FileDialog 文件对话框"></a>FileDialog 文件对话框</h3><p>FileDialog(Frame parent,String title,int mode)  parent指父窗口 mode指文件对话类型。 例如FileDialog.LOAD,用于打开了文件 FileDialog.SAVE用于保存文件</p>
+<p>记得设置fileDialog窗口可视化</p>
 <p>String getDirectory()获取被打开或保存文件的绝对路径</p>
 <p>String getFile() 获取被打开或者保存的文件名</p>
 <h2 id="GUI常见事件和事件监听器"><a href="#GUI常见事件和事件监听器" class="headerlink" title="GUI常见事件和事件监听器"></a>GUI常见事件和事件监听器</h2><h3 id="低级事件"><a href="#低级事件" class="headerlink" title="低级事件"></a>低级事件</h3><p>ComponentEvent 组件事件<br>ContainerEvent 容器事件<br>WindowEvent 窗口事件<br>FocusEvent 焦点事件<br>KeyEvent 键盘事件<br>MouseEvent 鼠标事件<br>PaintEvent 组件绘制事件</p>
@@ -462,7 +462,12 @@
 <h2 id="菜单组件"><a href="#菜单组件" class="headerlink" title="菜单组件"></a>菜单组件</h2><p>MenuBar 菜单条，菜单的容器<br>Menu 菜单组件，菜单项的容器，也是MenuItem的子类，所以可以作为菜单项使用<br>PopupMenu 上下文菜单组件（右键菜单组件）<br>MenuItem 菜单项组件<br>CheckboxMenuItem 复选框菜单组件</p>
 <h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><h3 id="绘图组件"><a href="#绘图组件" class="headerlink" title="绘图组件"></a>绘图组件</h3><p>paint(Graphics g) 绘制组件的外观<br>update(Graphics g) 内部调用paint方法，刷新组件外观<br>repaint() 调用uodate方法，刷新组件外观</p>
 <h4 id="Graphics类"><a href="#Graphics类" class="headerlink" title="Graphics类"></a>Graphics类</h4><p>setColor(Color c) 设置颜色<br>setFont(Font font) 设置字体<br>drawLine() 绘制直线<br>drawRectIO 绘制矩形<br>drawRoundRect() 绘制圆角矩形<br>drawOyal() 绘制椭圆形<br>drawPolygon() 绘制多边形<br>drawArc() 绘制圆弧<br>drawPolyline() 绘制折线<br>fillRoundRect() 填充圆角矩形区域<br>fillOval() 填充椭圆区域<br>fillRect() 填充多边形区域<br>fillRect() 填充圆弧对应的扇形区域<br>drawImage() 绘制位图</p>
-<h4 id="BUfferedImage位图对象"><a href="#BUfferedImage位图对象" class="headerlink" title="BUfferedImage位图对象"></a>BUfferedImage位图对象</h4>
+<h4 id="BUfferedImage位图对象"><a href="#BUfferedImage位图对象" class="headerlink" title="BUfferedImage位图对象"></a>BUfferedImage位图对象</h4><h2 id="位图使用步骤："><a href="#位图使用步骤：" class="headerlink" title="位图使用步骤："></a>位图使用步骤：</h2><p>1.创建Image的子类对象BufferedImage(int width,int height,int ImageType)，创建时需要指定位图的宽高以及类型属性；此时相当于在内存中生成了一张图片。<br>2.调用BufferedImage对象的getGraphics()方法获取画笔，此时就可以往内存中的图片上绘图了。<br>3.调用组件中paint方法提供的Graphics对象的drawImage()方法，一次性内存中的图片BufferedImage绘制到特定的组件上。</p>
+<h3 id="ImageIO的使用"><a href="#ImageIO的使用" class="headerlink" title="ImageIO的使用"></a>ImageIO的使用</h3><p>static BufferedImage read(File input) 读取本地磁盘图片文件<br>static BufferedImage read(InputStream input) 读取本地磁盘图片文件<br>static boolean write(RenderedImage im,String formatName,File output) 往本地磁盘中输出图片文件</p>
+<hr>
+<h2 id="Swing"><a href="#Swing" class="headerlink" title="Swing"></a>Swing</h2><p>概述：Swing由百分百纯java实现，不再依赖于本地平台的GUI，因此可以在所有平台上都保持相同的界面外观。独立于本地平台的Swing组件被称为轻量组件，依赖于本地平台的AWT被称为重量级组件。</p>
+<p>特征：Swing组件采用MVC(Model-View-Controller，即模型-视图-控制器)设计模式<br>模型：用于维护组件的各种状态<br>视图：是组件的可视化表现<br>控制器：用于控制对于各种事件/组件做出响应。</p>
+
                 
             </div>
             <hr/>
@@ -1277,7 +1282,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.5k</span>&nbsp;字
+                class="white-color">2.9k</span>&nbsp;字
             
             
             
