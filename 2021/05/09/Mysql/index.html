@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    356
+                    500
                 </div>
                 
 
@@ -463,6 +463,16 @@
 <p>(character_set_client) 客户端来源数据使用的字符集，该变量用来决定Mysql如何解释客户端发到服务端的SQL命令。</p>
 <p>(character_set_connection) 连接层字符集。用来决定MYSQL如何处理客户端发来的SQL命令</p>
 <p>(character_set_results) 查询结果字符集。当SQL返回结果时，该变量的值决定了发给客户端的字符编码。</p>
+<h2 id="创建数据库过程"><a href="#创建数据库过程" class="headerlink" title="创建数据库过程"></a>创建数据库过程</h2><h3 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h3><h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>char 写定长度<br>varchar 分配空间可变</p>
+<h4 id="时间类型"><a href="#时间类型" class="headerlink" title="时间类型"></a>时间类型</h4><p>datatime 写死<br>timestamp 时间戳（加时区）</p>
+<h4 id="union"><a href="#union" class="headerlink" title="union"></a>union</h4><h4 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h4><p>primary key,foreign key,not null,unique,default,ckeck,auto_increament</p>
+<h3 id="1-创建库"><a href="#1-创建库" class="headerlink" title="1.创建库"></a>1.创建库</h3><p>CREATE DATABASE 库名;<br>USE 库名;</p>
+<h4 id="删除库"><a href="#删除库" class="headerlink" title="删除库"></a>删除库</h4><p>DROP DATABASE 库名;</p>
+<h3 id="2-建表"><a href="#2-建表" class="headerlink" title="2.建表"></a>2.建表</h3><p>CREATE TABLE 表名(<br>    字段定义（字段名 数据类型 约束）<br>)</p>
+<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><p>DROP TABLE 表明;</p>
+<h3 id="3-插入表"><a href="#3-插入表" class="headerlink" title="3.插入表"></a>3.插入表</h3><p>INSERT INTO 表名（字段列表） VALUES(值列表),</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>delete from 表名 where 条件<br>truncate 表名;（删了又创建<br>）</p>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>UPDATE 表名 SET 字段名 = 新值/表达式 where 条件</p>
 
                 
             </div>
@@ -1287,7 +1297,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
