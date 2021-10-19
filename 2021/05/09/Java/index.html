@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-11
+                    2021-10-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    2.2k
                 </div>
                 
 
@@ -449,7 +449,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h3><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><h2 id="awt编译乱码：-Dfile-encoding-gbk"><a href="#awt编译乱码：-Dfile-encoding-gbk" class="headerlink" title="awt编译乱码：-Dfile.encoding=gbk"></a>awt编译乱码：-Dfile.encoding=gbk</h2><h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
+                <h1 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h1><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><h2 id="awt编译乱码：-Dfile-encoding-gbk"><a href="#awt编译乱码：-Dfile-encoding-gbk" class="headerlink" title="awt编译乱码：-Dfile.encoding=gbk"></a>awt编译乱码：-Dfile.encoding=gbk</h2><h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
 <h2 id="awt中常用组件"><a href="#awt中常用组件" class="headerlink" title="awt中常用组件"></a>awt中常用组件</h2><p>Button 按钮<br>Canvas 画布<br>Checkbox 复选框<br>CheckboxGroup 将多个Checkbox 组合成一组，一组Checkbox中将只有一个会被选中，即全部变成单选框组件<br>Choice 下拉选框<br>Frame 窗口，在GUI程序里通过该类创建窗口<br>Label 标签类，用于放置提示性文本<br>List 列表框组件，可以添加多条项目<br>Panel 不能单独存在容器内，必须存在其他容器中<br>Scrollbar 滚动条组件。如果需要用户输入某个范围内的值，就可以使用滚动条组件，定义一个滚动条时，必须指定它的方向，初始值，滑块的大小，最小值和最大值。<br>ScrollPane 带水平及垂直滚动条的容器<br>TextArea 多行容器<br>TextField 单行文本框</p>
 <h3 id="Dialog-对话框"><a href="#Dialog-对话框" class="headerlink" title="Dialog 对话框"></a>Dialog 对话框</h3><p>Dialog(Frame owner,String title,boolean modal)<br>模式对话框 不可以对父类容器做操作<br>非模式对话框 可以对父类容器做操作</p>
 <h3 id="FileDialog-文件对话框"><a href="#FileDialog-文件对话框" class="headerlink" title="FileDialog 文件对话框"></a>FileDialog 文件对话框</h3><p>FileDialog(Frame parent,String title,int mode)  parent指父窗口 mode指文件对话类型。 例如FileDialog.LOAD,用于打开了文件 FileDialog.SAVE用于保存文件</p>
@@ -467,6 +467,32 @@
 <hr>
 <h2 id="Swing"><a href="#Swing" class="headerlink" title="Swing"></a>Swing</h2><p>概述：Swing由百分百纯java实现，不再依赖于本地平台的GUI，因此可以在所有平台上都保持相同的界面外观。独立于本地平台的Swing组件被称为轻量组件，依赖于本地平台的AWT被称为重量级组件。</p>
 <p>特征：Swing组件采用MVC(Model-View-Controller，即模型-视图-控制器)设计模式<br>模型：用于维护组件的各种状态<br>视图：是组件的可视化表现<br>控制器：用于控制对于各种事件/组件做出响应。</p>
+<hr>
+<h3 id="Swing为组件设置边框"><a href="#Swing为组件设置边框" class="headerlink" title="Swing为组件设置边框"></a>Swing为组件设置边框</h3><h4 id="常见Border"><a href="#常见Border" class="headerlink" title="常见Border"></a>常见Border</h4><p>BevelBorder<br>LineBorder<br>EmptyBorder<br>EtchedBorder<br>TitledBorder<br>MatteBorder<br>CompoundBorder</p>
+<h4 id="特殊的Border"><a href="#特殊的Border" class="headerlink" title="特殊的Border"></a>特殊的Border</h4><p>TitleBorder：它的作用并不是直接为其他组件添加边框，而是为其他边框设置标题，创建该类对象时，需要传入一个其他的Border对象。<br>CompoundBorder：用来组合其他两个边框，创建该类对象时，需要传入其他两个Border对象，一个作为内边框，一个作为外边框。</p>
+<h4 id="给组件设置边框步骤"><a href="#给组件设置边框步骤" class="headerlink" title="给组件设置边框步骤"></a>给组件设置边框步骤</h4><p>1.使用BorderFactory或者XxxBorder创建Border的实例对象。<br>2.调用Swing组件的setBorder（Border b）方法为组件设置边框。</p>
+<h3 id="使用JtoolBar创建工具条"><a href="#使用JtoolBar创建工具条" class="headerlink" title="使用JtoolBar创建工具条"></a>使用JtoolBar创建工具条</h3><h3 id="JColorChooser和JFileChooser"><a href="#JColorChooser和JFileChooser" class="headerlink" title="JColorChooser和JFileChooser"></a>JColorChooser和JFileChooser</h3><h4 id="JColorChooser"><a href="#JColorChooser" class="headerlink" title="JColorChooser"></a>JColorChooser</h4><p>JColorChooser用于创建颜色选择器对话框，只需调用它的静态方法就可快速生成一个颜色选择对话框。<br>public static Color showDialog(Component component,String title,Color initialColor)<br>参数：component：指定当前对话框的父组件。<br>    title：当前对话框的名称<br>    initialColor：指定默认选中的颜色<br>返回值：返回用户选中的颜色</p>
+<h4 id="JFileChooser"><a href="#JFileChooser" class="headerlink" title="JFileChooser"></a>JFileChooser</h4><h5 id="1-创建JFileChooser对象"><a href="#1-创建JFileChooser对象" class="headerlink" title="1.创建JFileChooser对象"></a>1.创建JFileChooser对象</h5><p>JFileChooser chooser = new JFileChooser(“D:\“); //指定默认打开的本地磁盘路径</p>
+<h5 id="2-调用JFileChoose的一系列可选方法，进行初始化"><a href="#2-调用JFileChoose的一系列可选方法，进行初始化" class="headerlink" title="2.调用JFileChoose的一系列可选方法，进行初始化"></a>2.调用JFileChoose的一系列可选方法，进行初始化</h5><p>setSelectedFile(File file)/setSelectedFiles(File[] selectedFiles)：设置默认选中的文件<br>setMultiSelectionEnabled(boolean b)：设置是否允许多选，默认是单选<br>setFileSelectionMode(int mode)：设置可以选择内容，例如文件、文件夹等，默认只能选择文件</p>
+<h5 id="3-打开文件对话框"><a href="#3-打开文件对话框" class="headerlink" title="3.打开文件对话框"></a>3.打开文件对话框</h5><p>showOpenDialog(Component parent)：打开文件加载对话框，并指定父组件<br>showSaveDialog(Component parent)：打开文件保存对话框，并指定父组件</p>
+<h5 id="4-获取用户选择的结果"><a href="#4-获取用户选择的结果" class="headerlink" title="4.获取用户选择的结果"></a>4.获取用户选择的结果</h5><p>File getSelectedFile()：获取用户选择的一个文件<br>File[] getSelectedFiles()：获取用户选择的多个文件</p>
+<h3 id="JOptionPane"><a href="#JOptionPane" class="headerlink" title="JOptionPane"></a>JOptionPane</h3><hr>
+<p>基本描述：<br>通过JOptionPane可以非常方便地创建一些简单地对话框，Swing已经为这些对话框添加了相应的组件，无须手动添加组件。JOptionPane提供了如下4个方法来创建对话框。</p>
+<h4 id="showMessageDialog-showInternalMessageDialog"><a href="#showMessageDialog-showInternalMessageDialog" class="headerlink" title="showMessageDialog/showInternalMessageDialog"></a>showMessageDialog/showInternalMessageDialog</h4><p>消息对话框，告知用户某事已发生，用户只能单击“确定”按钮，类似于JavaScript的alert函数。</p>
+<h4 id="showConfirmDialog-showInternalConfirmDialog"><a href="#showConfirmDialog-showInternalConfirmDialog" class="headerlink" title="showConfirmDialog/showInternalConfirmDialog"></a>showConfirmDialog/showInternalConfirmDialog</h4><p>确认对话框，向用户确认某个问题，用户可以选择yes、no-cancel等选项。类似于JavaScript的confirm函数。该方法返回用户的单击了哪个按钮</p>
+<h4 id="showInputDialog-showInternalInputDialog"><a href="#showInputDialog-showInternalInputDialog" class="headerlink" title="showInputDialog/showInternalInputDialog"></a>showInputDialog/showInternalInputDialog</h4><p>输入对话框，提示要求输入某些信息，类似于JavaScript的prompt函数。该方法返回用户输入的字符串。</p>
+<h4 id="showOptionDialog-showInternalOptionDialog"><a href="#showOptionDialog-showInternalOptionDialog" class="headerlink" title="showOptionDialog/showInternalOptionDialog"></a>showOptionDialog/showInternalOptionDialog</h4><p>自定义选项对话框，允许使用自定义选项，可以取代showConfirmDialog所产生的对话框，只是用起来更复杂。</p>
+<hr>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>以上方法都有很多重载形式，选择其中一种最全的形式，参数解释如下：<br>showXxxDialog(Component parentComponent,<br>        Object message,<br>        String title,<br>        int optionType,<br>        int messageType,<br>        Icon icon,<br>        Object[] options,<br>        Object initialValue)</p>
+<p>参数解释：<br>parentComponent：当前对话框的父组件<br>message：对话框上显示的信息，信息可以是字符串、组件、图片等<br>title：当前对话框的标题<br>optionType：当前对话框上显示的按钮类型：DEFAULT_OPTION、YES_NO_OPTION、YES_NO_CANCEL_OPTION、OK_CANCEL_OPTION<br>messageType：当前对话框的类型：ERROR_MESSAGE、INFORMATION_MESSAGE、WARING_MESSAGE<br>icon：当前对话框左上角的图标<br>options：自定义下拉列表的选项<br>initialValue：自定义选项中的默认选中项</p>
+<hr>
+<p>当用户与对话框交互结束后，不同类型对话框的返回值如下：<br>showMessageDialog：无返回值。<br>showInputDialog：返回用户输入或选中的字符串。<br>showConfirmDialog：返回一个整数代表用户的选项。<br>showOptionDialog：返回一个整数代表用户的选项，如果用户选第一项，则返回0；如果用户选则第二项，则返回1，以此类推。</p>
+<hr>
+<p>对showConfirmDialog所产生的对话框，有如下几个返回值</p>
+<p>YES OPTION：用户单击了“是”按钮后返回。<br>NO OPTION：用户单击了“否”按钮后返回。<br>CANCEL OPTION：用户单击了“取消”按钮后返回。<br>OK OPTION：用户单击了“确定”按钮后返回。<br>CLOSED OPTION：用户单击了对话框右上角的“X”按钮后返回。</p>
+<h3 id="Swing中的特殊容器"><a href="#Swing中的特殊容器" class="headerlink" title="Swing中的特殊容器"></a>Swing中的特殊容器</h3><hr>
+<p>使用JSplitPane<br>通过如下构造方法可以创建JSplitPane对象<br>JSplitPane(int newOrientation,Component newLeftComponent,Component newRightCompnent)<br>newOrientation：指定JSplitPane容器的分割方向，如果值为JSplitPane.VERTICAL_SPLIT,为纵向分割，JSplitPane.HORIZONTAL_SPLIT，为横向分割<br>newLeftComponent：左侧或上侧的组件<br>newRughtComponent：右侧或下侧的组件</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><p>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>isDirectory()：判断File对象指向的文件是否为目录，返回一个boolean类型的值。</p>
 
                 
             </div>
@@ -1282,7 +1308,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3k</span>&nbsp;字
+                class="white-color">4.8k</span>&nbsp;字
             
             
             
