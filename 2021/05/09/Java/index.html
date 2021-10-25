@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-19
+                    2021-10-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.9k
                 </div>
                 
 
@@ -491,8 +491,26 @@
 <p>对showConfirmDialog所产生的对话框，有如下几个返回值</p>
 <p>YES OPTION：用户单击了“是”按钮后返回。<br>NO OPTION：用户单击了“否”按钮后返回。<br>CANCEL OPTION：用户单击了“取消”按钮后返回。<br>OK OPTION：用户单击了“确定”按钮后返回。<br>CLOSED OPTION：用户单击了对话框右上角的“X”按钮后返回。</p>
 <h3 id="Swing中的特殊容器"><a href="#Swing中的特殊容器" class="headerlink" title="Swing中的特殊容器"></a>Swing中的特殊容器</h3><hr>
-<p>使用JSplitPane<br>通过如下构造方法可以创建JSplitPane对象<br>JSplitPane(int newOrientation,Component newLeftComponent,Component newRightCompnent)<br>newOrientation：指定JSplitPane容器的分割方向，如果值为JSplitPane.VERTICAL_SPLIT,为纵向分割，JSplitPane.HORIZONTAL_SPLIT，为横向分割<br>newLeftComponent：左侧或上侧的组件<br>newRughtComponent：右侧或下侧的组件</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><p>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>isDirectory()：判断File对象指向的文件是否为目录，返回一个boolean类型的值。</p>
+<h4 id="使用JSplitPane"><a href="#使用JSplitPane" class="headerlink" title="使用JSplitPane"></a>使用JSplitPane</h4><p>通过如下构造方法可以创建JSplitPane对象<br>JSplitPane(int newOrientation,Component newLeftComponent,Component newRightCompnent)<br>newOrientation：指定JSplitPane容器的分割方向，如果值为JSplitPane.VERTICAL_SPLIT,为纵向分割，JSplitPane.HORIZONTAL_SPLIT，为横向分割<br>newLeftComponent：左侧或上侧的组件<br>newRughtComponent：右侧或下侧的组件</p>
+<p>设置是否开启连续布局的支持（可选）<br>setContinuousLayout(boolean newContinuousLayout)<br>默认是关闭的，如果设置为true，则打开连续布局的支持，但由于连续布局支持需要不断地重绘，所以效率会低一些</p>
+<p>设置是否支持“一触即展”地支持（可选）<br>setOneTouchExpandable(boolean new Value);<br>默认关闭</p>
+<p>其他设置<br>setDividerLocation(double proportionalLocation)：设置分割条地位置为JSplitPane的某个百分比<br>setDividerLocation(int location)：通过像素值设置分割条的位置<br>setDividerSize(int newSize)：通过像素值设置分割条大小<br>setLeftComponent(Component comp)：设置指定位置的组件</p>
+<h4 id="JTabbedPane"><a href="#JTabbedPane" class="headerlink" title="JTabbedPane"></a>JTabbedPane</h4><p>1.创建JTabbedPane<br>JTabbedPane(int tabPlacement,int tableLayoutPolicy)<br>tabPlacement：指定标签的放置位置，可以选择SwingConstants中的四个常量：TOP、LEFT、BOTTOM、RIGHT<br>tableLayoutPolicy：指定当前窗口不能容纳标签页标题时的布局策略，可以选用JTabbedPane.WRAP_TAB_LAYOUT和JTabbedPane.SCROLL_TAB_LAYOUT。</p>
+<p>2.通过JTabbedPane对象对标签进行增删改查<br>增加标签：<br>addTab(String title,Icon icon,Component component,String tip)<br>title：标签的名称<br>icon：标签的图标<br>component：标签对应的组件<br>tip：光标放到标签上的提示</p>
+<p>插入标签页：<br>insertTab(String title,Icon icon,Component component,String tip,int index)<br>title：标签的名称<br>icon：标签的图标<br>component：标签对应的组件<br>tip：光标放到标签上的提示<br>index：在哪个索引处插入标签页</p>
+<p>修改标签页对应的组件：<br>setComponentAt(int index,Component component)<br>index：在哪个索引处插入标签页<br>component：标签对应的组件</p>
+<p>删除组件：<br>removeTabAt(int index)<br>index：删除哪个索引处的标签</p>
+<p>3.设置当前选中的标签页<br>setSelectedIndex(int index)</p>
+<p>4.设置JtabbedPane的其他属性<br>setDisabledIconAt(int index,Icon disabledIcon)<br>将指定位置的禁用图标设置为icon，该图标也可以是null表示不使用禁用图标。</p>
+<p>setEnableAt(int index,boolean enabled)<br>设置指定位置的标签页是否启用</p>
+<p>setTitleAt(int index,String title)<br>设置指定位置标签页的标题为title，该title可以是null，表示该标签页的标题为空</p>
+<p>setToolTipTextAt(int index,String toolTipText)<br>设置指定位置标签页的提示文本</p>
+<p>5.为JTabbedPane设置监听器<br>addChangeListener(changeListener listener)</p>
+<h4 id="JProgressBar、ProgressMonitor、BoundedRangeModel实现进度条"><a href="#JProgressBar、ProgressMonitor、BoundedRangeModel实现进度条" class="headerlink" title="JProgressBar、ProgressMonitor、BoundedRangeModel实现进度条"></a>JProgressBar、ProgressMonitor、BoundedRangeModel实现进度条</h4><p>1.创建JProgress对象<br>public JProgressBar(int orient,int min,int max)：<br>orient：方向<br>min：最小值<br>max：最大值</p>
+<p>2.设置属性<br>setBorderPainted(boolean b)：设置进度条是否有边框<br>setIndeterminate(boolean newValue)：设置当前进度条是不是进度不确定的进度条，如果是，则将看到一个滑块在进度条中左右移动<br>setStringPainted(boolean b)：设置进度条是否显示当前完成的百分比</p>
+<p>3.获取和设置当前进度条的进度状态<br>setValue(int n)：设置当前进度值<br>double getPercentComplete()：获取进度条的完成百分比<br>String getString()：返回进度字符串的当前值</p>
+<p>创建进度对话框<br>ProgressMonitor的用法与ProgressBar的用法基本相似<br>public ProgressMonitor(Component parentComponent,Object message,String note,int min,int max)<br>parentComponent：对话框的父组件<br>message：对话框的描述信息<br>note：对话框的提示信息<br>min：进度条的最小值<br>max：进度条的最大值</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><p>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>isDirectory()：判断File对象指向的文件是否为目录，返回一个boolean类型的值。</p>
 
                 
             </div>
@@ -1067,8 +1085,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">学习笔记</span>
+                    <a href="/tags/note/">
+                        <span class="chip bg-color">note</span>
                     </a>
                     
                 </div>
@@ -1308,7 +1326,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.8k</span>&nbsp;字
+                class="white-color">5.6k</span>&nbsp;字
             
             
             
