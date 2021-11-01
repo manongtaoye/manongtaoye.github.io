@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-25
+                    2021-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    4.5k
                 </div>
                 
 
@@ -510,8 +510,58 @@
 <p>2.设置属性<br>setBorderPainted(boolean b)：设置进度条是否有边框<br>setIndeterminate(boolean newValue)：设置当前进度条是不是进度不确定的进度条，如果是，则将看到一个滑块在进度条中左右移动<br>setStringPainted(boolean b)：设置进度条是否显示当前完成的百分比</p>
 <p>3.获取和设置当前进度条的进度状态<br>setValue(int n)：设置当前进度值<br>double getPercentComplete()：获取进度条的完成百分比<br>String getString()：返回进度字符串的当前值</p>
 <p>创建进度对话框<br>ProgressMonitor的用法与ProgressBar的用法基本相似<br>public ProgressMonitor(Component parentComponent,Object message,String note,int min,int max)<br>parentComponent：对话框的父组件<br>message：对话框的描述信息<br>note：对话框的提示信息<br>min：进度条的最小值<br>max：进度条的最大值</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><p>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>isDirectory()：判断File对象指向的文件是否为目录，返回一个boolean类型的值。</p>
+<h4 id="JList、JComboBox实现列表框"><a href="#JList、JComboBox实现列表框" class="headerlink" title="JList、JComboBox实现列表框"></a>JList、JComboBox实现列表框</h4><p>JList和JComboBox极其相似，他们都只有一个列表框，只是JComboBox的列表框需要以下拉方式显示出来；JList和JComboBox都可以通过setRenderer()方法来改变列表项的表现形式。甚至维护这两个组件的Model都是相似的，JList使用ListModel,JComboBox使用JComboBoxModel，而ComboBoxModel是ListModel的子类。</p>
+<p>1.简单列表框<br>使用JList或JComboBox实现简单列表框的步骤：</p>
+<p>1.1创建JList或JComboBox对象<br>JList(final E[] listData)：创建JList对象，把listData数组中的每项内容转换成一个列表项展示<br>JList(final Vector&lt;? extends E&gt; listData)：创建JList对象，把listData数组中的每项内容转换成一个列表项展示<br>JComboBox(E[] items)<br>JComboBox(Vector<E> items)</p>
+<p>1.2设置JList或JComboBox的外观行为<br>详见API</p>
+<p>1.3设置监听器<br>JList通过addListSelectionListener完成，JComboBox通过addItemListener完成 </p>
+<h5 id="不强制储存列表项的ListModel和ComboBoxModel"><a href="#不强制储存列表项的ListModel和ComboBoxModel" class="headerlink" title="不强制储存列表项的ListModel和ComboBoxModel"></a>不强制储存列表项的ListModel和ComboBoxModel</h5><p>JList和JComboBox只负责外观的展示，而组件底层的状态数据则由相对应的Model来维护</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(String pathName)<br>通过指定的路径名字符串转换为抽象路径名来创建新的File实例<br>File(String parent,String child)<br>从父路径名字符串和子路径名字符串创建新的File实例<br>File(File parent,String child)<br>从父抽象路径名和子路径名字符串创建新的File实例</p>
+<h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><h4 id="File类创建功能"><a href="#File类创建功能" class="headerlink" title="File类创建功能"></a>File类创建功能</h4><p>createNewFile()：当具有该名称的文件不存在时，创建一个由该抽象路径名命名的新空文件<br>mkdir()：闯将由此抽象路径命名的目录<br>mkdirs()：创建由此抽象路径命名的目录，包括任何必须但不存在的父目录</p>
+<h4 id="File类判断和获取功能"><a href="#File类判断和获取功能" class="headerlink" title="File类判断和获取功能"></a>File类判断和获取功能</h4><p>isDirectory()：测试此抽象路径名表示的File是否为目录<br>isFile()：测试此抽象路径名表示的File是否为文件<br>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>getAbsolutePath()：返回此抽象路径名的绝对路径名字符串<br>getPath()：将此抽象路径名转换为路径名字符串<br>getName()：返回由此路径名表示的文件或目录的名称<br>list()：返回此抽象路径名表示的目录中的文件和目录的名称字符串数组<br>listFiles()：返回此抽象路径名表示的目录中的文件和目录的File对象数组</p>
+<h4 id="File类删除功能"><a href="#File类删除功能" class="headerlink" title="File类删除功能"></a>File类删除功能</h4><p>delete()：删除由此抽象路径名表示的文件或目录</p>
+<h3 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h3><h4 id="IO流概述："><a href="#IO流概述：" class="headerlink" title="IO流概述："></a>IO流概述：</h4><p>IO：输入输出（Input/Output）<br>流：是一种抽象概念，是对数据传输的总称。也就是说数据在设备间的传输称为流，流的本质是数据传输<br>IO流就是用来处理设备间传输问题的<br>常见应用：文件复制，文件上传，文件下载</p>
+<h4 id="IO分类"><a href="#IO分类" class="headerlink" title="IO分类"></a>IO分类</h4><p>按照数据的流向<br>输入流：读数据<br>输出流：写数据</p>
+<p>按照数据类型来分<br>字节流：字节输入/输出流<br>字符流：字符输入/输出流<br>用记事本打开字符流读得懂，字符流读不懂</p>
+<h4 id="字节流写数据"><a href="#字节流写数据" class="headerlink" title="字节流写数据"></a>字节流写数据</h4><p>字节流抽象基类<br>InputStream：这个抽象类是表示字节输入流的所有类的超类<br>OutputStream：这个抽象类是表示字节输出流的所有超类<br>子类名特点：子类名称都是以其父类名作为子类名的后缀</p>
+<hr>
+<p>FileOutputStream：文件输入流用于将数据写入File<br>FileOutputStream(String name)：创建文件输出流以指定的名称写入文件</p>
+<h5 id="输入流方法："><a href="#输入流方法：" class="headerlink" title="输入流方法："></a>输入流方法：</h5><p>void write(int b)：将指定的字节写入此文件输出流<br>最后都要释放资源<br>void close()：关闭此文件输出流并释放与此流相关联的任何系统资源<br>使用字节输出流写数据的步骤：<br>1.创建字节输出流对象（调用系统功能创建了文件，创建字节输出流对象，让字节输出流对象指向文件）<br>2.调用字节输出流对象的写数据方法<br>3.释放资源（关闭此文件输出流并释放与此流相关联的任何系统资源）</p>
+<p>所有有关IO的操作必须关闭</p>
+<hr>
+<h5 id="字节流写数据的3种方式"><a href="#字节流写数据的3种方式" class="headerlink" title="字节流写数据的3种方式"></a>字节流写数据的3种方式</h5><p>void write(int b)：将指定的字节写入此文件输出流，一次写一个字节数据<br>void write(byte[] b)：将b.length字节从指定的字节数组写入此文件输出流，一次写一个字节数据<br>void write(byte[] b,int off,int len)：将len字节从指定的字节数组开始，从偏移量off开始写入此文件输出流，一次写一个字节数组的部分数据</p>
+<p>FileOutputStream fos = new FileOutputStream(“1.txt”) 等价于 FileOutputStream fos = new FileOutputStream(new File(“1.txt”))</p>
+<p>byte[] getByte() 返回字符串对应的字节数组</p>
+<h5 id="字节流写数据的两个小问题"><a href="#字节流写数据的两个小问题" class="headerlink" title="字节流写数据的两个小问题"></a>字节流写数据的两个小问题</h5><p>1.字节流写数据如何实现换行？<br>windows：\r\n<br>linux：\n<br>mac：\r<br>2.字节流写数据如何实现追加写入？</p>
+<p>public FileOutputStream(String name,boolean append)</p>
+<p>创建文件输出流以指定的名称写入文件</p>
+<p>如果第二个参数为true，则字节将写入文件的末尾而不是开头</p>
+<h5 id="字节流写数据加异常处理"><a href="#字节流写数据加异常处理" class="headerlink" title="字节流写数据加异常处理"></a>字节流写数据加异常处理</h5><p>finally：在异常处理时提供finally块来执行所有清除操作，比如IO中的释放资源</p>
+<p>try {</p>
+<p>​    可能出现异常的代码</p>
+<p>} catch 异常类名 变量名 {</p>
+<p>​    异常的处理代码</p>
+<p>} finally {</p>
+<p>​    执行所有清除操作</p>
+<p>}</p>
+<h4 id="字节流读数据"><a href="#字节流读数据" class="headerlink" title="字节流读数据"></a>字节流读数据</h4><h5 id="字节流读数据（一次读一个字节数据）"><a href="#字节流读数据（一次读一个字节数据）" class="headerlink" title="字节流读数据（一次读一个字节数据）"></a>字节流读数据（一次读一个字节数据）</h5><p>FIleInputStream：从文件系统中的文件获取输入字节</p>
+<p>FileInputStream(String name)：通过打开与实际文件的连接来创建一个FileInputStream，该文件由文件系统中的路径名name命名。</p>
+<p>使用字节流读取数据的步骤：</p>
+<p>1.创建字节输入流对象</p>
+<p>2.调用字节输入流对象的读数据方法</p>
+<p>3.释放资源</p>
+<p>int read()：从输入流读取一个字节的数据</p>
+<p>数据的下一个字节，如果达到文件的末尾，值为-1</p>
+<p>遍历文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(File file);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> read = fis.read();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(read != -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">​	System.out.print((<span class="keyword">char</span>)read);</span><br><span class="line"></span><br><span class="line">​	read = fis.read();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">优化以上代码</span><br><span class="line"><span class="keyword">int</span> by;</span><br><span class="line"><span class="keyword">while</span>((by = fis.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">  System.out.println((<span class="keyword">char</span>)by);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h5 id="字节流案例：复制文本文件"><a href="#字节流案例：复制文本文件" class="headerlink" title="字节流案例：复制文本文件"></a>字节流案例：复制文本文件</h5><p>分析：</p>
+<p>1.其实就是把文本内容从一个文件中读取出来（数据源），然后写入到另一个文件中（目的地）</p>
+<p>2.数据源：</p>
+<p>​    1.txt—读数据—InputStream—FileInputStream</p>
+<p>3.目的地：</p>
+<p>​    D:\\1.txt—写数据—OutputStream—FileOutputStream</p>
+<h5 id="字节流读数据（一次一个字节数组数据）"><a href="#字节流读数据（一次一个字节数组数据）" class="headerlink" title="字节流读数据（一次一个字节数组数据）"></a>字节流读数据（一次一个字节数组数据）</h5>
                 
             </div>
             <hr/>
@@ -1326,7 +1376,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.6k</span>&nbsp;字
+                class="white-color">7.2k</span>&nbsp;字
             
             
             
