@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-01
+                    2021-11-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    6k
                 </div>
                 
 
@@ -449,7 +449,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h1><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><h2 id="awt编译乱码：-Dfile-encoding-gbk"><a href="#awt编译乱码：-Dfile-encoding-gbk" class="headerlink" title="awt编译乱码：-Dfile.encoding=gbk"></a>awt编译乱码：-Dfile.encoding=gbk</h2><h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
+                <h1 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h1><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><p>awt编译乱码：-Dfile.encoding=gbk<br>去掉窗体边框：setUndecorated</p>
+<hr>
+<h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
 <h2 id="awt中常用组件"><a href="#awt中常用组件" class="headerlink" title="awt中常用组件"></a>awt中常用组件</h2><p>Button 按钮<br>Canvas 画布<br>Checkbox 复选框<br>CheckboxGroup 将多个Checkbox 组合成一组，一组Checkbox中将只有一个会被选中，即全部变成单选框组件<br>Choice 下拉选框<br>Frame 窗口，在GUI程序里通过该类创建窗口<br>Label 标签类，用于放置提示性文本<br>List 列表框组件，可以添加多条项目<br>Panel 不能单独存在容器内，必须存在其他容器中<br>Scrollbar 滚动条组件。如果需要用户输入某个范围内的值，就可以使用滚动条组件，定义一个滚动条时，必须指定它的方向，初始值，滑块的大小，最小值和最大值。<br>ScrollPane 带水平及垂直滚动条的容器<br>TextArea 多行容器<br>TextField 单行文本框</p>
 <h3 id="Dialog-对话框"><a href="#Dialog-对话框" class="headerlink" title="Dialog 对话框"></a>Dialog 对话框</h3><p>Dialog(Frame owner,String title,boolean modal)<br>模式对话框 不可以对父类容器做操作<br>非模式对话框 可以对父类容器做操作</p>
 <h3 id="FileDialog-文件对话框"><a href="#FileDialog-文件对话框" class="headerlink" title="FileDialog 文件对话框"></a>FileDialog 文件对话框</h3><p>FileDialog(Frame parent,String title,int mode)  parent指父窗口 mode指文件对话类型。 例如FileDialog.LOAD,用于打开了文件 FileDialog.SAVE用于保存文件</p>
@@ -544,6 +546,22 @@
 <p>} finally {</p>
 <p>​    执行所有清除操作</p>
 <p>}</p>
+<p>JDK7改进方案：</p>
+<p>try(定义流对象) {</p>
+<p>​    可能出现异常的代码</p>
+<p>} catch(异常类名 变量名) {</p>
+<p>​    异常的处理代码</p>
+<p>}</p>
+<p>自动释放资源</p>
+<p>JDK9改进方案：</p>
+<p>定义输入流对象：</p>
+<p>定义输出流对象：</p>
+<p>try(输入流对象;输出流对象) {</p>
+<p>​    可能出现异常的代码</p>
+<p>} catch(异常类名 变量名) {</p>
+<p>​    异常的处理代码</p>
+<p>}</p>
+<p>自动释放资源</p>
 <h4 id="字节流读数据"><a href="#字节流读数据" class="headerlink" title="字节流读数据"></a>字节流读数据</h4><h5 id="字节流读数据（一次读一个字节数据）"><a href="#字节流读数据（一次读一个字节数据）" class="headerlink" title="字节流读数据（一次读一个字节数据）"></a>字节流读数据（一次读一个字节数据）</h5><p>FIleInputStream：从文件系统中的文件获取输入字节</p>
 <p>FileInputStream(String name)：通过打开与实际文件的连接来创建一个FileInputStream，该文件由文件系统中的路径名name命名。</p>
 <p>使用字节流读取数据的步骤：</p>
@@ -561,7 +579,80 @@
 <p>​    1.txt—读数据—InputStream—FileInputStream</p>
 <p>3.目的地：</p>
 <p>​    D:\\1.txt—写数据—OutputStream—FileOutputStream</p>
-<h5 id="字节流读数据（一次一个字节数组数据）"><a href="#字节流读数据（一次一个字节数组数据）" class="headerlink" title="字节流读数据（一次一个字节数组数据）"></a>字节流读数据（一次一个字节数组数据）</h5>
+<h5 id="字节流读数据（一次一个字节数组数据）"><a href="#字节流读数据（一次一个字节数组数据）" class="headerlink" title="字节流读数据（一次一个字节数组数据）"></a>字节流读数据（一次一个字节数组数据）</h5><p>int read(byte[] b)：从该输入流读取最多b.length个字节的数据到一个字节数组</p>
+<p>String (byte[] bytes,int offset,int length)</p>
+<p>数据的下一个字节，如果达到文件的末尾，值为-1</p>
+<h5 id="字节流案例：复制图片"><a href="#字节流案例：复制图片" class="headerlink" title="字节流案例：复制图片"></a>字节流案例：复制图片</h5><p>分析：</p>
+<p>1.根据数据源创建字节输入流对象</p>
+<p>2.根据目的地创建字节输出流对象</p>
+<p>3.读写数据，复制图片（一次读取一个字节数组，一次写入一个字节数组）</p>
+<p>4.释放资源</p>
+<h4 id="字节缓冲流"><a href="#字节缓冲流" class="headerlink" title="字节缓冲流"></a>字节缓冲流</h4><p>BufferedOutputStream：该类实现缓冲输出流。通过设置这样的输出流，应用程序可以向底层输出流写入字节，而不必为写入的每个字节导致底层系统的调用</p>
+<p>BufferedInputStream：创建BufferedInputStream将创建一个内部缓冲数组。当从流中读取或跳过字节时，内部缓冲区将根据需要从所包含的输入流中重新填充，一次很多字节。</p>
+<hr>
+<p>构造方法：</p>
+<p>字节缓冲输出流：BufferedOutputStream(OutputStream out)</p>
+<p>字节缓冲输入流：BufferedInputStream(InputStream in)</p>
+<p>question：为什么构造方法需要的是字节流，而不是具体的文件或者路径呢？</p>
+<p>answer：字节缓冲流仅仅提供缓冲区，而真正的读写数据还是得依靠基本得字节流对象进行操作</p>
+<h3 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h3><p>tips：为什么会出现字符流</p>
+<p>一个汉字存储：</p>
+<p>如果是GBK编码，占用两个字节</p>
+<p>如果是UTF-8编码，占用三个字节</p>
+<p>getBytes(charName name);</p>
+<p>字符流 = 字节流 + 编码表</p>
+<p>tips：如何识别中文？</p>
+<p>汉字在存储的时候，无论选择哪种编码存储，第一个字节都是负数</p>
+<h5 id="编码表"><a href="#编码表" class="headerlink" title="编码表"></a>编码表</h5><p>基础知识：计算机中储存的信息都是二进制数表示的</p>
+<p>按照某种规则，将字符存储到计算机中，称为编码。反之，将存储在计算机中的二进制数按照某种规则解析显示出来，称为解码。按A方式编码储存就必须按A方式编码解析</p>
+<p>字符编码：就是一套自然语言的字符与二进制数之间的对应规则</p>
+<p>字符集：</p>
+<p>是一个系统所支持的所有字符的集合，包括各国文字、标点符号、图形符号、数字等</p>
+<p>计算机要准确的存储和识别各种字符集符号，就需要进行字符编码，一套字符集必然至少有一套字符编码。常见的字符集有ASCII字符集、GBXXX字符集、Unicode字符集</p>
+<h5 id="字符串中的编码解码问题"><a href="#字符串中的编码解码问题" class="headerlink" title="字符串中的编码解码问题"></a>字符串中的编码解码问题</h5><p>编码：</p>
+<p>byte[] getBytes()：使用平台的默认字符集将该String编码为一系列字节，将结果存储到新的字节数组中</p>
+<p>byte[] getBytes(String charsetName)：使用指定的字符集将该String编码为一系列字节，将结果存储到新的字节数组中</p>
+<p>解码：</p>
+<p>String(byte[] bytes)：通过使用平台的默认字符集解码指定的字节数组来构造新的String</p>
+<p>String(byte[] bytes,String charsetName)：通过指定的字符集解码指定的字节数组来构造新的String</p>
+<h4 id="字符流抽象基类"><a href="#字符流抽象基类" class="headerlink" title="字符流抽象基类"></a>字符流抽象基类</h4><p>Reader：字符输入流的抽象类</p>
+<p>Writer：字符输出流的抽象类</p>
+<p>字符流中编码和解码相关的两个类：</p>
+<p>InputSteamReader</p>
+<p>OutputStreamWriter</p>
+<h5 id="OutputStreamWriter字符流写数据的五种方式"><a href="#OutputStreamWriter字符流写数据的五种方式" class="headerlink" title="OutputStreamWriter字符流写数据的五种方式"></a>OutputStreamWriter字符流写数据的五种方式</h5><p>一次写一个字符</p>
+<p>write(char c);</p>
+<p>一次写一个数组</p>
+<p>write(char[] chs)</p>
+<p>一次写入一个数组的一部分</p>
+<p>write(char[] chs,off,length)</p>
+<p>一次写一个字符串</p>
+<p>write(String str)</p>
+<p>一次写一个字符串的一部分</p>
+<p>write(String str,off,length)</p>
+<p>字符流刷新方法</p>
+<p>flush() 还可继续写数据</p>
+<p>close() 关闭流，释放资源，但是在关闭前会先刷新流，一旦关闭就不能写数据</p>
+<p>Tips：字符流相当于字节流有缓冲，主要还是通过FileOutputStream写数据，记得要用flush()刷新，close()在关闭前也会刷新。</p>
+<h5 id="InputStreamReader读数据的两种方式"><a href="#InputStreamReader读数据的两种方式" class="headerlink" title="InputStreamReader读数据的两种方式"></a>InputStreamReader读数据的两种方式</h5><p>int read() 一次读一个字符数据</p>
+<p>int read(char[] chs) 一次读一个字符数组</p>
+<h4 id="FileReader和FileWriter"><a href="#FileReader和FileWriter" class="headerlink" title="FileReader和FileWriter"></a>FileReader和FileWriter</h4><p>FileReader：用于读取字符文件的便携类</p>
+<p>FileReader(String fileName)</p>
+<p>FileWriter：用于写入字符文件的便携类</p>
+<p>FileWriter(String fileName)</p>
+<h4 id="字符缓冲流BufferedReader和BufferedWriter"><a href="#字符缓冲流BufferedReader和BufferedWriter" class="headerlink" title="字符缓冲流BufferedReader和BufferedWriter"></a>字符缓冲流BufferedReader和BufferedWriter</h4><p>BufferedWriter：将文本写入字符输出流，缓冲字符，以提供单个字符，数组和字符串的高效写入，可以指定缓冲区大小，或者可以接受默认大小。默认值足够大，可用于大多数用途</p>
+<p>BufferedReader：从字符输出流读取文本，缓冲字符，以提供字符，数组和行的高效读取，可以指定缓冲区大小，或者可以使用默认大小。默认值足够大，可用于大多数用途</p>
+<h5 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h5><p>BufferWriter(Writer out)</p>
+<p>BufferReader(Reader in)</p>
+<h5 id="字符缓冲流的特有功能"><a href="#字符缓冲流的特有功能" class="headerlink" title="字符缓冲流的特有功能"></a>字符缓冲流的特有功能</h5><p>BufferedWriter：</p>
+<p>void newLine()：写一行分隔符，行分隔符字符串由系统属性定义</p>
+<p>BufferedReader：</p>
+<p>public String readLine()：读一行文字，结果包含行的内容的字符串，不包括任何终止字符，如果流的结尾已经到达，则为null</p>
+<h3 id="IO流小结"><a href="#IO流小结" class="headerlink" title="IO流小结"></a>IO流小结</h3><p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211105095548418.png" alt="image-20211105095548418"></p>
+<p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211105095734136.png" alt="image-20211105095734136"></p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>创建线程对象<br>1.继承Thread类 </p>
+<p>2.实现Runnable接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">	ThreadDemo t1 = <span class="keyword">new</span> ThreadDemo();</span><br><span class="line">	Thread thread = <span class="keyword">new</span> Thread(t1);</span><br><span class="line">	thread.start();</span><br><span class="line">    <span class="comment">//	重写方法省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -1376,7 +1467,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.2k</span>&nbsp;字
+                class="white-color">9.1k</span>&nbsp;字
             
             
             

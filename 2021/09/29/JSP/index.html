@@ -411,14 +411,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-14
+                    2021-11-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
@@ -457,6 +457,17 @@
 <h3 id="session对象的常用方法："><a href="#session对象的常用方法：" class="headerlink" title="session对象的常用方法："></a>session对象的常用方法：</h3><p>void setAttribute(String name,Object obj) 将obj对象以name名称储存到会话中<br>Object getAttribute(String name) 获取指定名称相关联的session属性值<br>Enumeration getAttributeNames() 取得session对象所有的属性的集合，返回一个枚举类型数据<br>long getCreationTime() 获取session对象的创造时间，单位为毫秒<br>String getId() 获取sessionId的值<br>long getLastAccessedTime() 返回与当前session相关的客户端最后一次访问时间，由1970年1月1日算起，单位为毫秒<br>int getMaxInactiveInterval(int interval) 返回会话总时间，以秒为单位，即session对象的有效时间，当超过这个有效时间，此session被清除<br>void setMaxInactiveInterval(int interval) 设置session对象的有效时间<br>ServletContext getServeletContext() 返回一个该JSP页面对应的ServletContext对象实例<br>boolean isNew() 判断是否由服务器产生一个新的session对象<br>void invalidate() 销毁session对象</p>
 <h3 id="application对象的常用方法："><a href="#application对象的常用方法：" class="headerlink" title="application对象的常用方法："></a>application对象的常用方法：</h3><p>application对象实现了用户数据的共享</p>
 <p>void setAttribute(String name,Object obj) 将obj对象以name名称储存到application对象中<br>Object getAttribute(String name) 获取指定名称相关联的application属性值<br>Enumeration getAttribute() 返回所有的application属性</p>
+<h3 id="JDBC常用API"><a href="#JDBC常用API" class="headerlink" title="JDBC常用API"></a>JDBC常用API</h3><p>Connection接口：表示与特定数据库之间的连接</p>
+<p>Statement接口：用于执行SQL语句并返回它所生成结果的对象</p>
+<p>PreparedStatement：Statement的子接口，用于执行预编译的SQL语句，当多次执行这条SQL语句时，可以调用预编译好的SQL语句，大大节省了时间</p>
+<p>CallableStatement接口：是PreparedStatement接口的子接口，用于执行SQL存储过程</p>
+<p>ResultSet接口：表示执行select语句所得到的结果集</p>
+<p>ResultSetMetaData类：用来获取数据库表的结构，包括数据库的字段名称、类型、数目等所必须具备的信息</p>
+<h3 id="JDBC的连接"><a href="#JDBC的连接" class="headerlink" title="JDBC的连接"></a>JDBC的连接</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Connection conn = <span class="keyword">null</span>;</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		改变数据库连接变量conn的值</span></span><br><span class="line"><span class="comment">//		1.加载驱动类</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"><span class="comment">//		2.sql数据库的连接地址及用户名和密码</span></span><br><span class="line">		String url = <span class="string">&quot;jdbc:mysql://localhost:3306/onlinedb&quot;</span>;</span><br><span class="line">		String name = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">		String pwd = <span class="string">&quot;zt20020806&quot;</span>;</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		获取数据库连接</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			conn = DriverManager.getConnection(url,name,pwd);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> conn;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## </span><br></pre></td></tr></table></figure>
+
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p>概念：Extensible Markup Language 可扩展标记语言</p>
+<p>可扩展：标签可自定义</p>
+<p>XML和 html的区别</p>
 
                 
             </div>
@@ -1268,7 +1279,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.2k</span>&nbsp;字
+                class="white-color">9.1k</span>&nbsp;字
             
             
             
