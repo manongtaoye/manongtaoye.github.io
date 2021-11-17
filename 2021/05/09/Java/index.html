@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-08
+                    2021-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6k
+                    6.9k
                 </div>
                 
 
@@ -449,9 +449,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h1><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><p>awt编译乱码：-Dfile.encoding=gbk<br>去掉窗体边框：setUndecorated</p>
-<hr>
-<h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
+                <h1 id="Java图形界面开发"><a href="#Java图形界面开发" class="headerlink" title="Java图形界面开发"></a>Java图形界面开发</h1><h4 id="awt"><a href="#awt" class="headerlink" title="awt"></a>awt</h4><p>awt编译乱码：-Dfile.encoding=gbk</p>
+<h2 id="去掉窗体边框：setUndecorated"><a href="#去掉窗体边框：setUndecorated" class="headerlink" title="去掉窗体边框：setUndecorated"></a>去掉窗体边框：setUndecorated</h2><h2 id="awt布局"><a href="#awt布局" class="headerlink" title="awt布局"></a>awt布局</h2><p>BorderLayout<br>FlowLayout<br>GridLayout<br>GridBagLayout<br>CardLayout<br>BoxLayout(swing)</p>
 <h2 id="awt中常用组件"><a href="#awt中常用组件" class="headerlink" title="awt中常用组件"></a>awt中常用组件</h2><p>Button 按钮<br>Canvas 画布<br>Checkbox 复选框<br>CheckboxGroup 将多个Checkbox 组合成一组，一组Checkbox中将只有一个会被选中，即全部变成单选框组件<br>Choice 下拉选框<br>Frame 窗口，在GUI程序里通过该类创建窗口<br>Label 标签类，用于放置提示性文本<br>List 列表框组件，可以添加多条项目<br>Panel 不能单独存在容器内，必须存在其他容器中<br>Scrollbar 滚动条组件。如果需要用户输入某个范围内的值，就可以使用滚动条组件，定义一个滚动条时，必须指定它的方向，初始值，滑块的大小，最小值和最大值。<br>ScrollPane 带水平及垂直滚动条的容器<br>TextArea 多行容器<br>TextField 单行文本框</p>
 <h3 id="Dialog-对话框"><a href="#Dialog-对话框" class="headerlink" title="Dialog 对话框"></a>Dialog 对话框</h3><p>Dialog(Frame owner,String title,boolean modal)<br>模式对话框 不可以对父类容器做操作<br>非模式对话框 可以对父类容器做操作</p>
 <h3 id="FileDialog-文件对话框"><a href="#FileDialog-文件对话框" class="headerlink" title="FileDialog 文件对话框"></a>FileDialog 文件对话框</h3><p>FileDialog(Frame parent,String title,int mode)  parent指父窗口 mode指文件对话类型。 例如FileDialog.LOAD,用于打开了文件 FileDialog.SAVE用于保存文件</p>
@@ -518,7 +517,61 @@
 <p>1.2设置JList或JComboBox的外观行为<br>详见API</p>
 <p>1.3设置监听器<br>JList通过addListSelectionListener完成，JComboBox通过addItemListener完成 </p>
 <h5 id="不强制储存列表项的ListModel和ComboBoxModel"><a href="#不强制储存列表项的ListModel和ComboBoxModel" class="headerlink" title="不强制储存列表项的ListModel和ComboBoxModel"></a>不强制储存列表项的ListModel和ComboBoxModel</h5><p>JList和JComboBox只负责外观的展示，而组件底层的状态数据则由相对应的Model来维护</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(String pathName)<br>通过指定的路径名字符串转换为抽象路径名来创建新的File实例<br>File(String parent,String child)<br>从父路径名字符串和子路径名字符串创建新的File实例<br>File(File parent,String child)<br>从父抽象路径名和子路径名字符串创建新的File实例</p>
+<h5 id="强制存储列表项的DefaultListModel和DefaultComboBoxModel"><a href="#强制存储列表项的DefaultListModel和DefaultComboBoxModel" class="headerlink" title="强制存储列表项的DefaultListModel和DefaultComboBoxModel"></a>强制存储列表项的DefaultListModel和DefaultComboBoxModel</h5><p>DefaultListModel提供的方法：</p>
+<p>add(int index, E element)</p>
+<p>addElement(E obj)</p>
+<p>insertElementAt(E obj,int index)</p>
+<p>remove(int index)</p>
+<p>removeAllElements()</p>
+<p>removeElement(E element)</p>
+<p>removeElementAt(int index)</p>
+<p>removeRange(int fromIndex,int toIndex)</p>
+<p>set(int index,E element)</p>
+<p>setElementAt(E obj,int index)</p>
+<h5 id="使用ListCellRenderer改变列表外观"><a href="#使用ListCellRenderer改变列表外观" class="headerlink" title="使用ListCellRenderer改变列表外观"></a>使用ListCellRenderer改变列表外观</h5><p>实际上，JList和JComboBox还可以支持图标列表项，如果在创建JList或者JComboBox时传入图标数组，则创建的JList和JComboBox的列表项就是图标。</p>
+<p>如果希望列表项是更复杂的组件，例如希望像QQ一样每个列表既有图标又有字符串，此时需要使用ListCellRenderer接口的实现类对象，自定义每个条目组件的渲染过程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ListCellRenderer</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">	<span class="function">Component <span class="title">getListCellRendererComponent</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	JList&lt;? extends E&gt; list,//列表组件</span></span></span><br><span class="line"><span class="function"><span class="params">    E value,//当前列表项的内容</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="keyword">int</span> index,//当前列表项的索引</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="keyword">boolean</span> isSelected,//当前列表项是否被选中</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="keyword">boolean</span> cellHasFocus)</span></span>;<span class="comment">//当前列表项是否获取了焦点</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过JList的setCellRenderer(ListCellRenderer&lt;? super E&gt;cellRenderer)方法，把自定义的ListCellRenderer对象传递给JList，就可以按照自定义的规则来绘制列表项组件了。</p>
+<p>绘制组件大小：setPreferredSize()</p>
+<h4 id="JTree、TreeModel实现树"><a href="#JTree、TreeModel实现树" class="headerlink" title="JTree、TreeModel实现树"></a>JTree、TreeModel实现树</h4><p>树也是图形化用户界面中使用广泛的GUI组件，例如使用Windows资源管理器时，将看到如下图所示的目录树</p>
+<p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211116202753477.png" alt="image-20211116202753477"></p>
+<p>按照结点是否包含子节点，可以把结点分为下面两类：</p>
+<p>普通节点：包含子节点的结点；</p>
+<p>叶子节点：没有子节点的结点；</p>
+<p>按照结点是否具有唯一的父节点，可以把结点分为下面两类：</p>
+<p>根节点：没有父节点的结点，计算机中，一棵树只能有一个根节点</p>
+<p>普通节点：具有唯一父节点的结点</p>
+<h5 id="创建树"><a href="#创建树" class="headerlink" title="创建树"></a>创建树</h5><p>当一个结点具有子节点时，该节点有两种状态：</p>
+<p>展开状态：当父节点处于展开状态时，其子节点是可见的；</p>
+<p>折叠状态：当父节点属于折叠状态时，其子节点都是不可见的；</p>
+<h5 id="JTree常用构造方法"><a href="#JTree常用构造方法" class="headerlink" title="JTree常用构造方法"></a>JTree常用构造方法</h5><p>JTree(TreeModel newModel)：使用指定的数据模型来创建JTree对象，它默认显示根节点。</p>
+<p>JTree(TreeNode root)：使用root作为根节点创建JTree对象，它默认显示根节点。</p>
+<p>JTree(TreeNode root,boolean askAllowsChildren)：使用root作为根节点创建JTree对象，它默认显示根节点，其他详见API。</p>
+<p>TreeNode继承体系及使用：</p>
+<p>接口：TreeNode-&gt;接口：MutableTreeNode-&gt;DefaultMutableTreeNode；</p>
+<p>JTree的其他外观设置方法：</p>
+<p>tree.putClientProperty(“JTree.lineStyle”,”None”)：设置结点之间没有连接线</p>
+<p>tree.putClientProperty(“JTree.lineStyle”,”Horizontal”)：设置结点之间只有水平分割线</p>
+<h5 id="DefaultMutableTreeNode其他的成员方法"><a href="#DefaultMutableTreeNode其他的成员方法" class="headerlink" title="DefaultMutableTreeNode其他的成员方法"></a>DefaultMutableTreeNode其他的成员方法</h5><p>获取下一个兄弟结点</p>
+<p>getNextSibling();</p>
+<p>获取父节点</p>
+<p>getParent();</p>
+<p>判断是否为叶子结点</p>
+<p>isLeaf();</p>
+<p>判断是否为根节点</p>
+<p>isRoot();</p>
+<p>详见API</p>
+<h4 id="编辑树节点"><a href="#编辑树节点" class="headerlink" title="编辑树节点"></a>编辑树节点</h4><p>JTree生成的树默认是不可编辑的，调用JTree的setEditable(boolean b)方法可使JTree对象变成可编辑状态</p>
+<h5 id="编辑树节点的步骤"><a href="#编辑树节点的步骤" class="headerlink" title="编辑树节点的步骤"></a>编辑树节点的步骤</h5><p>1.获取被选中的结点</p>
+<p>获取当前被选中的结点，会有两种方式：</p>
+<p>一：</p>
+<p>通过JTree对象的某些方法，例如：TreePath getSelectionPath()等，得到一个TreePath对象，包含了从根节点到当前结点路径上的所有结点</p>
+<p>调用TreePath对象的 Object GetlastPathComponent() 方法，得到当前选中结点</p>
+<p>二：</p>
+<p>调用TreePath对象的 Object GetlastPathComponent() 方法，得到当前选中结点</p>
+<p>2.调用DefaultModel数据模型有关增删改查的一系列方法完成编辑，方法执行后，<strong>重绘Tree</strong></p>
+<h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(String pathName)<br>通过指定的路径名字符串转换为抽象路径名来创建新的File实例<br>File(String parent,String child)<br>从父路径名字符串和子路径名字符串创建新的File实例<br>File(File parent,String child)<br>从父抽象路径名和子路径名字符串创建新的File实例</p>
 <h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><h4 id="File类创建功能"><a href="#File类创建功能" class="headerlink" title="File类创建功能"></a>File类创建功能</h4><p>createNewFile()：当具有该名称的文件不存在时，创建一个由该抽象路径名命名的新空文件<br>mkdir()：闯将由此抽象路径命名的目录<br>mkdirs()：创建由此抽象路径命名的目录，包括任何必须但不存在的父目录</p>
 <h4 id="File类判断和获取功能"><a href="#File类判断和获取功能" class="headerlink" title="File类判断和获取功能"></a>File类判断和获取功能</h4><p>isDirectory()：测试此抽象路径名表示的File是否为目录<br>isFile()：测试此抽象路径名表示的File是否为文件<br>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>getAbsolutePath()：返回此抽象路径名的绝对路径名字符串<br>getPath()：将此抽象路径名转换为路径名字符串<br>getName()：返回由此路径名表示的文件或目录的名称<br>list()：返回此抽象路径名表示的目录中的文件和目录的名称字符串数组<br>listFiles()：返回此抽象路径名表示的目录中的文件和目录的File对象数组</p>
 <h4 id="File类删除功能"><a href="#File类删除功能" class="headerlink" title="File类删除功能"></a>File类删除功能</h4><p>delete()：删除由此抽象路径名表示的文件或目录</p>
@@ -653,6 +706,13 @@
 <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>创建线程对象<br>1.继承Thread类 </p>
 <p>2.实现Runnable接口</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">	ThreadDemo t1 = <span class="keyword">new</span> ThreadDemo();</span><br><span class="line">	Thread thread = <span class="keyword">new</span> Thread(t1);</span><br><span class="line">	thread.start();</span><br><span class="line">    <span class="comment">//	重写方法省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Java网络编程"><a href="#Java网络编程" class="headerlink" title="Java网络编程"></a>Java网络编程</h2><h5 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h5><p>1:服务器：准备就绪</p>
+<p>2：客户端：连接请求</p>
+<p>3：服务器：响应请求</p>
+
                 
             </div>
             <hr/>
@@ -1467,7 +1527,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.1k</span>&nbsp;字
+                class="white-color">10.2k</span>&nbsp;字
             
             
             
