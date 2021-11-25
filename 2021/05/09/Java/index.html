@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-17
+                    2021-11-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.9k
+                    7.1k
                 </div>
                 
 
@@ -571,6 +571,13 @@
 <p>二：</p>
 <p>调用TreePath对象的 Object GetlastPathComponent() 方法，得到当前选中结点</p>
 <p>2.调用DefaultModel数据模型有关增删改查的一系列方法完成编辑，方法执行后，<strong>重绘Tree</strong></p>
+<h4 id="监听结点事件"><a href="#监听结点事件" class="headerlink" title="监听结点事件"></a>监听结点事件</h4><h5 id="为JTree添加监听器："><a href="#为JTree添加监听器：" class="headerlink" title="为JTree添加监听器："></a>为JTree添加监听器：</h5><p>1.addTreeExpansionListener(TreeExpansionListener tel)：添加树结点展开折叠事件的监听器</p>
+<p>2.addTreeSelectionListener(TreeSelectionListener tsl)：添加树节点选择事件的监听器</p>
+<h5 id="修改JTree的选择模式："><a href="#修改JTree的选择模式：" class="headerlink" title="修改JTree的选择模式："></a>修改JTree的选择模式：</h5><p>JTree专门提供了一个TreeSelectionModel对象来保存该JTree选中状态的信息。也就是说，JTree组件背后隐藏了两个model对象，其中TreeModel用于保存该JTree所有的节点数据，而TreeSelectionModel用于保存在JTree的所有选中状态的信息。</p>
+<p>程序可以改变JTree的选择模式，但必须先获取该JTree对应的TreeSelectionModel对象，再调用该对象的setSelectionModel(int mode);方法来设置该JTree的选择模式，其中model可以有如下三种取值：</p>
+<p>1.TreeSelectionModel.CONTIGUOUS_TREE_SELECTION：可以连续选中多个TreePath。</p>
+<p>2.TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION：该选项对于选择没有任何限制。</p>
+<p>3.TreeSelectionModel.SINGLE_TREE_SELECTION：每次只能选择一个TreePath。</p>
 <h1 id="Java-I-O流"><a href="#Java-I-O流" class="headerlink" title="Java I/O流"></a>Java I/O流</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>File(String pathName)<br>通过指定的路径名字符串转换为抽象路径名来创建新的File实例<br>File(String parent,String child)<br>从父路径名字符串和子路径名字符串创建新的File实例<br>File(File parent,String child)<br>从父抽象路径名和子路径名字符串创建新的File实例</p>
 <h3 id="File类中常用方法"><a href="#File类中常用方法" class="headerlink" title="File类中常用方法"></a>File类中常用方法</h3><h4 id="File类创建功能"><a href="#File类创建功能" class="headerlink" title="File类创建功能"></a>File类创建功能</h4><p>createNewFile()：当具有该名称的文件不存在时，创建一个由该抽象路径名命名的新空文件<br>mkdir()：闯将由此抽象路径命名的目录<br>mkdirs()：创建由此抽象路径命名的目录，包括任何必须但不存在的父目录</p>
 <h4 id="File类判断和获取功能"><a href="#File类判断和获取功能" class="headerlink" title="File类判断和获取功能"></a>File类判断和获取功能</h4><p>isDirectory()：测试此抽象路径名表示的File是否为目录<br>isFile()：测试此抽象路径名表示的File是否为文件<br>exist()：判断File对象指向的文件是否存在，返回一个boolean类型的值。<br>getAbsolutePath()：返回此抽象路径名的绝对路径名字符串<br>getPath()：将此抽象路径名转换为路径名字符串<br>getName()：返回由此路径名表示的文件或目录的名称<br>list()：返回此抽象路径名表示的目录中的文件和目录的名称字符串数组<br>listFiles()：返回此抽象路径名表示的目录中的文件和目录的File对象数组</p>
@@ -1527,7 +1534,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.2k</span>&nbsp;字
+                class="white-color">10.5k</span>&nbsp;字
             
             
             
