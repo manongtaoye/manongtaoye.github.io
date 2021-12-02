@@ -411,14 +411,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-03
+                    2021-12-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.2k
                 </div>
                 
 
@@ -465,9 +465,276 @@
 <p>ResultSetMetaData类：用来获取数据库表的结构，包括数据库的字段名称、类型、数目等所必须具备的信息</p>
 <h3 id="JDBC的连接"><a href="#JDBC的连接" class="headerlink" title="JDBC的连接"></a>JDBC的连接</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		Connection conn = <span class="keyword">null</span>;</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		改变数据库连接变量conn的值</span></span><br><span class="line"><span class="comment">//		1.加载驱动类</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"><span class="comment">//		2.sql数据库的连接地址及用户名和密码</span></span><br><span class="line">		String url = <span class="string">&quot;jdbc:mysql://localhost:3306/onlinedb&quot;</span>;</span><br><span class="line">		String name = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">		String pwd = <span class="string">&quot;zt20020806&quot;</span>;</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		获取数据库连接</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			conn = DriverManager.getConnection(url,name,pwd);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> conn;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## </span><br></pre></td></tr></table></figure>
 
-<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p>概念：Extensible Markup Language 可扩展标记语言</p>
-<p>可扩展：标签可自定义</p>
-<p>XML和 html的区别</p>
+<h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><h3 id="概念：Extensible-Markup-Language-可扩展标记语言"><a href="#概念：Extensible-Markup-Language-可扩展标记语言" class="headerlink" title="概念：Extensible Markup Language 可扩展标记语言"></a>概念：Extensible Markup Language 可扩展标记语言</h3><p>可扩展：标签可自定义</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h4 id="存储数据"><a href="#存储数据" class="headerlink" title="存储数据"></a>存储数据</h4><p>1.配置文件</p>
+<p>2.在网络中传输</p>
+<h3 id="XML和-html的区别"><a href="#XML和-html的区别" class="headerlink" title="XML和 html的区别"></a>XML和 html的区别</h3><p>1.xml标签都是自定义的，html标签是预定义</p>
+<p>2.xml的语法严格，html语法松散</p>
+<p>3.xml存储数据，html展示数据</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="基本语法："><a href="#基本语法：" class="headerlink" title="基本语法："></a>基本语法：</h4><p>1.xml文档的后缀名 .xml</p>
+<p>2.xml第一行必须定义为文档声明（第一行是空格也不行）</p>
+<p>3.xml文档中有且仅有一个根标签</p>
+<p>4.属性值必须用单引号或双引号包起来</p>
+<p>5.标签必须正确关闭（双标签）</p>
+<p>6.xml标签名称区分大小写</p>
+<h4 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&#x27;1.0&#x27; ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;1&#x27;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">gender</span>&gt;</span>男<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;2&#x27;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>24<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">gender</span>&gt;</span>男<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="组成部分："><a href="#组成部分：" class="headerlink" title="组成部分："></a>组成部分：</h4><h5 id="1-文档声明"><a href="#1-文档声明" class="headerlink" title="1.文档声明"></a>1.文档声明</h5><p>1.格式<?xml 属性列表 ?></p>
+<p>2.属性列表：</p>
+<p>version：版本号，必须的属性</p>
+<p>encoding：编码方式，告知解析引擎当前文档使用的字符集，默认值：ISO-8859-1</p>
+<p>standalone：是否独立  </p>
+<p>​        取值：</p>
+<p>​                yes：不依赖其他文件</p>
+<p>​                no：依赖其他文件</p>
+<h5 id="2-指令（了解）：结合css"><a href="#2-指令（了解）：结合css" class="headerlink" title="2.指令（了解）：结合css"></a>2.指令（了解）：结合css</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&#x27;1.0&#x27; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;index.css&quot; ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;1&#x27;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>23<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">gender</span>&gt;</span>男<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">user</span> <span class="attr">id</span>=<span class="string">&#x27;2&#x27;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">age</span>&gt;</span>24<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">gender</span>&gt;</span>男<span class="tag">&lt;/<span class="name">gender</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-标签：标签名称自定义的"><a href="#3-标签：标签名称自定义的" class="headerlink" title="3.标签：标签名称自定义的"></a>3.标签：标签名称自定义的</h5><p>规则：名称可以含字母、数字以及其他的字符</p>
+<p>​            名称不能以数字或者标点符号开始 </p>
+<p>​            名称不能以字符 “xml”（或者 XML、Xml）开始 </p>
+<p>​            名称不能包含空格 </p>
+<p>​            可使用任何名称，没有保留的字词。</p>
+<h5 id="4-属性："><a href="#4-属性：" class="headerlink" title="4.属性："></a>4.属性：</h5><p>id属性值唯一</p>
+<h5 id="5-文本"><a href="#5-文本" class="headerlink" title="5.文本"></a>5.文本</h5><p>1.CDATA区：在该区域中的数据会被原样进行展示</p>
+<p>格式：<![CDATA[ 数据 ]]></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;![CDATA[</span><br><span class="line">	if(a &lt; b &amp;&amp; a &gt; c) &#123;&#125;</span><br><span class="line">]]&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h5><p>谁编写xml？–用户，软件使用者</p>
+<p>谁解析xml？–软件</p>
+<ul>
+<li><p>约束：规定xml文档的书写规则</p>
+</li>
+<li><p>分类：</p>
+</li>
+</ul>
+<p>1.DTD：一种简单的约束技术</p>
+<p>2.Schema：一种复杂的约束技术</p>
+<ul>
+<li><p>DTD：</p>
+<p>引入dtd文档到xml文档中</p>
+<ul>
+<li><p>内部dtd：将约束规则定义在xml文档中</p>
+</li>
+<li><p>外部dtd：将约束的规则定义在外部的dtd文档中</p>
+</li>
+<li><ul>
+<li><p>本地：<!DOCTYPE 根标签名 SYSTEM "dtd文件的位置"></p>
+</li>
+<li><p>网络：<!DOCTYPE 根标签名 SYSTEM PUBLIC "dtd文件名字" "dtd文件的位置URL"></p>
+</li>
+<li><p>直接写入</p>
+</li>
+<li><p>```xml</p>
+<!DOCTYPE students [
+    <!ELEMENT sydents (student+)><!-- student必须出现一次或多次，*为0次或多次 -->
+<pre><code>&lt;!ELEMENT student (name,age,sex)&gt;&lt;!--  student标签内的书写顺序 --&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;&lt;!--  字符串 --&gt;
+&lt;!ELEMENT age (#PCDATA)&gt;&lt;!--  字符串 --&gt;
+&lt;!ELEMENT sex (#PCDATA)&gt;&lt;!--  字符串 --&gt;
+&lt;!ATTLIST student number ID #REQUIRED&gt;&lt;!--  不可重复 --&gt;
+</code></pre>
+<p>]&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    * </span><br><span class="line"></span><br><span class="line">* Schema:</span><br><span class="line"></span><br><span class="line">  * 引入：</span><br><span class="line"></span><br><span class="line">    * 1.填写xml文档的根元素</span><br><span class="line"></span><br><span class="line">    * 2.引入xsi前缀，xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line"></span><br><span class="line">    * 3.引入xsd文件命名空间，xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.itcast.cn&#x2F;xml student.xsd&quot;</span><br><span class="line"></span><br><span class="line">    * 4.为每一个xsd约束声明一个前缀，作为标识 xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.itcast.cn&#x2F;xml&quot;</span><br><span class="line"></span><br><span class="line">    * &#96;&#96;&#96;xml</span><br><span class="line">      &lt;students xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">                xmlns:&quot;http:&#x2F;&#x2F;www.itcast.cn&#x2F;xml&quot;</span><br><span class="line">                xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.itcast.cn&#x2F;xml student.xsd&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>3.解析：操作xml文档，将文档中的数据读取到内存中</p>
+<ul>
+<li><p>操作xml文档</p>
+<ul>
+<li>1.解析（读取）：将文档中的数据读取到内存中</li>
+<li>2.写入：将内存中的数据保存到xml文档中。持久化的存储</li>
+</ul>
+</li>
+<li><p>解析xml的方式</p>
+<ul>
+<li><p>DOM：将标记语言文档一次性加载进内存，在内存中形成一颗dom树</p>
+<ul>
+<li>优点：操作方便，可以对文档进行CRUD的所有操作</li>
+<li>缺点：占内存</li>
+</ul>
+</li>
+<li><p>SAX：逐行读取，基于事件驱动</p>
+<ul>
+<li>优点：不占内存</li>
+<li>缺点：只能读取，不能增删改</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>xml常见的解析器</p>
+<ul>
+<li>1.JAXP：sun公司提供的解析器，支持dom和sax两种思想</li>
+<li>2.DOM4J：一款非常优秀的解析器</li>
+<li>3.Jsoup：是一款Java的HTML解析器，可直接解析某个URL地址、HTML文本内容。它提供了一套非常省力的API，可通过DOM，CSS以及类似于jQuery的操作方法来取出和操作数据</li>
+<li>4.PULL：Android操作系统内置的解析器，sax方式的</li>
+</ul>
+</li>
+<li><p>Jsoup</p>
+<ul>
+<li><p>快速入门：</p>
+<ul>
+<li>步骤：<ul>
+<li><p>1.导入jar包</p>
+</li>
+<li><p>2.获取Document对象</p>
+</li>
+<li><p>3.获取对应的标签Element对象</p>
+</li>
+<li><p>4.获取数据</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><pre><code class="java">//        获取Document对象，根据xml文档获取
+//        获取student.xml的path
+//        .class获取字节码
+        String path = JsoupDemo1.class.getClassLoader().getResource(&quot;student.xml&quot;).getPath();
+//        解析xml文档，加载文档进内存，获取dom树--&gt;Document
+        Document document = Jsoup.parse(new File(path),&quot;utf-8&quot;);
+//        获取元素对象,Element
+        Elements elements = document.getElementsByTag(&quot;name&quot;);
+        System.out.println(elements.size());
+//        获取第一个name的Element对象
+        Element element = elements.get(0);
+//        获取数据
+        String name = element.text();
+        System.out.println(name)
+</code></pre>
+</li>
+<li></li>
+</ul>
+</li>
+<li><p>对象的使用</p>
+<ul>
+<li><p>Jsoup：工具类，可以解析html或xml文档，返回Document对象</p>
+<ul>
+<li>parse：解析html或xml文档，返回Document<ul>
+<li>parse(File in,String charsetName)：解析xml或html文件的</li>
+<li>parse(String html)：解析html或xml字符串</li>
+<li>parse(URL url,int timeoutMillis)：通过网络路径获取指定的html或xml文档对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Document：文档对象，代表内存中的dom树</p>
+<ul>
+<li><p>元素ELement对象的集合</p>
+<ul>
+<li><p>getElementById(String id)：根据id属性值获取唯一的element对象</p>
+</li>
+<li><p>getElementsByTag(String tagName)：根据标签名获取元素对象集合</p>
+</li>
+<li><p>getElementsByAttribute(String key)：根据属性名称获取元素对象集合</p>
+</li>
+<li><p>getElementsByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Elements：元素ELement对象的集合，可以当作ArrayList<ELement>来使用</p>
+</li>
+<li><p>ELement：元素对象</p>
+<ul>
+<li><p>1.获取子元素对象 </p>
+<ul>
+<li><p>getElementById(String id)：根据id属性值获取唯一的element对象</p>
+</li>
+<li><p>getElementsByTag(String tagName)：根据标签名获取元素对象集合</p>
+</li>
+<li><p>getElementsByAttribute(String key)：根据属性名称获取元素对象集合</p>
+</li>
+<li><p>getElementsByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合</p>
+</li>
+</ul>
+</li>
+<li><p>2.获取属性值</p>
+<ul>
+<li>attr(String key)：根据属性名称获取属性值</li>
+</ul>
+</li>
+<li><p>3.获取文本内容</p>
+<ul>
+<li>String text()：获取文本内容</li>
+<li>String html()：获取标签体的所有内容（包括子标签的字符串内容）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Node：节点对象</p>
+<ul>
+<li>是Document和Element的父类</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>快捷查询方式：</p>
+<ul>
+<li>1.selector：选择器<ul>
+<li>使用的方法：Elements selector(String cssQuery)<ul>
+<li>语法：参考Selector类中定义的语法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.XPath：XPath即为XML路径语言，它是一种用来确定XML（标准通用标记语言的子集）文档中某部分位置的语言<ul>
+<li>使用Jsoup的XPath需要额外导入jar包</li>
+<li>查询w3cschool参考手册，用XPath的语法完成查询</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h3><ul>
+<li><p>1.软件架构</p>
+<ul>
+<li>C/S：客户端/服务器端</li>
+<li>B/S：浏览器/服务器端</li>
+</ul>
+</li>
+<li><p>2.资源分类</p>
+<ul>
+<li>1.静态资源：所有用户访问后，得到的结果是一样的，称为静态资源，静态资源可以直接被浏览器解析<ul>
+<li>如：html,cssjavascript</li>
+</ul>
+</li>
+<li>2.动态资源：每个用户访问相同资源后，得到的结果可能不一样。称为动态资源，动态资源被访问后，需要先转化为静态资源，再返回给浏览器<ul>
+<li>如：servlet/jsp,php,asp…….</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3.网络通信三要素</p>
+<ul>
+<li><p>1.IP：电子设备在网络中的唯一标识</p>
+</li>
+<li><p>2.端口：应用程序在计算机中的唯一标识。0~65536</p>
+</li>
+<li><p>3.传输协议：规定了数据传输的规则</p>
+<ul>
+<li><p>1.基础协议：</p>
+<ul>
+<li>1.tcp：安全协议，三次握手。速度稍慢</li>
+<li>2.udp：不安全协议。速度快</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="web服务器软件"><a href="#web服务器软件" class="headerlink" title="web服务器软件"></a>web服务器软件</h3><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+</ul>
 
                 
             </div>
@@ -1279,7 +1546,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.5k</span>&nbsp;字
+                class="white-color">12.3k</span>&nbsp;字
             
             
             
