@@ -594,146 +594,52 @@
 </li>
 </ul>
 </li>
-<li><pre><code class="java">//        获取Document对象，根据xml文档获取
-//        获取student.xml的path
-//        .class获取字节码
-        String path = JsoupDemo1.class.getClassLoader().getResource(&quot;student.xml&quot;).getPath();
-//        解析xml文档，加载文档进内存，获取dom树--&gt;Document
-        Document document = Jsoup.parse(new File(path),&quot;utf-8&quot;);
-//        获取元素对象,Element
-        Elements elements = document.getElementsByTag(&quot;name&quot;);
-        System.out.println(elements.size());
-//        获取第一个name的Element对象
-        Element element = elements.get(0);
-//        获取数据
-        String name = element.text();
-        System.out.println(name)
+<li><p>```java<br>//        获取Document对象，根据xml文档获取<br>//        获取student.xml的path<br>//        .class获取字节码</p>
+<pre><code>    String path = JsoupDemo1.class.getClassLoader().getResource(&quot;student.xml&quot;).getPath();
+</code></pre>
+<p>//        解析xml文档，加载文档进内存，获取dom树–&gt;Document</p>
+<pre><code>    Document document = Jsoup.parse(new File(path),&quot;utf-8&quot;);
+</code></pre>
+<p>//        获取元素对象,Element</p>
+<pre><code>    Elements elements = document.getElementsByTag(&quot;name&quot;);
+    System.out.println(elements.size());
+</code></pre>
+<p>//        获取第一个name的Element对象</p>
+<pre><code>    Element element = elements.get(0);
+</code></pre>
+<p>//        获取数据</p>
+<pre><code>    String name = element.text();
+    System.out.println(name)
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">  * </span><br><span class="line"></span><br><span class="line">* 对象的使用</span><br><span class="line">  * Jsoup：工具类，可以解析html或xml文档，返回Document对象</span><br><span class="line">    * parse：解析html或xml文档，返回Document</span><br><span class="line">      * parse(File in,String charsetName)：解析xml或html文件的</span><br><span class="line">      * parse(String html)：解析html或xml字符串</span><br><span class="line">      * parse(URL url,int timeoutMillis)：通过网络路径获取指定的html或xml文档对象</span><br><span class="line">    </span><br><span class="line">  * Document：文档对象，代表内存中的dom树</span><br><span class="line">  </span><br><span class="line">    * 元素ELement对象的集合</span><br><span class="line">  </span><br><span class="line">      * getElementById(String id)：根据id属性值获取唯一的element对象</span><br><span class="line">  </span><br><span class="line">      * getElementsByTag(String tagName)：根据标签名获取元素对象集合</span><br><span class="line">  </span><br><span class="line">      * getElementsByAttribute(String key)：根据属性名称获取元素对象集合</span><br><span class="line">      * getElementsByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合</span><br><span class="line">  </span><br><span class="line">  * Elements：元素ELement对象的集合，可以当作ArrayList&lt;ELement&gt;来使用</span><br><span class="line">  </span><br><span class="line">  * ELement：元素对象</span><br><span class="line">  </span><br><span class="line">    * 1.获取子元素对象 </span><br><span class="line">  </span><br><span class="line">      * getElementById(String id)：根据id属性值获取唯一的element对象</span><br><span class="line">  </span><br><span class="line">      * getElementsByTag(String tagName)：根据标签名获取元素对象集合</span><br><span class="line">  </span><br><span class="line">      * getElementsByAttribute(String key)：根据属性名称获取元素对象集合</span><br><span class="line">      * getElementsByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合</span><br><span class="line">  </span><br><span class="line">    * 2.获取属性值</span><br><span class="line">  </span><br><span class="line">      * attr(String key)：根据属性名称获取属性值</span><br><span class="line">  </span><br><span class="line">    * 3.获取文本内容</span><br><span class="line">  </span><br><span class="line">      * String text()：获取文本内容</span><br><span class="line">      * String html()：获取标签体的所有内容（包括子标签的字符串内容）</span><br><span class="line">  </span><br><span class="line">  * Node：节点对象</span><br><span class="line">  </span><br><span class="line">    * 是Document和Element的父类</span><br><span class="line">  </span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">* 快捷查询方式：</span><br><span class="line">  * 1.selector：选择器</span><br><span class="line">    * 使用的方法：Elements selector(String cssQuery)</span><br><span class="line">      * 语法：参考Selector类中定义的语法</span><br><span class="line">  * 2.XPath：XPath即为XML路径语言，它是一种用来确定XML（标准通用标记语言的子集）文档中某部分位置的语言</span><br><span class="line">    * 使用Jsoup的XPath需要额外导入jar包</span><br><span class="line">    * 查询w3cschool参考手册，用XPath的语法完成查询</span><br><span class="line"></span><br><span class="line">## Servlet</span><br><span class="line"></span><br><span class="line">### web相关概念</span><br><span class="line"></span><br><span class="line">* 1.软件架构</span><br><span class="line">  * C&#x2F;S：客户端&#x2F;服务器端</span><br><span class="line">  * B&#x2F;S：浏览器&#x2F;服务器端</span><br><span class="line"></span><br><span class="line">* 2.资源分类</span><br><span class="line">  * 1.静态资源：所有用户访问后，得到的结果是一样的，称为静态资源，静态资源可以直接被浏览器解析</span><br><span class="line">    * 如：html,cssjavascript</span><br><span class="line">  * 2.动态资源：每个用户访问相同资源后，得到的结果可能不一样。称为动态资源，动态资源被访问后，需要先转化为静态资源，再返回给浏览器</span><br><span class="line">    * 如：servlet&#x2F;jsp,php,asp.......</span><br><span class="line"></span><br><span class="line">* 3.网络通信三要素</span><br><span class="line"></span><br><span class="line">  * 1.IP：电子设备在网络中的唯一标识</span><br><span class="line"></span><br><span class="line">  * 2.端口：应用程序在计算机中的唯一标识。0~65536</span><br><span class="line"></span><br><span class="line">  * 3.传输协议：规定了数据传输的规则</span><br><span class="line"></span><br><span class="line">    * 1.基础协议：</span><br><span class="line"></span><br><span class="line">      * 1.tcp：安全协议，三次握手。速度稍慢</span><br><span class="line">      * 2.udp：不安全协议。速度快</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">### web服务器软件</span><br><span class="line"></span><br><span class="line">* 服务器：安装了服务器软件的计算机</span><br><span class="line">* 服务器软件：接收用户的请求，处理请求，做出响应</span><br><span class="line">* web服务器软件：接收用户的请求，处理请求，做出响应</span><br><span class="line">  * 在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目</span><br><span class="line">  * web容器</span><br><span class="line"></span><br><span class="line">* 常见的java相关的web服务器软件：</span><br><span class="line">  * webLogic：oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</span><br><span class="line">  * webSphere：IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</span><br><span class="line">  * JBOSS：JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。</span><br><span class="line">  * Tomcat：Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet&#x2F;jsp。开源的，免费的。</span><br><span class="line"></span><br><span class="line">* JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</span><br><span class="line"></span><br><span class="line">* Tomcat：web服务器软件</span><br><span class="line"></span><br><span class="line">  * 1.下载：见官网</span><br><span class="line"></span><br><span class="line">  * 2.安装：解压压缩包即可</span><br><span class="line"></span><br><span class="line">    * 注意：安装目录建议不要有中文和空格</span><br><span class="line"></span><br><span class="line">  * 3.卸载：删除目录即可</span><br><span class="line"></span><br><span class="line">  * 4.启动：</span><br><span class="line"></span><br><span class="line">    * bin&#x2F;startup.bat,双击运行该文件即可</span><br><span class="line"></span><br><span class="line">    * 访问：浏览器输入：http:&#x2F;&#x2F;localhost:8080（http:&#x2F;&#x2F;ip:8080可以做到访问他们）</span><br><span class="line"></span><br><span class="line">    * 可能遇到的问题：</span><br><span class="line"></span><br><span class="line">      * 1.黑窗口一闪而过</span><br><span class="line"></span><br><span class="line">        * 原因：没有正确配置JAVA_HOME环境变量</span><br><span class="line"></span><br><span class="line">      * 2.启动报错</span><br><span class="line"></span><br><span class="line">        * 1.找到占用的端口号，并且找到对应的进程，杀死该进程</span><br><span class="line"></span><br><span class="line">          * netstat -ano，找到占用的PID结束进程</span><br><span class="line"></span><br><span class="line">        * 2.修改自身的端口号</span><br><span class="line"></span><br><span class="line">          * conf&#x2F;server.xml下修改</span><br><span class="line"></span><br><span class="line">            &#96;&#96;&#96;xml</span><br><span class="line">            &lt;Connector port&#x3D;&quot;8080&quot; protocol&#x3D;&quot;HTTP:&#x2F;1.1&quot; connectionTimeout&#x3D;&quot;20000&quot; redirectPort&#x3D;&quot;8445&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<pre><code>  * 一般会将tomcat的端口号改为80，80端口号是http协议的默认端口号。
+    * 好处：在访问时不用输入端口号
 </code></pre>
 </li>
-<li></li>
-</ul>
-</li>
-<li><p>对象的使用</p>
+<li><p>5.关闭：</p>
 <ul>
-<li><p>Jsoup：工具类，可以解析html或xml文档，返回Document对象</p>
+<li>1.正常关闭：<ul>
+<li>bin/shutdown.bat</li>
+<li>ctrl+c</li>
+</ul>
+</li>
+<li>2.强制关闭：点击启动窗口的’X’</li>
+</ul>
+</li>
+<li><p>6.文件信息：</p>
 <ul>
-<li>parse：解析html或xml文档，返回Document<ul>
-<li>parse(File in,String charsetName)：解析xml或html文件的</li>
-<li>parse(String html)：解析html或xml字符串</li>
-<li>parse(URL url,int timeoutMillis)：通过网络路径获取指定的html或xml文档对象</li>
+<li>bin：可执行文件</li>
+<li>conf：配置文件</li>
+<li>lib：依赖jar包</li>
+<li>logs：日志文件</li>
+<li>temp：临时文件</li>
+<li>webapps：存放web项目</li>
+<li>work：存放运行时的数据</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Document：文档对象，代表内存中的dom树</p>
-<ul>
-<li><p>元素ELement对象的集合</p>
-<ul>
-<li><p>getElementById(String id)：根据id属性值获取唯一的element对象</p>
-</li>
-<li><p>getElementsByTag(String tagName)：根据标签名获取元素对象集合</p>
-</li>
-<li><p>getElementsByAttribute(String key)：根据属性名称获取元素对象集合</p>
-</li>
-<li><p>getElementsByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Elements：元素ELement对象的集合，可以当作ArrayList<ELement>来使用</p>
-</li>
-<li><p>ELement：元素对象</p>
-<ul>
-<li><p>1.获取子元素对象 </p>
-<ul>
-<li><p>getElementById(String id)：根据id属性值获取唯一的element对象</p>
-</li>
-<li><p>getElementsByTag(String tagName)：根据标签名获取元素对象集合</p>
-</li>
-<li><p>getElementsByAttribute(String key)：根据属性名称获取元素对象集合</p>
-</li>
-<li><p>getElementsByAttributeValue(String key, String value)：根据对应的属性名和属性值获取元素对象集合</p>
-</li>
-</ul>
-</li>
-<li><p>2.获取属性值</p>
-<ul>
-<li>attr(String key)：根据属性名称获取属性值</li>
-</ul>
-</li>
-<li><p>3.获取文本内容</p>
-<ul>
-<li>String text()：获取文本内容</li>
-<li>String html()：获取标签体的所有内容（包括子标签的字符串内容）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Node：节点对象</p>
-<ul>
-<li>是Document和Element的父类</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>快捷查询方式：</p>
-<ul>
-<li>1.selector：选择器<ul>
-<li>使用的方法：Elements selector(String cssQuery)<ul>
-<li>语法：参考Selector类中定义的语法</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2.XPath：XPath即为XML路径语言，它是一种用来确定XML（标准通用标记语言的子集）文档中某部分位置的语言<ul>
-<li>使用Jsoup的XPath需要额外导入jar包</li>
-<li>查询w3cschool参考手册，用XPath的语法完成查询</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="web相关概念"><a href="#web相关概念" class="headerlink" title="web相关概念"></a>web相关概念</h3><ul>
-<li><p>1.软件架构</p>
-<ul>
-<li>C/S：客户端/服务器端</li>
-<li>B/S：浏览器/服务器端</li>
-</ul>
-</li>
-<li><p>2.资源分类</p>
-<ul>
-<li>1.静态资源：所有用户访问后，得到的结果是一样的，称为静态资源，静态资源可以直接被浏览器解析<ul>
-<li>如：html,cssjavascript</li>
-</ul>
-</li>
-<li>2.动态资源：每个用户访问相同资源后，得到的结果可能不一样。称为动态资源，动态资源被访问后，需要先转化为静态资源，再返回给浏览器<ul>
-<li>如：servlet/jsp,php,asp…….</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>3.网络通信三要素</p>
-<ul>
-<li><p>1.IP：电子设备在网络中的唯一标识</p>
-</li>
-<li><p>2.端口：应用程序在计算机中的唯一标识。0~65536</p>
-</li>
-<li><p>3.传输协议：规定了数据传输的规则</p>
-<ul>
-<li><p>1.基础协议：</p>
-<ul>
-<li>1.tcp：安全协议，三次握手。速度稍慢</li>
-<li>2.udp：不安全协议。速度快</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="web服务器软件"><a href="#web服务器软件" class="headerlink" title="web服务器软件"></a>web服务器软件</h3><ul>
-<li>服务器：安装了服务器软件的计算机</li>
 </ul>
 
                 
