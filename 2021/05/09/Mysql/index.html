@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2021-12-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    899
+                    1.9k
                 </div>
                 
 
@@ -452,6 +452,13 @@
                 <h2 id="杂记"><a href="#杂记" class="headerlink" title="杂记"></a>杂记</h2><p>tinyint 跟布尔型类似<br>注释方法：<br># --</p>
 <p>bin是二进制的缩写</p>
 <p>encrypted是否加密</p>
+<p>存储过程</p>
+<p>触发器</p>
+<p>事件</p>
+<p>事务</p>
+<p>ER模型</p>
+<p>备份</p>
+<p>日志</p>
 <h2 id="走进Mysql"><a href="#走进Mysql" class="headerlink" title="走进Mysql"></a>走进Mysql</h2><p>（SQL语句的大小写无所谓）</p>
 <h3 id="1-1-1-Mysql的启动和停止"><a href="#1-1-1-Mysql的启动和停止" class="headerlink" title="1.1.1: Mysql的启动和停止"></a>1.1.1: Mysql的启动和停止</h3><p>启动Mysql服务的sql命令如下：<br>NET START mysql55</p>
 <p>停止Mysql服务的命令如下：<br>NET STOP mysql55</p>
@@ -519,6 +526,87 @@
 <p>错误日志</p>
 <p>通用日志</p>
 <p>慢查询日志</p>
+<h2 id="CAP原则"><a href="#CAP原则" class="headerlink" title="CAP原则"></a>CAP原则</h2><p>Consisteacy一致性</p>
+<p>Availability可用性</p>
+<p>Partitiontolerance分区容错性</p>
+<h1 id="NOSQL"><a href="#NOSQL" class="headerlink" title="NOSQL"></a>NOSQL</h1><ul>
+<li>大数据的四个特点：四个V<ul>
+<li>Volume</li>
+<li>Variety</li>
+<li>Velocity</li>
+<li>Value/Veracity</li>
+</ul>
+</li>
+</ul>
+<h2 id="MangoDB"><a href="#MangoDB" class="headerlink" title="MangoDB"></a>MangoDB</h2><h4 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h4><ul>
+<li>show dbs 查看数据库</li>
+<li>use 库名 //如果没有，创建再切换库，有就直接切换</li>
+<li>db 查看当前数据库</li>
+<li>db.createCollection(键值对)创建集合</li>
+<li>show collections 查看集合</li>
+<li>db.集合名.insert({键值对},{}…) //插入数据</li>
+<li>db.集合名.find() //查看集合所有内容</li>
+<li>pretty() //格式化查询</li>
+<li>db.集合.drop() //删除集合</li>
+<li>db.dropDatabase() //删除库</li>
+<li>db.collection_name.update(criteria,odjNew,upsert,multi)</li>
+<li>upsert:判断是否匹配，匹配不到直接新建一条数据（默认关闭</li>
+<li>multi:多行判断，多行执行（默认关闭）</li>
+<li>db.集合名.update({条件:<value>}，{$set:$}) !–修改语句</li>
+<li>db.集合名.deleteOne({&lt;条件&gt;：&lt;&gt;}) !–删除语句</li>
+<li>db.集合名.daletemaney({条件：}) !—删除多行</li>
+<li>db.集合名.find(“条件”) !—-指定查询（条件中格式：{“age”:{$gte:”20”}}）其中条件符号将使用<ul>
+<li>lte(小于等于）</li>
+<li>gt(大于)</li>
+<li>lt(小于)</li>
+<li>ne(不等于)         </li>
+</ul>
+</li>
+<li>db.集合名称.find({“userid”:{$lte:”1004”},”age”:{$gte:”20”}}).pretty() !–多条件查询，默认and 同时满足</li>
+<li>db.集合名称.find({&amp;or:[“条件”:&lt;&gt;],{“条件”:&lt;&gt;}}).pretty !–查询只需满足一个条件的数据</li>
+<li>db.集合名称。find({“uesr”:{$in:[“1005”,”1006”]}}) !—查询满足一个条件的数据</li>
+</ul>
+<h3 id="常见聚合管道操作"><a href="#常见聚合管道操作" class="headerlink" title="常见聚合管道操作"></a>常见聚合管道操作</h3><ul>
+<li>$group：将集合中的文档进行分组</li>
+<li>$limit：用于限制MongoDB聚合管道返回的文档数</li>
+<li>$match：用于过滤数据，只输出符合条件的文档</li>
+<li>$sort：将输入的文档先进行排序，再输出</li>
+<li>$project：用于修改输入文档的结构（增加、删除字段等）和名称</li>
+<li>$skip：在聚合管道中跳过指定数量的文档，并返回剩余数量恶的文档</li>
+</ul>
+<h4 id="具体语法"><a href="#具体语法" class="headerlink" title="具体语法"></a>具体语法</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># $<span class="keyword">group</span>操作符</span><br><span class="line">db.COLLECTION_NAME.aggregate([&#123;$group:&#123;&lt;key1&gt;:&quot;$&lt;key2&gt;&quot;&#125;]).pretty()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="常见管道表达式"><a href="#常见管道表达式" class="headerlink" title="常见管道表达式"></a>常见管道表达式</h3><ul>
+<li><p>$sum：计算总和</p>
+</li>
+<li><p>$avg：计算平均值</p>
+</li>
+<li><p>$min：获取集合中所有文档对应值的最小值</p>
+</li>
+<li><p>$max：获取集合中所有文档对应值的最大值</p>
+</li>
+<li><p>$push：在结果文档中插入值到一个数组中</p>
+</li>
+<li><p>$first：获取分组文档中的第一个文档</p>
+</li>
+<li><p>$last：获取分组文档中的最后一个文档</p>
+</li>
+</ul>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="服务器启动"><a href="#服务器启动" class="headerlink" title="服务器启动"></a>服务器启动</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis<span class="operator">-</span>server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211220105715978.png" alt="image-20211220105715978"></p>
+<h3 id="客户端启动"><a href="#客户端启动" class="headerlink" title="客户端启动"></a>客户端启动</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">redis<span class="operator">-</span>cli.exe <span class="operator">-</span>h 地址 <span class="operator">-</span>p 端口号</span><br><span class="line">#也可以直接redis<span class="operator">-</span>cli.exe</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> index #切换数据库</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> key <span class="keyword">value</span> #插入值</span><br><span class="line"></span><br><span class="line"><span class="keyword">get</span> key #查询值</span><br><span class="line"></span><br><span class="line">dbsize #查询数据库数据大小</span><br><span class="line"></span><br><span class="line">del key #删除数据</span><br><span class="line"></span><br><span class="line">keys <span class="operator">*</span>#查看库里面的所有key</span><br><span class="line"></span><br><span class="line">flushdb #清除当前库下所有数据</span><br><span class="line"></span><br><span class="line">flushall #清除服务器下所有库的数据</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211220111046648.png" alt="image-20211220111046648"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 操作字符串</span><br><span class="line">#设置多个键值对</span><br><span class="line">mset key1 value1 key2 value2...</span><br><span class="line"># 获取多个键值对</span><br><span class="line">mget key1 key2</span><br><span class="line">#自增</span><br><span class="line">incr key</span><br><span class="line">#自减</span><br><span class="line">decr key</span><br><span class="line">#增加、减少指定的值</span><br><span class="line">incrby key increment</span><br><span class="line">decrby key decrement</span><br><span class="line">#获取指定字符串键的旧值并设置新值</span><br><span class="line">getset key <span class="keyword">value</span></span><br><span class="line">#获取字符串值得字节长度</span><br><span class="line">strlen key</span><br><span class="line">#获取指定区间得字符串</span><br><span class="line">substr key startIndex endIndex#index从<span class="number">0</span>开始 </span><br><span class="line">#获取字符串键指定索引范围内的值内容</span><br><span class="line">getrange key startIndex endIndex#index从<span class="number">0</span>开始</span><br><span class="line">#为字符串键的指定索引位置设置值</span><br><span class="line">setrange key <span class="keyword">offset</span> <span class="keyword">value</span></span><br><span class="line">#追加新内容到值的末尾</span><br><span class="line">append key <span class="keyword">value</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="操作键"><a href="#操作键" class="headerlink" title="操作键"></a>操作键</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#序列化指定的键，并返回被序列化的值</span><br><span class="line">dump key</span><br><span class="line">#判断指定键是否存在</span><br><span class="line"><span class="keyword">exists</span> key...</span><br><span class="line">#查看指定键的类型</span><br><span class="line">type key</span><br><span class="line">#删除指定键的值</span><br><span class="line">rename key newkey #将旧值赋给新键</span><br><span class="line">#设置指定键的生存时间，以秒为单位</span><br><span class="line">expire key seconds</span><br><span class="line">#返回指定键的剩余生存时间</span><br><span class="line">ttl key</span><br><span class="line">#移除指定键的生存时间</span><br><span class="line">persist key</span><br><span class="line">#在键存在时，删除键</span><br><span class="line">del key ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="事务-1"><a href="#事务-1" class="headerlink" title="事务"></a>事务</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#开启事务</span><br><span class="line">multi</span><br><span class="line">#执行事务</span><br><span class="line"><span class="keyword">exec</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211222111919533.png" alt="image-20211222111919533"></p>
 
                 
             </div>
@@ -1343,7 +1431,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.3k</span>&nbsp;字
+                class="white-color">13.7k</span>&nbsp;字
             
             
             
