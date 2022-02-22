@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mysql, daily">
+    <meta name="keywords" content="daily">
     <meta name="description" content="日常">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Mysql | 水兽的Blog</title>
+    <title>水兽的Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mysql</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-22
+                    2021-12-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.6k
                 </div>
                 
 
@@ -506,8 +506,8 @@
 <p>isolaction隔离等级</p>
 <p>read-uncommitted  脏读</p>
 <p>read-committed 不可重复读</p>
-<p>repeatable-read（默认，可重复读取）欢度</p>
-<p>serializable</p>
+<p>repeatable-read（默认，可重复读取）幻读</p>
+<p>serializable 一次只允许一个事务进行读写操作</p>
 <p>deadlock死锁</p>
 <p>两个或两个以上进程因争夺资源，而造成的相互等待现象。若无外力作用，系统将无法推进。</p>
 <h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>事务在对一个数据对象（表、记录）进行操作之前向系统发出请求，对其上锁</p>
@@ -552,14 +552,16 @@
 <li>db.collection_name.update(criteria,odjNew,upsert,multi)</li>
 <li>upsert:判断是否匹配，匹配不到直接新建一条数据（默认关闭</li>
 <li>multi:多行判断，多行执行（默认关闭）</li>
-<li>db.集合名.update({条件:<value>}，{$set:$}) !–修改语句</li>
+<li>db.集合名.update({条件:<value>}，{$set:{key:value}}) !–修改语句</li>
 <li>db.集合名.deleteOne({&lt;条件&gt;：&lt;&gt;}) !–删除语句</li>
-<li>db.集合名.daletemaney({条件：}) !—删除多行</li>
+<li>db.集合名.daletemany({条件：}) !—删除多行</li>
 <li>db.集合名.find(“条件”) !—-指定查询（条件中格式：{“age”:{$gte:”20”}}）其中条件符号将使用<ul>
-<li>lte(小于等于）</li>
-<li>gt(大于)</li>
-<li>lt(小于)</li>
-<li>ne(不等于)         </li>
+<li>$lte(小于等于）</li>
+<li>$gt(大于)</li>
+<li>$lt(小于)</li>
+<li>$ne(不等于)         </li>
+<li>$in(包含)</li>
+<li>$nin(not in)</li>
 </ul>
 </li>
 <li>db.集合名称.find({“userid”:{$lte:”1004”},”age”:{$gte:”20”}}).pretty() !–多条件查询，默认and 同时满足</li>
@@ -607,6 +609,14 @@
 <h3 id="事务-1"><a href="#事务-1" class="headerlink" title="事务"></a>事务</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#开启事务</span><br><span class="line">multi</span><br><span class="line">#执行事务</span><br><span class="line"><span class="keyword">exec</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="C:\Users\15135\AppData\Roaming\Typora\typora-user-images\image-20211222111919533.png" alt="image-20211222111919533"></p>
+<h3 id="操作列表"><a href="#操作列表" class="headerlink" title="操作列表"></a>操作列表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 将一个元素或多个元素推入到列表的右端</span><br><span class="line">rpush key <span class="keyword">value</span></span><br><span class="line"># 将一个或多个元素推入到列表的左端</span><br><span class="line">lpush key <span class="keyword">value</span></span><br><span class="line"># 获取列表指定索引范围内的元素</span><br><span class="line">lrange key <span class="keyword">start</span> stop</span><br><span class="line"># 获取列表指定索引位置上的元素</span><br><span class="line">lindex key index</span><br><span class="line"># 弹出列表最右端的元素</span><br><span class="line">rpop key</span><br><span class="line"># 弹出列表最左端的元素</span><br><span class="line">lpop key</span><br><span class="line"># 获取指定列表的长度</span><br><span class="line">llen key</span><br><span class="line"># 移除列表中的指定元素</span><br><span class="line">lrem key count <span class="keyword">value</span> <span class="comment">-- count以 &quot;-&quot; 开头，移除几个，value是指从哪个值开始 </span></span><br><span class="line"># 截取字符串，直接对串进行修改</span><br><span class="line">ltrim key <span class="keyword">start</span> stop</span><br><span class="line"># 查看列表全部数据</span><br><span class="line">lrange key <span class="number">0</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="操作集合"><a href="#操作集合" class="headerlink" title="操作集合"></a>操作集合</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 将一个或多个元素添加到集合中</span><br><span class="line">sadd key <span class="keyword">member</span> ...</span><br><span class="line"># 获取集合中的元素数量</span><br><span class="line">scard key</span><br><span class="line"># 获取集合中的所有元素</span><br><span class="line">smembers key</span><br><span class="line"># 检查指定元素是否存在于集合中</span><br><span class="line">sismember key <span class="keyword">member</span></span><br><span class="line"># 移除集合中的一个或多个已存在的元素</span><br><span class="line">srem key member...</span><br><span class="line"># 将元素从一个集合移动到另一个集合</span><br><span class="line">smove source(元素所在集合) destination(目标集合) <span class="keyword">member</span></span><br><span class="line"># 求两个或多个集合的交集</span><br><span class="line">sinter key...</span><br><span class="line"># 求两个或多个集合的并集</span><br><span class="line">sunion key...</span><br><span class="line"># 求两个或多个集合的差h</span><br><span class="line">sdiff key...</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作有序集合"><a href="#操作有序集合" class="headerlink" title="操作有序集合"></a>操作有序集合</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 为有序集合添加一个或多个键值对</span><br><span class="line">zadd key score <span class="keyword">member</span></span><br><span class="line"># 获取有序集合中元素的个数</span><br><span class="line">zcard key</span><br><span class="line"># 统计有序集合中指定分值范围内得元素个数</span><br><span class="line">zcount key min max</span><br><span class="line"># 获取有序集合中指定索引范围内的元素</span><br><span class="line">zrange key <span class="keyword">start</span> stop</span><br><span class="line"># 获取有序集合中指定元素的分值</span><br><span class="line">zscore key <span class="keyword">member</span></span><br><span class="line"># 移除有序集合中的指定元素</span><br><span class="line">zrem key <span class="keyword">member</span># 返回为<span class="number">1</span>删除成功</span><br><span class="line"># 反向获取有序集合中指定索引范围内的元素</span><br><span class="line">zrevrange key <span class="keyword">start</span> stop</span><br><span class="line"># 获取有序集合中指定元素的排名</span><br><span class="line">zrank key <span class="keyword">member</span></span><br><span class="line"># 反向获取有序集合中指定元素的排名</span><br><span class="line">zrevrank key memeber</span><br><span class="line"># 删除指定范围内的元素</span><br><span class="line">zremrangebyrank key <span class="keyword">start</span> stop</span><br><span class="line"># 给指定元素增加或删</span><br><span class="line">减值</span><br><span class="line">zincrby key increment <span class="keyword">member</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="操作散列"><a href="#操作散列" class="headerlink" title="操作散列"></a>操作散列</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 为散列中的指定键设置值</span><br><span class="line">hset key field <span class="keyword">value</span></span><br><span class="line"># 为散列中多个键设置值</span><br><span class="line">hmset key key field <span class="keyword">value</span> ...</span><br><span class="line"># 获取散列中指定键的值</span><br><span class="line">hget key field</span><br><span class="line"># 获取散列中多个键的值</span><br><span class="line">hmget key field ...</span><br><span class="line"># 获取散列中所有键值对</span><br><span class="line">hgetall key</span><br><span class="line"># 获取散列中的所有键</span><br><span class="line">hkeys key</span><br><span class="line"># 获取散列中的所有键的值</span><br><span class="line">hvals key</span><br><span class="line"># 删除散列中指定键及其相对应的值</span><br><span class="line">hdel key field</span><br><span class="line"># 获取散列中键值对的个数</span><br><span class="line">hlen key</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -1114,13 +1124,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/09/Java/">
+                <a href="/2021/05/09/JavaScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
                         
-                        <span class="card-title">Java</span>
+                        <span class="card-title">JavaScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1142,14 +1152,6 @@
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/note/">
-                        <span class="chip bg-color">note</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -1163,9 +1165,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Mysql">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Mysql</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1422,7 +1424,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Water monster</a>
@@ -1431,7 +1433,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.7k</span>&nbsp;字
+                class="white-color">5.6k</span>&nbsp;字
             
             
             
