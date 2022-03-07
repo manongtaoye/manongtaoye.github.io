@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.5k
                 </div>
                 
 
@@ -449,7 +449,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><h5 id="pojo"><a href="#pojo" class="headerlink" title="pojo"></a>pojo</h5><p>简单java对象，一个单纯的类，一般来说用于数据的封装</p>
+                <h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><h5 id="pojo"><a href="#pojo" class="headerlink" title="pojo"></a>pojo</h5><p>简单java对象，一个单纯的类， 一般来说用于数据的封装</p>
 <h5 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h5><p>数据访问对象，简而言之，和数据库打交道的类</p>
 <h5 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h5><ul>
 <li>O：对象，pojo包中的某个类</li>
@@ -605,6 +605,15 @@
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 导入通用PageHelper坐标 --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--   分页插件     --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.pagehelper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>pagehelper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        分页--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.jsqlparser<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jsqlparser<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="1-3知识小结-1"><a href="#1-3知识小结-1" class="headerlink" title="1.3知识小结"></a>1.3知识小结</h4><h5 id="MyBatis核心配置文件常用标签"><a href="#MyBatis核心配置文件常用标签" class="headerlink" title="MyBatis核心配置文件常用标签"></a>MyBatis核心配置文件常用标签</h5><ul>
+<li>1.properties标签：该标签可以加载外部的properties文件</li>
+<li>2.typeAliases标签：设置类型别名</li>
+<li>3.environments标签：数据源环境配置标签</li>
+<li>4.typeHandlers标签：配置自定义类型处理器</li>
+<li>5.plugins标签：配置MyBatis的插件</li>
+</ul>
+<h3 id="MyBatis的多表操作"><a href="#MyBatis的多表操作" class="headerlink" title="MyBatis的多表操作"></a>MyBatis的多表操作</h3><h4 id="1-1一对一查询"><a href="#1-1一对一查询" class="headerlink" title="1.1一对一查询"></a>1.1一对一查询</h4><h5 id="一对一查询的模型"><a href="#一对一查询的模型" class="headerlink" title="一对一查询的模型"></a>一对一查询的模型</h5><p>用户表和订单表的关系为，一个用户有多个订单，一个订单只从属于一个用户</p>
+<p>一对一查询的需求：查询一个订单，与此同时查询出该订单所需的用户</p>
 
                 
             </div>
@@ -1428,7 +1437,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.1k</span>&nbsp;字
+                class="white-color">36.2k</span>&nbsp;字
             
             
             
