@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-03-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    3.2k
                 </div>
                 
 
@@ -459,7 +459,7 @@
 <p>ER模型</p>
 <p>备份</p>
 <p>日志</p>
-<h2 id="走进Mysql"><a href="#走进Mysql" class="headerlink" title="走进Mysql"></a>走进Mysql</h2><p>（SQL语句的大小写无所谓）</p>
+<h5 id="左连接，左边的表无论如何都能显示，右连接同理"><a href="#左连接，左边的表无论如何都能显示，右连接同理" class="headerlink" title="左连接，左边的表无论如何都能显示，右连接同理"></a>左连接，左边的表无论如何都能显示，右连接同理</h5><h2 id="走进Mysql"><a href="#走进Mysql" class="headerlink" title="走进Mysql"></a>走进Mysql</h2><p>（SQL语句的大小写无所谓）</p>
 <h3 id="1-1-1-Mysql的启动和停止"><a href="#1-1-1-Mysql的启动和停止" class="headerlink" title="1.1.1: Mysql的启动和停止"></a>1.1.1: Mysql的启动和停止</h3><p>启动Mysql服务的sql命令如下：<br>NET START mysql55</p>
 <p>停止Mysql服务的命令如下：<br>NET STOP mysql55</p>
 <hr>
@@ -538,6 +538,21 @@
 </ul>
 </li>
 </ul>
+<h3 id="索引原理"><a href="#索引原理" class="headerlink" title="索引原理"></a>索引原理</h3><p>本质都是：通过不断地缩小想要获取数据的范围来筛选出最终想要的结果，同时把随机的事件变成顺序的事件，也就是说，有了这种索引机制，我们可以总是用同一种查找方式来锁定数据。</p>
+<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p>B+树是通过二叉查找树，再由平衡二叉树，B树演化而来</p>
+<hr>
+<p><strong>在数据库中，B+树的高度一般都在2<del>4层，这也就是说查找某一个键值的行记录时最多只需要2到4次IO，这倒不错。因为当前一般的机械硬盘每秒至少可以做100次IO，2</del>4次的IO意味着查询时间只需要0.02~0.04秒。</strong></p>
+<p><strong>数据库中的B+树索引可以分为聚集索引（clustered index）和辅助索引（secondary index），</strong></p>
+<p><strong>聚集索引与辅助索引相同的是：不管是聚集索引还是辅助索引，其内部都是B+树的形式，即高度是平衡的，叶子结点存放着所有的数据。</strong></p>
+<p><strong>聚集索引与辅助索引不同的是：叶子结点存放的是否是一整行的信息</strong></p>
+<hr>
+<h5 id="创建-删除索引的语法"><a href="#创建-删除索引的语法" class="headerlink" title="创建/删除索引的语法"></a>创建/删除索引的语法</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#方法一：创建表时</span><br><span class="line">    　　<span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名 (</span><br><span class="line">                字段名<span class="number">1</span>  数据类型 [完整性约束条件…],</span><br><span class="line">                字段名<span class="number">2</span>  数据类型 [完整性约束条件…],</span><br><span class="line">                [<span class="keyword">UNIQUE</span> <span class="operator">|</span> FULLTEXT <span class="operator">|</span> SPATIAL ]   INDEX <span class="operator">|</span> KEY</span><br><span class="line">                [索引名]  (字段名[(长度)]  [<span class="keyword">ASC</span> <span class="operator">|</span><span class="keyword">DESC</span>]) </span><br><span class="line">                );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#方法二：<span class="keyword">CREATE</span>在已存在的表上创建索引</span><br><span class="line">        <span class="keyword">CREATE</span>  [<span class="keyword">UNIQUE</span> <span class="operator">|</span> FULLTEXT <span class="operator">|</span> SPATIAL ]  INDEX  索引名 </span><br><span class="line">                     <span class="keyword">ON</span> 表名 (字段名[(长度)]  [<span class="keyword">ASC</span> <span class="operator">|</span><span class="keyword">DESC</span>]) ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#方法三：<span class="keyword">ALTER</span> <span class="keyword">TABLE</span>在已存在的表上创建索引</span><br><span class="line">        <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span>  [<span class="keyword">UNIQUE</span> <span class="operator">|</span> FULLTEXT <span class="operator">|</span> SPATIAL ] INDEX</span><br><span class="line">                             索引名 (字段名[(长度)]  [<span class="keyword">ASC</span> <span class="operator">|</span><span class="keyword">DESC</span>]) ;</span><br><span class="line">                             </span><br><span class="line">#删除索引：<span class="keyword">DROP</span> INDEX 索引名 <span class="keyword">ON</span> 表名字;</span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#方式一</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t1(</span><br><span class="line">    id <span class="type">int</span>,</span><br><span class="line">    name <span class="type">char</span>,</span><br><span class="line">    age <span class="type">int</span>,</span><br><span class="line">    sex enum(<span class="string">&#x27;male&#x27;</span>,<span class="string">&#x27;female&#x27;</span>),</span><br><span class="line">    <span class="keyword">unique</span> key uni_id(id),</span><br><span class="line">    index ix_name(name) #index没有key</span><br><span class="line">);</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t1(</span><br><span class="line">    id <span class="type">int</span>,</span><br><span class="line">    name <span class="type">char</span>,</span><br><span class="line">    age <span class="type">int</span>,</span><br><span class="line">    sex enum(<span class="string">&#x27;male&#x27;</span>,<span class="string">&#x27;female&#x27;</span>),</span><br><span class="line">    <span class="keyword">unique</span> key uni_id(id),</span><br><span class="line">    index(name) #index没有key</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#方式二</span><br><span class="line"><span class="keyword">create</span> index ix_age <span class="keyword">on</span> t1(age);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#方式三</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> index ix_sex(sex);</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">add</span> index(sex);</span><br><span class="line"></span><br><span class="line">#查看</span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> t1;</span><br><span class="line"><span class="operator">|</span> t1    <span class="operator">|</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `t1` (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `name` <span class="type">char</span>(<span class="number">1</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `age` <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `sex` enum(<span class="string">&#x27;male&#x27;</span>,<span class="string">&#x27;female&#x27;</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uni_id` (`id`),</span><br><span class="line">  KEY `ix_name` (`name`),</span><br><span class="line">  KEY `ix_age` (`age`),</span><br><span class="line">  KEY `ix_sex` (`sex`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>latin1</span><br><span class="line"></span><br><span class="line">示</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="MangoDB"><a href="#MangoDB" class="headerlink" title="MangoDB"></a>MangoDB</h2><h4 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h4><ul>
 <li>show dbs 查看数据库</li>
 <li>use 库名 //如果没有，创建再切换库，有就直接切换</li>
@@ -1441,7 +1456,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.8k</span>&nbsp;字
+                class="white-color">33.9k</span>&nbsp;字
             
             
             
