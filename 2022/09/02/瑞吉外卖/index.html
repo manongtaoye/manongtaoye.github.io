@@ -1,0 +1,2847 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="瑞吉外卖, daily">
+    <meta name="description" content="日常">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>瑞吉外卖 | 水兽的Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
+        </script>
+        <script src="/js/cursor.js"></script>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">水兽的Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">水兽的Blog</div>
+        <div class="logo-desc">
+            
+            日常
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">瑞吉外卖</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/note/">
+                                <span class="chip bg-color">note</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-09-02
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-10-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    19.4k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="软件开发流程"><a href="#软件开发流程" class="headerlink" title="软件开发流程"></a>软件开发流程</h2><h3 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h3><ul>
+<li>需求分析<ul>
+<li>产品原型、需求规格说明书</li>
+</ul>
+</li>
+<li>设计<ul>
+<li>产品文档、UI 界面设计、概要设计、详情设计、数据库设计</li>
+</ul>
+</li>
+<li>编码<ul>
+<li>项目代码、单元测试</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>测试用例、测试报告</li>
+</ul>
+</li>
+<li>上线运维<ul>
+<li>软件环境安装、配置</li>
+</ul>
+</li>
+</ul>
+<h3 id="角色分工"><a href="#角色分工" class="headerlink" title="角色分工"></a>角色分工</h3><ul>
+<li>项目经理<ul>
+<li>对整个项目负责，任务分配、把控进度</li>
+</ul>
+</li>
+<li>产品经理<ul>
+<li>进行需求调研，输出需求调研文档、产品原型等</li>
+</ul>
+</li>
+<li>UI 设计师<ul>
+<li>根据产品原型输出界面效果图</li>
+</ul>
+</li>
+<li>架构师<ul>
+<li>项目整体架构设计、技术选型等</li>
+</ul>
+</li>
+<li>开发工程师<ul>
+<li>代码实现</li>
+</ul>
+</li>
+<li>测试工程师<ul>
+<li>编写测试用例，输出测试报告</li>
+</ul>
+</li>
+<li>运维工程师<ul>
+<li>软件环境搭建、项目上线</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h3><ul>
+<li>开发环境（development）：开发人员在开发阶段使用的环境，一般外部用户无法访问</li>
+<li>测试环境（testing）：专门给测试人员使用的环境，用于测试项目，一般外部用户无法访问</li>
+<li>生产环境（production）：即线上环境，正式提供对外服务的环境</li>
+</ul>
+<h2 id="瑞吉外卖项目介绍"><a href="#瑞吉外卖项目介绍" class="headerlink" title="瑞吉外卖项目介绍"></a>瑞吉外卖项目介绍</h2><h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p>本项目共分 3 期进行开发：</p>
+<p>第一期主要实现基本需求，其中移动端应用通过 H5 实现，用户可以通过手机浏览器访问。</p>
+<p>第二期主要针对移动端应用进行改进，使用微信小程序实现，用户使用起来更加方便。</p>
+<p>第三期主要针对系统进行优化升级，提供系统的访问性能。</p>
+<h3 id="产品原型展示"><a href="#产品原型展示" class="headerlink" title="产品原型展示"></a>产品原型展示</h3><p>产品原型，就是一款产品成型之前的一个简单的框架，就是将页面的排版布局展示出来，使产品的初步构思有一个可视化的展示。通过原型展示，可以更加直观的了解项目的需求和提供的功能。</p>
+<p><strong>注意事项：</strong>产品原型主要用于展示项目的功能，并不是最终的页面效果。</p>
+<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><h4 id="用户层"><a href="#用户层" class="headerlink" title="用户层"></a>用户层</h4><p>H5、Vue.js、ElementUI、微信小程序</p>
+<h4 id="网关层"><a href="#网关层" class="headerlink" title="网关层"></a>网关层</h4><p>Nginx</p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>Spring Boot、Spring MVC、Spring Session、Spring、Swagger、lombok</p>
+<h4 id="数据层"><a href="#数据层" class="headerlink" title="数据层"></a>数据层</h4><p>Mysql、Mybatis、Mybatis Plus、Redis</p>
+<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><p>git、maven、junit</p>
+<h3 id="功能架构"><a href="#功能架构" class="headerlink" title="功能架构"></a>功能架构</h3><h4 id="移动端前台（H5、微信小程序）"><a href="#移动端前台（H5、微信小程序）" class="headerlink" title="移动端前台（H5、微信小程序）"></a>移动端前台（H5、微信小程序）</h4><p>手机号、微信登陆、地址管理、历史订单、菜品规格、购物车、下单、菜品浏览</p>
+<h4 id="系统管理后台"><a href="#系统管理后台" class="headerlink" title="系统管理后台"></a>系统管理后台</h4><p>分类管理、菜品管理、套餐管理、菜品口味管理、员工登陆、员工退出、员工管理、订单管理</p>
+<h3 id="角色"><a href="#角色" class="headerlink" title="角色"></a>角色</h3><ul>
+<li>后台系统管理员：登陆后台管理系统，拥有后台系统中的所有操作权限</li>
+<li>后台系统普通员工：登陆后台管理系统，对菜品、套餐、订单等进行管理</li>
+<li>C 端用户：登陆移动端应用，可以浏览菜品、添加购物车、设置地址、在线下单等</li>
+</ul>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><h3 id="设置静态资源映射"><a href="#设置静态资源映射" class="headerlink" title="设置静态资源映射"></a>设置静态资源映射</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.reggie.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurationSupport</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 设置静态资源映射</span></span><br><span class="line"><span class="comment">    * @param registry</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;开始映射&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/backend/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/backend/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/front/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/front/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="登录拦截器"><a href="#登录拦截器" class="headerlink" title="登录拦截器"></a>登录拦截器</h3><h4 id="实现步骤："><a href="#实现步骤：" class="headerlink" title="实现步骤："></a>实现步骤：</h4><ul>
+<li>1、创建自定义过滤器 LoginCheckFilter</li>
+<li>2、在启动类上加入注解 @ServletComponentScan（开启组件扫描，这样才会扫描过滤器）</li>
+<li>3、完善过滤器的处理逻辑</li>
+</ul>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.reggie.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.itheima.reggie.common.R;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.AntPathMatcher;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebFilter;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 检查用户是否已经完成登录</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@WebFilter(filterName = &quot;loginCheckFilter&quot;, urlPatterns = &quot;/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginCheckFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//路径匹配器，支持通配符</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> AntPathMatcher PATH_MATCHER = <span class="keyword">new</span> AntPathMatcher();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line">        HttpServletResponse response = (HttpServletResponse) servletResponse;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1、获取本次请求的 URI</span></span><br><span class="line">        String requestURI = request.getRequestURI();</span><br><span class="line"></span><br><span class="line">        log.info(<span class="string">&quot;拦截到请求：&#123;&#125;&quot;</span>, requestURI);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 放行的资源</span></span><br><span class="line">        String[] urls = <span class="keyword">new</span> String[] &#123;</span><br><span class="line">                <span class="string">&quot;/employee/login&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/employee/logout&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/backend/**&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/front/**&quot;</span></span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2、判断本次请求是否需要处理</span></span><br><span class="line">        <span class="keyword">boolean</span> check = check(urls, requestURI);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3、如果不需要处理，则直接放行</span></span><br><span class="line">        <span class="keyword">if</span>(check) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;本次请求&#123;&#125;不需要处理&quot;</span>, requestURI);</span><br><span class="line">            filterChain.doFilter(request, response);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4、判断登录状态，如果已登录，则直接放行</span></span><br><span class="line">        <span class="keyword">if</span>(request.getSession().getAttribute(<span class="string">&quot;employee&quot;</span>) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;用户已登录，用户 id 为：&#123;&#125;&quot;</span>, request.getSession().getAttribute(<span class="string">&quot;employee&quot;</span>));</span><br><span class="line">            filterChain.doFilter(request, response);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5、如果未登录则返回未登录结果，通过输出流方式向客户端页面响应数据</span></span><br><span class="line">        log.info(<span class="string">&quot;用户未登录&quot;</span>);</span><br><span class="line">        response.getWriter().write(JSON.toJSONString(R.error(<span class="string">&quot;NOTLOGIN&quot;</span>)));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 路径匹配，检查本次请求是否需要放行</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(String[] urls, String requestURI)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (String url : urls) &#123;</span><br><span class="line">            <span class="keyword">boolean</span> match = PATH_MATCHER.match(url, requestURI);</span><br><span class="line">            <span class="keyword">if</span>(match) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增员工"><a href="#新增员工" class="headerlink" title="新增员工"></a>新增员工</h3><h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><ul>
+<li>1、页面发送 ajax 请求，将新增员工页面中输入的数据以 json 的形式提交到服务端</li>
+<li>2、服务端 Controller 接受页面提交的数据并调用 Service 将数据进行保存</li>
+<li>3、Service 调用 Mapper 操作数据库，保存数据</li>
+</ul>
+<h3 id="设置员工状态"><a href="#设置员工状态" class="headerlink" title="设置员工状态"></a>设置员工状态</h3><h4 id="员工-id-解决方法"><a href="#员工-id-解决方法" class="headerlink" title="员工 id 解决方法"></a>员工 id 解决方法</h4><p>员工 id 过长，前端 js 只能读取 16 位。</p>
+<h5 id="具体实现步骤："><a href="#具体实现步骤：" class="headerlink" title="具体实现步骤："></a>具体实现步骤：</h5><ul>
+<li>1.提供对象转换器 JacksonObjectMapper，基于 Jackson 进行 Java 对象到 json 数据的转换</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对象映射器:基于jackson将Java对象转为json，或者将json转为Java对象</span></span><br><span class="line"><span class="comment"> * 将JSON解析为Java对象的过程称为 [从JSON反序列化Java对象]</span></span><br><span class="line"><span class="comment"> * 从Java对象生成JSON的过程称为 [序列化Java对象到JSON]</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JacksonObjectMapper</span> <span class="keyword">extends</span> <span class="title">ObjectMapper</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_DATE_FORMAT = <span class="string">&quot;yyyy-MM-dd&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_DATE_TIME_FORMAT = <span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_TIME_FORMAT = <span class="string">&quot;HH:mm:ss&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">JacksonObjectMapper</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="comment">//收到未知属性时不报异常</span></span><br><span class="line">        <span class="keyword">this</span>.configure(FAIL_ON_UNKNOWN_PROPERTIES, <span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//反序列化时，属性不存在的兼容处理</span></span><br><span class="line">        <span class="keyword">this</span>.getDeserializationConfig().withoutFeatures(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        SimpleModule simpleModule = <span class="keyword">new</span> SimpleModule()</span><br><span class="line">                .addDeserializer(LocalDateTime.class, <span class="keyword">new</span> LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)))</span><br><span class="line">                .addDeserializer(LocalDate.class, <span class="keyword">new</span> LocalDateDeserializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)))</span><br><span class="line">                .addDeserializer(LocalTime.class, <span class="keyword">new</span> LocalTimeDeserializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)))</span><br><span class="line"></span><br><span class="line">                .addSerializer(BigInteger.class, ToStringSerializer.instance)</span><br><span class="line">                .addSerializer(Long.class, ToStringSerializer.instance)</span><br><span class="line">                .addSerializer(LocalDateTime.class, <span class="keyword">new</span> LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT)))</span><br><span class="line">                .addSerializer(LocalDate.class, <span class="keyword">new</span> LocalDateSerializer(DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)))</span><br><span class="line">                .addSerializer(LocalTime.class, <span class="keyword">new</span> LocalTimeSerializer(DateTimeFormatter.ofPattern(DEFAULT_TIME_FORMAT)));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//注册功能模块 例如，可以添加自定义序列化器和反序列化器</span></span><br><span class="line">        <span class="keyword">this</span>.registerModule(simpleModule);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2.在 WebMvcConfig 配置类中拓展 SpringMvc 的消息转换器，在此消息转换器中使用提供的对象转换器进行 Java 对象到 json 数据的转换</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// common/WebMvcConfig</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 拓展 mvc 框架的消息转换器</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">extendMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;拓展消息转换器...&quot;</span>);</span><br><span class="line">        <span class="comment">// 创建消息转换器对象</span></span><br><span class="line">        MappingJackson2HttpMessageConverter messageConverter = <span class="keyword">new</span> MappingJackson2HttpMessageConverter();</span><br><span class="line">        <span class="comment">// 设置对象转换器，底层使用 Jackson 将 Java 对象转为 json</span></span><br><span class="line">        messageConverter.setObjectMapper(<span class="keyword">new</span> JacksonObjectMapper());</span><br><span class="line">        <span class="comment">// 将上面的消息转换器对象追加到 mvc 框架的转换器容器集合中</span></span><br><span class="line">        converters.add(<span class="number">0</span>, messageConverter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑员工信息"><a href="#编辑员工信息" class="headerlink" title="编辑员工信息"></a>编辑员工信息</h3><h4 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h4><ul>
+<li>1、点击编辑按钮时，页面跳转到 add.html，并在 url 中携带参数</li>
+<li>2、在 add.html 页面获取 url 中的参数 [员工 id]</li>
+<li>3、发送 axios 请求，请求服务端，同时提交员工 id 参数</li>
+<li>4、服务端接收请求，根据员工 id 查询员工信息，将员工信息以 json 形式响应给页面</li>
+<li>5、页面接收服务端响应的 json数据，通过 Vue 的数据绑定进行员工信息回显</li>
+<li>6、点击保存按钮，发送 axios 请求，将页面中的员工信息以 json 方式提交给服务端</li>
+<li>7、服务端接收员工信息，并进行处理，完成后给页面响应</li>
+<li>8、页面接收到服务端响应信息后进行相应处理</li>
+</ul>
+<p><strong>注意：</strong>add.html 页面为公共页面，新增员工和编辑员工都是在此页面进行操作</p>
+<h2 id="菜品分类管理"><a href="#菜品分类管理" class="headerlink" title="菜品分类管理"></a>菜品分类管理</h2><h3 id="公共字段自动填充"><a href="#公共字段自动填充" class="headerlink" title="公共字段自动填充"></a>公共字段自动填充</h3><h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>前面我们已经完成了后台系统的员工管理功能开发，在新增员工时需设置创建时间、创建人、修改时间、修改人等字段，在编辑员工时需要设置修改时间和修改人等字段。这些字段属于公共字段，也就是很多表中都有这些字段，如下：</p>
+<ul>
+<li>create_time</li>
+<li>update_time</li>
+<li>create_user</li>
+<li>update_user</li>
+</ul>
+<p>能不能对于这些公共字段在某个地方统一处理来简化开发呢？</p>
+<p>答案就是使用 MyBatis Plus 提供的公共字段自动填充功能。</p>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><p>Mybatis Plus 公共字段自动填充，也就是在插入或者更新的时候为指定字段赋予指定的值，使用它的好处就是可以统一对这些字段进行处理，避免了重复代码。</p>
+<h5 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h5><ul>
+<li>1、在实体类的属性上加入 @TableField 注解，指定自动填充的策略</li>
+<li>2、按照框架要求编写元数据对象处理器，在此类中统一为公共字段赋值，此类需要实现 MetaObjectHandler 接口</li>
+</ul>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><ul>
+<li>第一步，添加 @TableField 注解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Employee 类</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableField(fill = FieldFill.INSERT)</span> <span class="comment">// 插入时填充字段</span></span><br><span class="line">    <span class="keyword">private</span> LocalDateTime createTime;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableField(fill = FieldFill.INSERT_UPDATE)</span> <span class="comment">// 插入和更新时填充字段</span></span><br><span class="line">    <span class="keyword">private</span> LocalDateTime updateTime;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableField(fill = FieldFill.INSERT)</span></span><br><span class="line">    <span class="keyword">private</span> Long createUser;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableField(fill = FieldFill.INSERT_UPDATE)</span></span><br><span class="line">    <span class="keyword">private</span> Long updateUser;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2、按照框架要求编写元数据对象处理器，在此类中统一为公共字段赋值，此类需要实现 MetaObjectHandler 接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// common/MetaObjectHandler.java</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 自定义元数据对象处理器</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyMetaObjectHandler</span> <span class="keyword">implements</span> <span class="title">MetaObjectHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 插入操作自动填充</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertFill</span><span class="params">(MetaObject metaObject)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;公共字段自动填充[insert]...&quot;</span>);</span><br><span class="line">        log.info(metaObject.toString());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;createTime&quot;</span>, LocalDateTime.now());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateTime&quot;</span>, LocalDateTime.now());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;createUser&quot;</span>, <span class="keyword">new</span> Long(<span class="number">1</span>));</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateUser&quot;</span>, <span class="keyword">new</span> Long(<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 更新操作自动填充</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateFill</span><span class="params">(MetaObject metaObject)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;公共字段自动填充[update]...&quot;</span>);</span><br><span class="line">        log.info(metaObject.toString());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateTime&quot;</span>, LocalDateTime.now());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateUser&quot;</span>, <span class="keyword">new</span> Long(<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>当我们设置 createUser 和 updateUser 为固定值，后面我们需要进行改造，改为动态获得当前登录用户的 id</p>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>将 EmployeeController 中的新增和修改方法手动设置公共字段的代码注释掉，测试这些公共字段是否完成了自动填充</p>
+<h4 id="功能完善"><a href="#功能完善" class="headerlink" title="功能完善"></a>功能完善</h4><p>前面我们已经完成了公共字段自动填充功能的代码开发，但是还有一个问题没有解决，就是我们在自动填充 createUser 和 updateUser 时设置的用户 id 是固定值，现在我们需要改造成动态获取当前登录用户的 id。</p>
+<p>注意，我们在 MyMetaObjectHandler 类中是不能获得 HttpSession 对象的，所以我们需要通过其他方式来获取登录用户 id。</p>
+<p>可以使用 ThreadLocal 来解决此问题，它就是一个 JDK 中提供的一个类。</p>
+<hr>
+<p>在学习 ThreadLocal 之前，我们需要先确定一个事情，就是客户端发送的每次 http 请求，对应的在服务端都会分配一个新的线程来处理，在处理过程中涉及到下面类中的方法都属于相同的一个线程：</p>
+<ul>
+<li>1、LoginCheckFilter 的 doFilter 方法</li>
+<li>2、EmployeeController 的 update 方法</li>
+<li>3、MyMetaObjectHandler 的 updateFill 方法</li>
+</ul>
+<p>可以在上面的三个方法中分别加入下面代码（获取当前线程 id）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> id = Thread.currentThread().getId();</span><br><span class="line">log.info(<span class="string">&quot;线程id：&#123;&#125;&quot;</span>, id);</span><br></pre></td></tr></table></figure>
+
+<p>执行编辑员工功能验证，通过观察控制台输出可以发现，一次请求对应的线程 id 是相同的。</p>
+<hr>
+<p>什么是ThreadLocal？</p>
+<p>ThreadLocal 并不是一个 Thread，而是 Thread 的局部变量。当使用 ThreadLocal 维护变量时，ThreadLocal 为每个使用该变量的线程提供独立的变量副本，所以每个线程都可以独立地改变自己的副本，而不会影响其他线程所对应的副本。</p>
+<p>ThreadLocal 为每个线程提供单独一份存储空间，具有线程隔离的效果，只有在线程内才会获取到对应的值，线程外不能访问。</p>
+<p>ThreadLocal 常用方法：</p>
+<ul>
+<li>public void set(T value)：设置当前线程的线程局部变量的值</li>
+<li>public T get()：返回当前线程所对应的线程局部变量的值</li>
+</ul>
+<p>我们可以在 LoginCheckFilter 的 doFilter 方法中获取当前登录用户 id，并调用 ThreadLocal 的 set 方法来设置当前线程的线程局部变量的值（用户 id），然后在 MyMeteObjectHandler 的 updateFill 方法中调用 ThreadLocal 的 get 方法来获取当前线程所对应的线程局部变量的值（用户 id）</p>
+<h5 id="实现步骤-1"><a href="#实现步骤-1" class="headerlink" title="实现步骤"></a>实现步骤</h5><ul>
+<li>1、编写 BaseContext 工具类，基于 ThreadLocal 封装的工具类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 基于 ThreadLocal 封装，用户保存和获取当前登录用户 id</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseContext</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ThreadLocal&lt;Long&gt; threadLocal = <span class="keyword">new</span> ThreadLocal&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setCurrentId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        threadLocal.set(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Long <span class="title">getCurrentId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> threadLocal.get();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2、在 LoginChechFilter 的 doFilter 方法中调用 BaseContext 来设置当前登录用户的 id</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 检查用户是否已经完成登录</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@WebFilter(filterName = &quot;loginCheckFilter&quot;, urlPatterns = &quot;/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginCheckFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//路径匹配器，支持通配符</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> AntPathMatcher PATH_MATCHER = <span class="keyword">new</span> AntPathMatcher();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line">        HttpServletResponse response = (HttpServletResponse) servletResponse;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1、获取本次请求的 URI</span></span><br><span class="line">        String requestURI = request.getRequestURI();</span><br><span class="line"></span><br><span class="line">        log.info(<span class="string">&quot;拦截到请求：&#123;&#125;&quot;</span>, requestURI);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 放行的资源</span></span><br><span class="line">        String[] urls = <span class="keyword">new</span> String[] &#123;</span><br><span class="line">                <span class="string">&quot;/employee/login&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/employee/logout&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/backend/**&quot;</span>,</span><br><span class="line">                <span class="string">&quot;/front/**&quot;</span></span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2、判断本次请求是否需要处理</span></span><br><span class="line">        <span class="keyword">boolean</span> check = check(urls, requestURI);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3、如果不需要处理，则直接放行</span></span><br><span class="line">        <span class="keyword">if</span>(check) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;本次请求&#123;&#125;不需要处理&quot;</span>, requestURI);</span><br><span class="line">            filterChain.doFilter(request, response);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4、判断登录状态，如果已登录，则直接放行</span></span><br><span class="line">        <span class="keyword">if</span>(request.getSession().getAttribute(<span class="string">&quot;employee&quot;</span>) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;用户已登录，用户 id 为：&#123;&#125;&quot;</span>, request.getSession().getAttribute(<span class="string">&quot;employee&quot;</span>));</span><br><span class="line"></span><br><span class="line">            Long empId = (Long) request.getSession().getAttribute(<span class="string">&quot;employee&quot;</span>);</span><br><span class="line">            BaseContext.setCurrentId(empId);</span><br><span class="line"></span><br><span class="line">            filterChain.doFilter(request, response);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5、如果未登录则返回未登录结果，通过输出流方式向客户端页面响应数据</span></span><br><span class="line">        log.info(<span class="string">&quot;用户未登录&quot;</span>);</span><br><span class="line">        response.getWriter().write(JSON.toJSONString(R.error(<span class="string">&quot;NOTLOGIN&quot;</span>)));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3、在 MyMetaObjectHandler 的方法中调用 BaseContext 获取登录用户的 id</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 自定义元数据对象处理器</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyMetaObjectHandler</span> <span class="keyword">implements</span> <span class="title">MetaObjectHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 插入操作自动填充</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertFill</span><span class="params">(MetaObject metaObject)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;公共字段自动填充[insert]...&quot;</span>);</span><br><span class="line">        log.info(metaObject.toString());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;createTime&quot;</span>, LocalDateTime.now());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateTime&quot;</span>, LocalDateTime.now());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;createUser&quot;</span>, BaseContext.getCurrentId());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateUser&quot;</span>, BaseContext.getCurrentId());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 更新操作自动填充</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateFill</span><span class="params">(MetaObject metaObject)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;公共字段自动填充[update]...&quot;</span>);</span><br><span class="line">        log.info(metaObject.toString());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateTime&quot;</span>, LocalDateTime.now());</span><br><span class="line">        metaObject.setValue(<span class="string">&quot;updateUser&quot;</span>, BaseContext.getCurrentId());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除分类"><a href="#删除分类" class="headerlink" title="删除分类"></a>删除分类</h3><h4 id="功能完善-1"><a href="#功能完善-1" class="headerlink" title="功能完善"></a>功能完善</h4><p>前面我们已经实现了根据 id 删除分类的功能，但是并没有检查删除的分类是否关联了菜品或套餐，所以我们需要进行功能完善。</p>
+<p>要完善分类删除功能，需要先准备基础的类和接口：</p>
+<ul>
+<li>1、实体类 Dish 和 Setmeal</li>
+<li>2、Mapper 接口和 DishMapper 和 SetmealMapper</li>
+<li>3、Service 接口 DishService 和 SetmealService</li>
+<li>4、Service 实现类 DishServiceImpl 和 SetmealServiceImpl</li>
+</ul>
+<hr>
+<ul>
+<li>1、在 CategoryService 中新增 remove 方法，并在 CategoryServiceImpl 中实现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CategoryServiceImpl.java</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CategoryServiceImpl</span> <span class="keyword">extends</span> <span class="title">ServiceImpl</span>&lt;<span class="title">CategoryMapper</span>, <span class="title">Category</span>&gt; <span class="keyword">implements</span> <span class="title">CategoryService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DishService dishService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> SetmealService setmealService;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 根据 id 删除分类，删除之前需要进行判断</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        LambdaQueryWrapper&lt;Dish&gt; dishLambdaQueryWrapper = <span class="keyword">new</span> LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">        <span class="comment">// 添加查询条件，根据分类 id 进行查询</span></span><br><span class="line">        dishLambdaQueryWrapper.eq(Dish::getCategoryId, id);</span><br><span class="line">        <span class="keyword">int</span> count1 = dishService.count(dishLambdaQueryWrapper);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 查询当前分类是否关联了菜品，如果已经关联，抛出一个业务异常</span></span><br><span class="line">        <span class="keyword">if</span>(count1 &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 已经关联菜品，抛出一个业务异常</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> CustomException(<span class="string">&quot;当前分类项关联了菜品，不能删除&quot;</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 查询当前分类是否关联了套餐，如果已经关联，抛出一个业务异常</span></span><br><span class="line">        LambdaQueryWrapper&lt;Setmeal&gt; setmealLambdaQueryWrapper = <span class="keyword">new</span> LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">        <span class="comment">// 添加查询条件，根据分类 id 进行查询</span></span><br><span class="line">        setmealLambdaQueryWrapper.eq(Setmeal::getCategoryId, id);</span><br><span class="line">        <span class="keyword">int</span> count2 = setmealService.count(setmealLambdaQueryWrapper);</span><br><span class="line">        <span class="keyword">if</span>(count2 &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 已经关联套餐，抛出一个业务异常</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> CustomException(<span class="string">&quot;当前分类项关联了套餐，不能删除&quot;</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 正常删除分类</span></span><br><span class="line">        <span class="keyword">super</span>.removeById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2、自定义异常</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// common/CustomException</span></span><br><span class="line"><span class="keyword">package</span> com.itheima.reggie.common;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 自定义业务异常类</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomException</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(message);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3、在 CategoryController 中调用 remove 方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 根据 id 删除分类</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="meta">@DeleteMapping</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> R&lt;String&gt; <span class="title">delete</span><span class="params">(Long ids)</span> </span>&#123;</span><br><span class="line">    log.info(<span class="string">&quot;删除分类，id为：&#123;&#125;&quot;</span>, ids);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// categoryService.removeById(ids);</span></span><br><span class="line"></span><br><span class="line">    categoryService.remove(ids);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> R.success(<span class="string">&quot;分类信息删除成功&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件上传下载"><a href="#文件上传下载" class="headerlink" title="文件上传下载"></a>文件上传下载</h3><h4 id="文件上传介绍"><a href="#文件上传介绍" class="headerlink" title="文件上传介绍"></a>文件上传介绍</h4><p>文件上传，也就是 upload，是指将本地图片、视频、音频等文件上传到服务器上，可以供其他用户浏览或下载的过程。文件上传在项目中应用非常广泛，我们经常发微博、发微信朋友圈都用到了文件上传功能。</p>
+<hr>
+<p>文件上传时，对页面的 form 表单有如下要求：</p>
+<ul>
+<li>method=”post”        采用 post 方式提交数据</li>
+<li>enctype=”multipart/form-data”  采用 multipart 格式上传文件</li>
+<li>type=”file”                 使用 input 的 file 控件上传</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;/common/upload&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;myFile&quot;</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>服务端要接收客户端页面上传的文件，通常会使用 Apache 的两个组件：</p>
+<ul>
+<li>commons-fileupload</li>
+<li>commons-io</li>
+</ul>
+<p>Spring 框架在 spring-web 包中对文件上传进行了封装，大大简化了服务端代码，我们只需要在 Controller 的方法中声明一个 MultipartFile 类型的参数即可接收上传的文件，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 文件上传</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@PostMapping(value=&quot;/upload&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> R&lt;String&gt; <span class="title">upload</span><span class="params">(MultipartFile file)</span> </span>&#123;</span><br><span class="line">    System.out.println(file);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="文件上传实现"><a href="#文件上传实现" class="headerlink" title="文件上传实现"></a>文件上传实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// commonController</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 文件上传和下载</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/common&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;reggie.path&#125;&quot;)</span><span class="comment">// 来自 application.yml 文件配置</span></span><br><span class="line">    <span class="keyword">private</span> String basePath;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 文件上传</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@PostMapping(&quot;/upload&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> R&lt;String&gt; <span class="title">upload</span><span class="params">(MultipartFile file)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// file 是一个临时文件，需要转存到指定位置，否则本次请求完成后临时文件会删除</span></span><br><span class="line">        log.info(file.toString());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 原始文件名</span></span><br><span class="line">        String originalFilename = file.getOriginalFilename();<span class="comment">// xxx.jpg</span></span><br><span class="line">        String suffix = originalFilename.substring(originalFilename.lastIndexOf(<span class="string">&quot;.&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用 UUID 重新生成文件名，防止文件名称重复造成文件覆盖</span></span><br><span class="line">        String fileName = UUID.randomUUID().toString() + suffix;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个目录对象</span></span><br><span class="line">        File dir = <span class="keyword">new</span> File(basePath);</span><br><span class="line">        <span class="comment">// 判断当前目录是否存在</span></span><br><span class="line">        <span class="keyword">if</span>(!dir.exists()) &#123;</span><br><span class="line">            <span class="comment">// 目录不存在，需要创建</span></span><br><span class="line">            dir.mkdirs();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 将临时文件转存到指定位置</span></span><br><span class="line">            file.transferTo(<span class="keyword">new</span> File(basePath + fileName));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> R.success(fileName);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="文件下载介绍"><a href="#文件下载介绍" class="headerlink" title="文件下载介绍"></a>文件下载介绍</h4><p>文件下载，也称为 download，是指将文件从服务器传输到本地计算机的过程。</p>
+<p>通过浏览器进行文件下载，通常有两种表现形式：</p>
+<ul>
+<li>以附件形式下载，弹出保存对话框，将文件保存到指定磁盘目录</li>
+<li>直接在浏览器中打开</li>
+</ul>
+<p>通过浏览器进行文件下载，本质上就是服务端将文件以流的形式回写到浏览器的过程。</p>
+<hr>
+<p>文件下载，页面端可以使用 <img> 标签展示下载的图片</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-if</span>=<span class="string">&quot;imageUrl&quot;</span> <span class="attr">:src</span>=<span class="string">&quot;imageUrl&quot;</span> <span class="attr">class</span>=<span class="string">&quot;avatar&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonController 类</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 文件上传和下载</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/common&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;reggie.path&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String basePath;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 文件下载</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/download&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">download</span><span class="params">(String name, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 输入流，通过输入流读取文件内容</span></span><br><span class="line">            FileInputStream fileInputStream = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(basePath + name));</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 输出流，通过输出流将文件写回浏览器，在浏览器回显展示图片</span></span><br><span class="line">            ServletOutputStream outputStream = response.getOutputStream();</span><br><span class="line"></span><br><span class="line">            response.setContentType(<span class="string">&quot;image/jepg&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">            <span class="keyword">while</span>((len = fileInputStream.read(bytes)) != -<span class="number">1</span>) &#123;</span><br><span class="line">                outputStream.write(bytes, <span class="number">0</span>, len);</span><br><span class="line">                outputStream.flush();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 关闭资源</span></span><br><span class="line">            outputStream.close();</span><br><span class="line">            fileInputStream.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="新增菜品"><a href="#新增菜品" class="headerlink" title="新增菜品"></a>新增菜品</h2><h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>后台系统中可以管理菜品信息，通过新增功能来添加一个新的菜品，在添加菜品时需要选择当前菜品所属的菜品分类，并且需要上传菜品图片，在移动端会按照菜品分类来展示对应的菜品信息。</p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>新增菜品，其实就是将新增页面录入的信息插入到 dish 表，如果添加了口味做法，还需要向 dish_flavor 表插入数据。所以在新增菜品时，涉及到两个表：</p>
+<ul>
+<li>dish        菜品表</li>
+<li>dish_flavor 菜品口味表</li>
+</ul>
+<h3 id="代码开发-1"><a href="#代码开发-1" class="headerlink" title="代码开发"></a>代码开发</h3><h4 id="梳理交互过程"><a href="#梳理交互过程" class="headerlink" title="梳理交互过程"></a>梳理交互过程</h4><p>在开发代码之前，需要梳理一下新增菜品时前端页面和服务端的交互过程：</p>
+<ul>
+<li>1、页面（backend/page/food/add.html）发送 ajax 请求，请求服务端获取菜品分类数据并展示到下拉框中</li>
+<li>2、页面发送请求进行图片上传，请求服务端将图片保存到服务器</li>
+<li>3、页面发送请求进行图片下载，将上传的图片进行回显</li>
+<li>4、点击保存按钮，发送 ajax 请求，将菜品相关数据以 json 形式提交到服务端</li>
+</ul>
+<hr>
+<p>开发新增菜品功能，其实就是在服务端编写代码去处理前端页面发送的这 4 次请求即可。</p>
+<h4 id="导入-DTO"><a href="#导入-DTO" class="headerlink" title="导入 DTO"></a>导入 DTO</h4><p>导入 DishDto 类，用于封装页面提交的数据</p>
+<p><strong>注意事项：</strong>DTO，全称为 Data Transfer Object，即数据传输对象，一般用于展示层与服务层之间的数据传输。</p>
+<h3 id="功能测试-1"><a href="#功能测试-1" class="headerlink" title="功能测试"></a>功能测试</h3><h2 id="套餐管理"><a href="#套餐管理" class="headerlink" title="套餐管理"></a>套餐管理</h2><h3 id="新增套餐"><a href="#新增套餐" class="headerlink" title="新增套餐"></a>新增套餐</h3><h4 id="需求分析-1"><a href="#需求分析-1" class="headerlink" title="需求分析"></a>需求分析</h4><p>新增套餐，其实就是将新增页面录入的套餐信息插入到 setmeal 表，还需要向 setmeal_dish 表插入套餐和菜品关联数据。所以在新增套餐时，涉及到两个表：</p>
+<ul>
+<li>setmeal        套餐表</li>
+<li>setmeal_dish 套餐菜品关系表</li>
+</ul>
+<h4 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h4><h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><p>在开发业务功能前，先将需要用到的类和接口基本结构创建好</p>
+<ul>
+<li>实体类 SetmealDish</li>
+<li>DTO类 SetmealDto</li>
+<li>Mapper 接口 SetmealDishMapper</li>
+<li>业务层接口 SetmealDishService</li>
+<li>业务层实现类 SetmealDishServiceImpl</li>
+<li>控制层 SetmealController</li>
+</ul>
+<h5 id="梳理交互过程-1"><a href="#梳理交互过程-1" class="headerlink" title="梳理交互过程"></a>梳理交互过程</h5><ul>
+<li>1、页面（backend/page/combo/add.html）发送 ajax 请求，请求服务端获取套餐分类数据并展示到下拉框中</li>
+<li>2、页面发送 ajax 请求，请求服务端获取菜品分类数据并展示到添加菜品窗口中</li>
+<li>3、页面发送 ajax 请求，请求服务端，根据菜品分类查询对应的菜品数据并展示到添加菜品窗口中</li>
+<li>4、页面发送请求进行图片上传，请求服务端将图片保存到服务器</li>
+<li>5、页面发送请求进行图片下载，将上传的图片进行回显</li>
+<li>6、点击保存按钮，发送 ajax 请求，将套餐相关数据以 json 形式提交到服务端</li>
+</ul>
+<hr>
+<h6 id="难点部分"><a href="#难点部分" class="headerlink" title="难点部分"></a>难点部分</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SetmealService 类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">SetmealService</span> <span class="keyword">extends</span> <span class="title">IService</span>&lt;<span class="title">Setmeal</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 新增套餐，同时需要保存套餐和菜品的关联关系</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveWithDish</span><span class="params">(SetmealDto setmealDto)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SetmealServiceImpl 类</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetmealServiceImpl</span> <span class="keyword">extends</span> <span class="title">ServiceImpl</span>&lt;<span class="title">SetmealMapper</span>, <span class="title">Setmeal</span>&gt; <span class="keyword">implements</span> <span class="title">SetmealService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> SetmealDishService setmealDishService;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 新增套餐，同时需要保存套餐和菜品的关联关系</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveWithDish</span><span class="params">(SetmealDto setmealDto)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 保存套餐的基本信息，操作 setmeal，执行 insert 操作</span></span><br><span class="line">        <span class="keyword">this</span>.save(setmealDto);</span><br><span class="line"></span><br><span class="line">        List&lt;SetmealDish&gt; setmealDishes = setmealDto.getSetmealDishes();</span><br><span class="line">        setmealDishes.stream().map((item)-&gt; &#123;</span><br><span class="line">            item.setSetmealId(setmealDto.getId());</span><br><span class="line">            <span class="keyword">return</span> item;</span><br><span class="line">        &#125;).collect(Collectors.toList());</span><br><span class="line">        <span class="comment">// 保存套餐和菜品的关联信息，操作 setmeal_dish，执行 insert 操作</span></span><br><span class="line">        setmealDishService.saveBatch(setmealDishes);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除套餐"><a href="#删除套餐" class="headerlink" title="删除套餐"></a>删除套餐</h3><h4 id="需求分析-2"><a href="#需求分析-2" class="headerlink" title="需求分析"></a>需求分析</h4><p>在套餐管理列表页面点击删除按钮，可以删除对应的套餐信息。也可以通过复选框选择多个套餐，点击批量删除按钮一次删除多个套餐。注意，对于状态为售卖中的套餐不能删除，需要先停售，然后才能删除。</p>
+<h2 id="短信发送"><a href="#短信发送" class="headerlink" title="短信发送"></a>短信发送</h2><h3 id="短信服务介绍"><a href="#短信服务介绍" class="headerlink" title="短信服务介绍"></a>短信服务介绍</h3><p>目前市面上有很多第三方提供的短信服务，这些第三方短信服务会和各个运营商（移动、联通、电信对接）我们只需要注册称为会员并且按照提供的开发文档进行调用就可以发送短信。需要说明的是，这些短信服务一般都是收费服务。</p>
+<h4 id="常用短信服务"><a href="#常用短信服务" class="headerlink" title="常用短信服务"></a>常用短信服务</h4><ul>
+<li>阿里云</li>
+<li>华为云</li>
+<li>腾讯云</li>
+<li>京东</li>
+<li>梦网</li>
+<li>乐信</li>
+</ul>
+<h3 id="阿里云短信服务"><a href="#阿里云短信服务" class="headerlink" title="阿里云短信服务"></a>阿里云短信服务</h3><p>阿里云短信服务（Short Message Service :sms）</p>
+<h4 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h4><ul>
+<li>验证码</li>
+<li>短信通知</li>
+<li>推广短信</li>
+</ul>
+<h3 id="代码开发-2"><a href="#代码开发-2" class="headerlink" title="代码开发"></a>代码开发</h3><h4 id="具体开发步骤"><a href="#具体开发步骤" class="headerlink" title="具体开发步骤"></a>具体开发步骤</h4><ul>
+<li>1、导入 maven 坐标</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.aliyun<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aliyun-java-sdk-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.5.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.aliyun<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aliyun-java-sdk-dysmsapi<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2、调用 API</li>
+</ul>
+<h2 id="手机验证码登录"><a href="#手机验证码登录" class="headerlink" title="手机验证码登录"></a>手机验证码登录</h2><h3 id="需求分析-3"><a href="#需求分析-3" class="headerlink" title="需求分析"></a>需求分析</h3><p>为了方便用户登录，移动端通常都会提供通过手机验证码登录的功能。</p>
+<p>手机验证码登录的优点：</p>
+<ul>
+<li>方便快捷，无需注册，直接登录</li>
+<li>使用短信验证码作为登录凭证，无需记忆密码</li>
+<li>安全</li>
+</ul>
+<p>登录流程：</p>
+<p>输入手机号&gt;获取验证码&gt;输入验证码&gt;点击登录&gt;登录成功</p>
+<p><strong>注意：</strong>通过手机验证码登录，手机号是区分不同用户的标识</p>
+<h3 id="代码开发-3"><a href="#代码开发-3" class="headerlink" title="代码开发"></a>代码开发</h3><h4 id="梳理交互过程-2"><a href="#梳理交互过程-2" class="headerlink" title="梳理交互过程"></a>梳理交互过程</h4><ul>
+<li>1、在登录页面(front/page/login.html)输入手机号，点击【获取验证码】按钮，页面发送 ajax 请求，在服务端调用短信服务 API 给指定手机号发送验证码短信</li>
+<li>2、在登录页面输入验证码，点击【登录】按钮，发送 ajax 请求，在服务端处理登录请求。</li>
+</ul>
+<h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><p>在开发业务前，先将需要用到的类和接口基本结构创建好</p>
+<ul>
+<li>实体类 User</li>
+<li>Mapper 接口 UserMapper</li>
+<li>业务层接口 UserService</li>
+<li>业务层实现类 UseServiceImpl</li>
+<li>控制层 UserController</li>
+<li>工具类 SMSUtis、ValidateCodeUtils</li>
+</ul>
+<h2 id="菜品展示、购物车、下单"><a href="#菜品展示、购物车、下单" class="headerlink" title="菜品展示、购物车、下单"></a>菜品展示、购物车、下单</h2><ul>
+<li>导入用户地址簿相关功能代码</li>
+<li>菜品展示</li>
+<li>购物车</li>
+<li>下单</li>
+</ul>
+<h3 id="导入用户地址簿相关功能代码"><a href="#导入用户地址簿相关功能代码" class="headerlink" title="导入用户地址簿相关功能代码"></a>导入用户地址簿相关功能代码</h3><ul>
+<li><p>需求分析</p>
+</li>
+<li><p>数据模型</p>
+</li>
+<li><p>导入功能代码</p>
+</li>
+<li><p>功能测试</p>
+</li>
+</ul>
+<h4 id="需求分析-4"><a href="#需求分析-4" class="headerlink" title="需求分析"></a>需求分析</h4><p>地址簿，指的是移动端消费者用户的地址信息，用户登录成功后可以维护自己的地址信息。同一个用户可以有多个地址信息，但是只能有一个默认地址。</p>
+<h4 id="数据模型-1"><a href="#数据模型-1" class="headerlink" title="数据模型"></a>数据模型</h4><p>用户的地址信息会存储在 address_book 表，即地址表中</p>
+<h4 id="导入功能代码"><a href="#导入功能代码" class="headerlink" title="导入功能代码"></a>导入功能代码</h4><p>功能代码清单：</p>
+<ul>
+<li>实体类 AddressBook</li>
+<li>Mapper 接口 AddressBookMapper</li>
+<li>业务层接口 AddressBookService</li>
+<li>业务层实现类 AddressBookServiceImpl</li>
+<li>控制层 AddressBookController</li>
+</ul>
+<h2 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a>git 常用命令</h2><h3 id="git-全局设置"><a href="#git-全局设置" class="headerlink" title="git 全局设置"></a>git 全局设置</h3><p>安装 git 后首先要做的事是设置用户名称和 email 地址。因为每次 git 提交都会使用该用户信息</p>
+<hr>
+<p>在 git 命令行中执行下面命令：</p>
+<ul>
+<li>设置用户信息</li>
+</ul>
+<p>git config –global user.name “demo”</p>
+<p>git config –global user.email “<a href="mailto:&#x68;&#x65;&#108;&#x6c;&#111;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#109;">&#x68;&#x65;&#108;&#x6c;&#111;&#x40;&#113;&#113;&#46;&#99;&#x6f;&#109;</a>“</p>
+<ul>
+<li>查看配置信息</li>
+</ul>
+<p>git config –list</p>
+<p><strong>注意：</strong>上面的 user.name 和 user.email 并不是我们在注册码云或其他托管账号时使用的用户名和邮箱，此处可任意处理。</p>
+<h3 id="获取-git-仓库"><a href="#获取-git-仓库" class="headerlink" title="获取 git 仓库"></a>获取 git 仓库</h3><p>要使用 git 对我们的代码进行版本控制，首先需要获得 git 仓库</p>
+<hr>
+<p>获取 git 仓库通常有两种方式：</p>
+<ul>
+<li>在本地初始化一个 git 仓库（不常用）</li>
+<li>从远程仓库克隆（常用）</li>
+</ul>
+<h4 id="获取-git-仓库-在本地初始化-git-仓库"><a href="#获取-git-仓库-在本地初始化-git-仓库" class="headerlink" title="获取 git 仓库-在本地初始化 git 仓库"></a>获取 git 仓库-在本地初始化 git 仓库</h4><h5 id="执行步骤如下："><a href="#执行步骤如下：" class="headerlink" title="执行步骤如下："></a>执行步骤如下：</h5><p>1、在任意目录下创建一个空目录（例如 repo1）作为我们的本地 git 仓库</p>
+<p>2、进入这个目录中，点击右键打开 git bash 窗口</p>
+<p>3、执行命令 git init</p>
+<p>如果在当前目录中看到 .git 文件夹（此文件夹为隐藏文件夹）则说明 git 仓库创建成功</p>
+<h4 id="获取-git-仓库-从远程仓库克隆"><a href="#获取-git-仓库-从远程仓库克隆" class="headerlink" title="获取 git 仓库-从远程仓库克隆"></a>获取 git 仓库-从远程仓库克隆</h4><p>可以通过 git 提供的命令从远程仓库进行克隆，将远程仓库克隆到本地</p>
+<p>命令形式：git clone [远程 git 仓库地址]</p>
+<h3 id="工作区、缓存区、版本库概念"><a href="#工作区、缓存区、版本库概念" class="headerlink" title="工作区、缓存区、版本库概念"></a>工作区、缓存区、版本库概念</h3><p><strong>版本库：</strong>前面看到的.git 隐藏文件夹就是版本库，版本库中存储了很多配置信息、日志信息和文件版本信息等</p>
+<p><strong>工作区：</strong>包含 .git 文件夹的目录就是工作区，也称为工作目录，主要用于存放开发的代码</p>
+<p><strong>暂存区：</strong>.git 中有很多文件，其中有一个 index 文件就是暂缓区，也可以叫做 stage。暂存区是一个临时保存修改文件的地方</p>
+<h4 id="git-工作区中文件的状态"><a href="#git-工作区中文件的状态" class="headerlink" title="git 工作区中文件的状态"></a>git 工作区中文件的状态</h4><p>git 工作区中的文件存在两种状态：</p>
+<ul>
+<li>untracked 未跟踪（未被纳入版本控制）</li>
+<li>tracked 已跟踪（被纳入版本控制）<ul>
+<li>1）Unmodified 未修改状态</li>
+<li>2）Modified 已修改状态</li>
+<li>3）Staged 已暂存状态</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong>这些文件的状态会随着我们执行 git 的命令发生变化</p>
+<h3 id="本地仓库操作"><a href="#本地仓库操作" class="headerlink" title="本地仓库操作"></a>本地仓库操作</h3><p>本地仓库常用命令如下：</p>
+<ul>
+<li>git status 查看文件状态</li>
+<li>git add 将文件的修改加入暂存区</li>
+<li>git reset 将暂存区的文件取消暂存或者是切换到指定版本</li>
+<li>git commit 将暂存区的文件修改提交到版本库</li>
+<li>git log 查看日志</li>
+</ul>
+<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><p>前面执行的命令操作都是针对的本地仓库，远程仓库操作如下：</p>
+<ul>
+<li>git remote 查看远程仓库</li>
+<li>git remote add 添加远程仓库</li>
+<li>git clone 从远程仓库克隆</li>
+<li>git pull 从远程仓库拉取</li>
+<li>git push 推送到远程仓库</li>
+</ul>
+<h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><p>如果想查看已经配置的远程仓库服务器，可以运行 git remote 命令，它会列出每一个远程服务器的简写。如果已经克隆了远程仓库，那么至少应该能看到 origin，这是 git 克隆的仓库服务器的默认名字。</p>
+<hr>
+<p>git remote -v 查看详细的远程仓库</p>
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><p>添加远程仓库，运行 git remote add [short-name] [url] 添加一个新的远程仓库，同时指定一个可以引用的简写。</p>
+<h4 id="克隆远程仓库到本地"><a href="#克隆远程仓库到本地" class="headerlink" title="克隆远程仓库到本地"></a>克隆远程仓库到本地</h4><p>如果你想获得一份已经存在了的 git 远程仓库的拷贝，这时就要用到 git clone 命令。git 克隆的是该 git 仓库服务器上的几乎所有数据（包括日志信息、历史记录等），而不仅仅是复制工作所需要的文件。</p>
+<p>克隆仓库的命令格式是：git clone [url]</p>
+<h4 id="推送至远程仓库"><a href="#推送至远程仓库" class="headerlink" title="推送至远程仓库"></a>推送至远程仓库</h4><p>将本地仓库内容推送到远程仓库，可以使用命令：git push [remote-name] [branch-name]</p>
+<p>在使用 git push 命令将本地文件推送至码云远程仓库时，需要进行身份认证，认证通过才可以推送</p>
+<h4 id="从远程仓库拉取"><a href="#从远程仓库拉取" class="headerlink" title="从远程仓库拉取"></a>从远程仓库拉取</h4><p>git pull 命令的作用是从远程仓库获取最新版本并合并到本地仓库，命令格式：git pull [short-name] [branch-name]</p>
+<p><strong>注意：</strong>如果当前本地仓库不是从远程仓库克隆，而是本地创建的仓库，并且仓库中存在文件，此时再从远程仓库拉取文件的时候会报错（fatal: refusing to merge unrelated histories）</p>
+<p>解决此问题可以在 git pull 命令后加入参数 –allow-unrelated-histories（从远程仓库获取最新的版本，并且合并到本地仓库）</p>
+<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><p>分支是 git 使用过程中非常重要的概念。使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。</p>
+<hr>
+<p>通过 git init 命令创建本地仓库时默认会创建一个 master 分支</p>
+<p>相关具体命令如下：</p>
+<ul>
+<li>git branch 查看分支<ul>
+<li>git branch -r 列出所有本地分支</li>
+<li>git branch -a 列出所有本地分支和远程分支</li>
+<li>git branch -d [name] 删除指定分支</li>
+</ul>
+</li>
+<li>git branch [name] 创建分支</li>
+<li>git checkout [name] 切换分支</li>
+<li>git push [short-name] [name] 推送至远程仓库分支</li>
+<li>git merge [name] 合并分支</li>
+</ul>
+<h4 id="解决合并时冲突"><a href="#解决合并时冲突" class="headerlink" title="解决合并时冲突"></a>解决合并时冲突</h4><p>手动修改再重新 git add</p>
+<p>如果提交时报错：cannot do a partial commit during a merge </p>
+<p>则添加一个参数 -i （ignore）</p>
+<h3 id="标签操作"><a href="#标签操作" class="headerlink" title="标签操作"></a>标签操作</h3><p>git 中的标签，指的是某个分支某个特定时间点的状态。通过标签，可以很方便的切换到标记时的状态。比较有代表性的是人们会使用这个功能来标记发布结点（v1.0、v1.2等）。具体可参考 mybatis-plus 的标签。</p>
+<p>相关命令：</p>
+<ul>
+<li>git tag 列出已有标签</li>
+<li>git tag [name] 创建标签</li>
+<li>git push [short-name] [name] 将标签推送至远程仓库</li>
+<li>git checkout -b [branch] [name] 检出标签</li>
+</ul>
+<p>打好标签号，分支状态不会再变化。应用于版本更新与新版本发行</p>
+<h2 id="在-IDEA-中使用-git"><a href="#在-IDEA-中使用-git" class="headerlink" title="在 IDEA 中使用 git"></a>在 IDEA 中使用 git</h2><p>在 IDEA 中使用 git，本质上还是使用的本地安装的 git，所以需要在 IDEA 中配置 git。</p>
+<h3 id="获取-git-仓库-1"><a href="#获取-git-仓库-1" class="headerlink" title="获取 git 仓库"></a>获取 git 仓库</h3><p>在 IDEA 中使用 git 获取仓库有两种方式：</p>
+<ul>
+<li>本地初始化仓库</li>
+<li>从远程仓库克隆</li>
+</ul>
+<h3 id="本地仓库操作-1"><a href="#本地仓库操作-1" class="headerlink" title="本地仓库操作"></a>本地仓库操作</h3><ul>
+<li>将文件加入暂存区</li>
+<li>将暂存区的文件提交到版本库</li>
+<li>查看日志</li>
+</ul>
+<h3 id="远程仓库操作-1"><a href="#远程仓库操作-1" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><ul>
+<li>查看远程仓库</li>
+<li>添加远程仓库</li>
+<li>推送至远程仓库</li>
+<li>从远程仓库拉取</li>
+</ul>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>环境搭建（Linux 安装远程连接）</p>
+<p>常用命令（文件、目录拷贝、移动打包、压缩文件编辑）</p>
+<p>安装软件（文件上传、jdk、tomcat、mysql）</p>
+<p>项目部署（Java 应用、Python应用、日志查看、系统管理、用户权限）</p>
+<h3 id="Linux-简介"><a href="#Linux-简介" class="headerlink" title="Linux 简介"></a>Linux 简介</h3><h4 id="不同应用领域的主流操作系统"><a href="#不同应用领域的主流操作系统" class="headerlink" title="不同应用领域的主流操作系统"></a>不同应用领域的主流操作系统</h4><ul>
+<li>桌面操作系统<ul>
+<li>Windows（用户最多）</li>
+<li>Mac OS（操作体验好，办公人士首选）</li>
+<li>Linux（用户最少）</li>
+</ul>
+</li>
+<li>服务器操作系统<ul>
+<li>UNIX（安全、稳定、付费）</li>
+<li>Linux（安全、稳定、免费、占有率高）</li>
+<li>Windows Server（付费、占有率低）</li>
+</ul>
+</li>
+<li>移动设备操作系统<ul>
+<li>Android（基于 Linux、开源，主要用于智能手机、平板电脑和智能电视）</li>
+<li>IOS（苹果公司开发、不开源，用于苹果公司的产品，例如：iPhone、iPad）</li>
+</ul>
+</li>
+<li>嵌入式操作系统<ul>
+<li>Linux（机顶盒、路由器、交换机）</li>
+</ul>
+</li>
+</ul>
+<h4 id="Linux-系统版本"><a href="#Linux-系统版本" class="headerlink" title="Linux 系统版本"></a>Linux 系统版本</h4><p>Linux 系统分为内核版和发行版</p>
+<ul>
+<li>内核版<ul>
+<li>由 Linux Torvalds 及其团队开发、维护</li>
+<li>免费、开源</li>
+<li>负责控制硬件</li>
+</ul>
+</li>
+<li>发行版<ul>
+<li>基于 Linux 内核版进行拓展</li>
+<li>由各个 Linux 厂商开发、维护</li>
+<li>有收费版本和免费版本</li>
+</ul>
+</li>
+</ul>
+<h5 id="Linux-系统发行版"><a href="#Linux-系统发行版" class="headerlink" title="Linux 系统发行版"></a>Linux 系统发行版</h5><ul>
+<li>Ubuntu：以桌面应用为主</li>
+<li>RedHat：应用最广泛、收费</li>
+<li>CentOS：RedHat 的社区版、免费</li>
+<li>openSUSE：对个人完全免费、图形界面华丽</li>
+<li>Fedora：功能完备、快速更新、免费</li>
+<li>红旗 Linux：北京中科红旗软件技术有限公司开发</li>
+</ul>
+<h3 id="Linux-安装"><a href="#Linux-安装" class="headerlink" title="Linux 安装"></a>Linux 安装</h3><h4 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h4><p>Linux 系统的安装方式</p>
+<ul>
+<li>物理机安装：直接将操作系统安装到服务器硬件上</li>
+<li>虚拟机安装：通过虚拟机软件安装</li>
+</ul>
+<p><strong>虚拟机</strong>（Virtual Machine）指通过软件模拟的具有完整硬件系统功能、运行在完全隔离环境中的完整计算机系统。</p>
+<p>常用虚拟机软件</p>
+<ul>
+<li>VMWare</li>
+<li>VirtualBox</li>
+<li>VMLite WorkStation</li>
+<li>Qemu</li>
+<li>HopeddotVOS</li>
+</ul>
+<h4 id="网卡设置"><a href="#网卡设置" class="headerlink" title="网卡设置"></a>网卡设置</h4><p>由于启动服务器时未加载网卡，导致 IP 地址初始化失败</p>
+<p>修改网络初始化配置，设定网卡在系统启动时初始化</p>
+<p>cd / 进入根目录</p>
+<p>cd etc 进入 etc 目录</p>
+<p>cd sysconfig 进入 sysconfig 目录</p>
+<p>cd network-scripts 进入 network-scripts</p>
+<p>vi ifcfg-ens33 编辑 ifcfg-ens33 文件</p>
+<p>i 进入编辑状态</p>
+<p><esc> -&gt; :wq <Enter> 保存退出</p>
+<h4 id="安装-SSH-连接工具"><a href="#安装-SSH-连接工具" class="headerlink" title="安装 SSH 连接工具"></a>安装 SSH 连接工具</h4><p>SSH（Secure Shell），建立在应用层基础上的安全协议</p>
+<p>常用的 SSH 连接工具</p>
+<ul>
+<li>putty</li>
+<li>secureCRT</li>
+<li>xshell</li>
+<li>finalshell</li>
+</ul>
+<p>通过 SSH 连接工具就可以实现从本地连接到远程的 Linux 服务器</p>
+<h3 id="Linux-和-Windows-目录结构对比"><a href="#Linux-和-Windows-目录结构对比" class="headerlink" title="Linux 和 Windows 目录结构对比"></a>Linux 和 Windows 目录结构对比</h3><p>Linux 系统中的目录</p>
+<ul>
+<li>/ 是所有目录的顶点</li>
+<li>目录结构像一颗倒挂的树</li>
+</ul>
+<h4 id="Linux-目录介绍"><a href="#Linux-目录介绍" class="headerlink" title="Linux 目录介绍"></a>Linux 目录介绍</h4><ul>
+<li>bin 存放二进制可执行文件</li>
+<li>boot 存放系统引导时使用的各种文件</li>
+<li>dev 存放设备文件</li>
+<li>etc 存放系统配置文件</li>
+<li>home 存放系统用户的文件</li>
+<li>lib 存放程序运行所需的共享库和内核模块</li>
+<li>opt 额外安装的可选应用程序包所放置的位置</li>
+<li>root 超级用户目录</li>
+<li>sbin 存放二进制可执行文件，只有 root 用户才能访问</li>
+<li>tmp 存放临时文件</li>
+<li>usr 存放系统应用程序</li>
+<li>var 存放运行时需要改变数据的文件，例如日志文件</li>
+</ul>
+<h3 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h3><h4 id="文件目录操作命令-ls"><a href="#文件目录操作命令-ls" class="headerlink" title="文件目录操作命令 ls"></a>文件目录操作命令 ls</h4><p>作用：显示指定目录下的内容</p>
+<p>语法：ls [-al] [dir]</p>
+<p>说明：</p>
+<ul>
+<li>-a 显示所有文件及目录（.开头的隐藏文件也会列出）</li>
+<li>-l 除文件名称为，同时将文件型态（d 表示目录，- 表示文件）、权限、拥有者、文件大小等信息详细列出。</li>
+</ul>
+<p><strong>注意：</strong>由于我们使用 ls 命令时经常需要加入 -l 选项，所以 Linux 为 ls -l 命令提供了一种简写方式，即 ll</p>
+<h4 id="文件目录操作命令-cd"><a href="#文件目录操作命令-cd" class="headerlink" title="文件目录操作命令 cd"></a>文件目录操作命令 cd</h4><p>作用：用于切换当前目录，即进入指定目录</p>
+<p>语法：cd [dir-name]</p>
+<p>特殊说明：</p>
+<ul>
+<li>~ 表示用户的 home 目录</li>
+<li>. 表示目前所在的目录</li>
+<li>.. 表示目前目录位置的上级目录</li>
+</ul>
+<h4 id="文件目录操作命令-cat"><a href="#文件目录操作命令-cat" class="headerlink" title="文件目录操作命令 cat"></a>文件目录操作命令 cat</h4><p>作用：用于显示文件内容</p>
+<p>语法：cat [-n] file-name</p>
+<p>说明：</p>
+<ul>
+<li>-n：由 1 开始对所有输出的行数编号</li>
+</ul>
+<h4 id="文件目录操作命令-more"><a href="#文件目录操作命令-more" class="headerlink" title="文件目录操作命令 more"></a>文件目录操作命令 more</h4><p>作用：以分页的形式显示文件内容</p>
+<p>语法：more file-name</p>
+<p>操作说明：</p>
+<ul>
+<li>回车键：向下滚动一行</li>
+<li>空格键：向下滚动一屏</li>
+<li>b：返回上一屏</li>
+<li>q 或者 ctrl + c：退出 more</li>
+</ul>
+<h4 id="文件目录操作命令-tail"><a href="#文件目录操作命令-tail" class="headerlink" title="文件目录操作命令 tail"></a>文件目录操作命令 tail</h4><p>作用：查看文件末尾的内容</p>
+<p>语法：tail [-f] file-name</p>
+<p>说明：</p>
+<ul>
+<li>-f：动态读取文件末尾内容并显示，通常用于日志文件的内容输出</li>
+</ul>
+<h4 id="文件目录操作命令-mkdir"><a href="#文件目录操作命令-mkdir" class="headerlink" title="文件目录操作命令 mkdir"></a>文件目录操作命令 mkdir</h4><p>作用：创建目录</p>
+<p>语法：mkdir [-p] dir-name</p>
+<p>说明：</p>
+<ul>
+<li>-p：确保目录名称存在，不存在的就创建一个。通过此选项，可以实现多层目录同时创建</li>
+</ul>
+<h4 id="文件目录操作命令-rmdir"><a href="#文件目录操作命令-rmdir" class="headerlink" title="文件目录操作命令 rmdir"></a>文件目录操作命令 rmdir</h4><p>作用：删除空目录</p>
+<p>语法：rmdir [-p] dir-name</p>
+<p>说明：</p>
+<ul>
+<li>-p：当子目录被删除后使父目录为空目录的话，则一并删除</li>
+</ul>
+<h4 id="文件目录操作命令-rm"><a href="#文件目录操作命令-rm" class="headerlink" title="文件目录操作命令 rm"></a>文件目录操作命令 rm</h4><p>作用：删除文件或者目录</p>
+<p>语法：rm [-rf] name</p>
+<p>说明：</p>
+<ul>
+<li>-r：将目录及目录中所有文件（目录）逐一删除，即递归删除</li>
+<li>-f：无需确认，直接删除</li>
+</ul>
+<h4 id="拷贝移动命令-cp"><a href="#拷贝移动命令-cp" class="headerlink" title="拷贝移动命令 cp"></a>拷贝移动命令 cp</h4><p>作用：用于复制文件或目录</p>
+<p>语法：cp [-r] source dest</p>
+<p>说明：</p>
+<ul>
+<li>-r：如果复制的是目录需要使用此选项，此时将复制该目录下所有的子目录和文件</li>
+</ul>
+<h4 id="拷贝移动命令-mv"><a href="#拷贝移动命令-mv" class="headerlink" title="拷贝移动命令 mv"></a>拷贝移动命令 mv</h4><p>作用：为文件或目录改名、或将文件或目录移动到其他位置</p>
+<p>语法：mv source dest</p>
+<h4 id="打包压缩命令-tar"><a href="#打包压缩命令-tar" class="headerlink" title="打包压缩命令 tar"></a>打包压缩命令 tar</h4><p>作用：对文件进行打包、解包、压缩、解压</p>
+<p>语法：tar [-zcxvf] file-name [files]</p>
+<p>包文件后缀为 .tar 表示只是完成了打包，并没有压缩</p>
+<p>包文件后缀为 .tar.gz 表示打包的同时还进行了压缩</p>
+<p>说明：</p>
+<ul>
+<li>-z：z 代表的是 gzip，通过 gzip 命令处理文件，gzip 可以对文件压缩或解压</li>
+<li>-c：c 代表的是 create，即创建新的包文件</li>
+<li>-x：x 代表的是 extract，实现从包文件中还原文件</li>
+<li>-v：v 代表的是 verbose，显示命令的执行过程</li>
+<li>-f：f 代表的是 file，用于指定包文件的名称</li>
+</ul>
+<p>举例：</p>
+<p>打包</p>
+<ul>
+<li>tar -cvf hello.tar ./* 将当前目录下所有文件打包，打包后的文件名为 hello.tar</li>
+<li>tar -zcvf hello.tar.gz ./* 将当前目录下所有文件打包并压缩，打包后的文件名为 hello.tar.gz</li>
+</ul>
+<p>解包</p>
+<ul>
+<li>tar -xvf hello.tar 将 hello.tar 文件进行解包，并将解包后的文件放在当前目录</li>
+<li>tar -zxvf hello.tar.gz 将 hello.tar.gz 文件进行解压，并将解压后的文件放在当前目录</li>
+<li>tar -zxvf hello.tar.gz -C /user/local 将 hello.tar.gz 文件进行解压，并将解压后的文件放在 /usr/local</li>
+</ul>
+<h4 id="文本编辑命令-vi-vim"><a href="#文本编辑命令-vi-vim" class="headerlink" title="文本编辑命令 vi/vim"></a>文本编辑命令 vi/vim</h4><p>作用：vi 命令是 Linux 系统提供的一个文本编辑工具，可以对文件内容进行编辑，类似于 Windows 中的记事本</p>
+<p>语法：vi/vim file-name</p>
+<p>说明：</p>
+<p>1、vim 是从 vi 发展来的一个功能更强大的文本编辑工具，在编辑文件时可以对文本内容进行着色，方便我们对文件进行编辑处理，所以实际工作中 vim 更加常用</p>
+<p>2、要使用 vim 命令，需要我们自己完成安装。可以使用下面的命令来完成安装</p>
+<p>yum install vim</p>
+<p>3、在使用 vim 命令编辑文件时，如果指定的文件存在则直接打开此文件。如果指定的文件不存在则新建文件。</p>
+<p>4、vim 在进行文本编辑时工分为三种模式，分别是命令模式（Command mode），插入模式（Insert mode）和底形模式（Last line mode）。这三种模式之间可以互相切换。我们在使用 vim 时一定要注意我们当前所处的是哪种模式。</p>
+<hr>
+<p>针对 vim 中的三种模式说明如下：</p>
+<p>1、命令模式</p>
+<ul>
+<li>命令模式下可以查看文件内容、移动光标（上下左右箭头、gg、G）</li>
+<li>通过 vim 命令打开文件后，默认进入命令模式</li>
+<li>另外两种模式需要首先进入命令模式，才能进入彼此</li>
+</ul>
+<p>2、插入模式</p>
+<ul>
+<li>插入模式下可以对文件内容进行编辑</li>
+<li>在命令模式下按下 [i,a,o] 任意一个，可以进入插入模式。进入模式后下方会出现 insert 字样</li>
+<li>在插入模式下按下 ESC 键，回到命令模式</li>
+</ul>
+<p>3、底行模式</p>
+<ul>
+<li>底行模式下可以通过命令对文件内容进行查找、显示行号、退出等操作</li>
+<li>在命令模式下按下 [:,/] 任意一个，可以对文件内容进行查找</li>
+<li>通过 / 方式进入底行模式后，可以对文件内容进行查找</li>
+<li>通过 : 方式进入底行模式后，可以输入 wq（保存并退出）、q!（不保存退出）、set nu（显示行号）</li>
+</ul>
+<h4 id="查找命令-find"><a href="#查找命令-find" class="headerlink" title="查找命令 find"></a>查找命令 find</h4><p>作用：在指定目录下查找文件</p>
+<p>语法：find dir-name -option file-name</p>
+<h4 id="查找命令-grep"><a href="#查找命令-grep" class="headerlink" title="查找命令 grep"></a>查找命令 grep</h4><p>作用：从指定文件中查找指定的文本内容</p>
+<p>语法：grep word file-name</p>
+<p>说明：</p>
+<ul>
+<li>-r：如果复制的是目录需要使用此选项，此时将复制该目录下所有的子目录和文件</li>
+</ul>
+<h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul>
+<li>二进制发布包安装<ul>
+<li>软件已经针对具体平台编译打包发布，只要解压，修改配置即可</li>
+</ul>
+</li>
+<li>rpm 安装<ul>
+<li>软件已经按照 redhat 的包管理规范进行打包，使用 rpm 命令进行安装，不能自行解决库依赖问题</li>
+</ul>
+</li>
+<li>yum 安装<ul>
+<li>一种在线软件安装方式，本质上还是 rpm 安装，自动下载安装包并安装，安装过程中自动解决库依赖问题</li>
+</ul>
+</li>
+<li>源码编译安装<ul>
+<li>软件以源码工程的形式发布，需要自己编译打包</li>
+</ul>
+</li>
+</ul>
+<h4 id="XShell-安装方法"><a href="#XShell-安装方法" class="headerlink" title="XShell 安装方法"></a>XShell 安装方法</h4><p>1、打开xshell 连接虚拟机</p>
+<p>2、yum 安装 lrzsz：yum install lrzsz -y</p>
+<p>3、输入：rpm -qa |grep lrzsz 检查是否能连接服务器</p>
+<p>4、直接把文件拖进 xshell 窗口即可上传文件</p>
+<h4 id="安装-jdk"><a href="#安装-jdk" class="headerlink" title="安装 jdk"></a>安装 jdk</h4><p>操作步骤：</p>
+<p>1、使用 FinalShell 自带的上传工具将 jdk 的二进制发布包上传到 Linux</p>
+<p>2、解压安装包，命令为 tar -zxvf jdk-8u171-linux-x64.tar.gz -C /usr/local</p>
+<p>3、配置环境变量，使用 vim 命令修改 /etc/profile 文件，在文件末尾位置加入如下配置：</p>
+<p>JAVA_HOME=/usr/local/jdk1.8.0_171</p>
+<p>PATH=$JAVA_HOME/bin:$PATH</p>
+<p>4、重新加载 profile 文件，使更改的配置立即生效，命令为 source /etc/profile</p>
+<p>5、检查安装是否成功，命令为 java -version</p>
+<h4 id="安装-Tomcat"><a href="#安装-Tomcat" class="headerlink" title="安装 Tomcat"></a>安装 Tomcat</h4><h5 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h5><p>1、使用 FinalShell 自带的上传工具将 Tomcat 的二进制发布包上传到 Linux</p>
+<p>2、解压安装包，命令为 tar -zxvf apache-tomcat-7.0.57.tar.gz -C /usr/local</p>
+<p>3、进入 tomcat 的 bin 目录启动服务，命令为 sh startup.sh 或者 ./startup/sh</p>
+<hr>
+<p>验证 Tomcat 启动是否成功，有多种方式：</p>
+<ul>
+<li>查看启动日志<ul>
+<li>more /usr/local/apache-tomcat-7.0.57/logs/catalina.out</li>
+<li>tail -50 /usr/local/apache-tomcat-7.0.57/logs/catalina.out</li>
+</ul>
+</li>
+<li>查看进程 ps -ef | grep tomcat</li>
+</ul>
+<p><strong>注意：</strong></p>
+<ul>
+<li>ps 命令是 linux 下非常强大的进程查看命令，通过 ps -ef 可以查看当前运行的所有进程的详细信息</li>
+<li>“|” 在 Linux 中称为管道符，可以将前一个命令的结果输出给后一个命令作为输入</li>
+<li>使用 ps 查看进程时，经常配合管道符和查找命令 grep 一起使用，来查看特定进程</li>
+</ul>
+<h5 id="防火墙操作"><a href="#防火墙操作" class="headerlink" title="防火墙操作"></a>防火墙操作</h5><ul>
+<li>查看防火墙状态（systemctl status firewalld、firewall-cmd –state）</li>
+<li>暂时关闭防火墙（systemctl stop firewalld）</li>
+<li>永久关闭防火墙（systemctl disable firewalld）</li>
+<li>开启防火墙（systemctl start firewalld）</li>
+<li>开放指定端口（firewall-cmd –zone=public –add-port=8080/tcp –permanent）</li>
+<li>关闭指定端口（firewall-cmd –zone=public –remove-port=8080/tcp –permanent）</li>
+<li>立即生效（firewall-cmd –reload）</li>
+<li>查看开放的窗口（firewall-cmd –zone=public –list-ports）</li>
+</ul>
+<p><strong>注意：</strong></p>
+<p>1、systemctl 是管理 Linux 中服务的命令，可以对服务进行启动、停止、重启、查看状态等操作</p>
+<p>2、firewall-cmd 是 Linux 中专门用于控制防火墙的命令</p>
+<p>3、为了保证系统安全，服务器的防火墙不建议关闭</p>
+<h5 id="停止-Tomcat-服务的方式"><a href="#停止-Tomcat-服务的方式" class="headerlink" title="停止 Tomcat 服务的方式"></a>停止 Tomcat 服务的方式</h5><ul>
+<li>运行 Tomcat 的 bin 目录中提供的停止服务的脚本文件：shutdown.sh<ul>
+<li>sh shutdown.sh</li>
+<li>./shutdown.sh</li>
+</ul>
+</li>
+<li>结束 Tomcat 进程<ul>
+<li>查看 Tomcat 进程，获取进程 id</li>
+<li>执行命令结束进程 kill -9 [id]</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong>kill 命令是 Linux 提供的用于结束进程的命令，-9 表示强制结束</p>
+<h4 id="安装-Mysql"><a href="#安装-Mysql" class="headerlink" title="安装 Mysql"></a>安装 Mysql</h4><p>1、检测当前系统中是否安装 Mysql 数据库</p>
+<p>rpm -qa 查询当前系统中安装的所有软件</p>
+<p>rpm -qa | grep mysql 查询当前系统中安装的名称带 mysql 的软件</p>
+<p>rpm -qa | grep mariadb 查询当前系统中安装的名称带 mariadb 的软件</p>
+<p>RPM（Red-Hat Package Manager）RPM 软件包管理器，是红帽 Linux 用于管理和安装软件的工具</p>
+<p><strong>注意事项：</strong>如果当前系统中已经安装有 mysql 数据库，安装将失败。Centos 自带 mariadb，与 mysql 数据库冲突</p>
+<p>2、卸载已经安装的冲突软件</p>
+<p>rpm -e –nodeps 软件名称</p>
+<p>rpm -e –nodeps mariadb-libs-5.5.60-1.el7_5.x86_64</p>
+<p>3、将资料中提供的 mysql 安装包上传到 Linux 并解压</p>
+<p>mkdir /usr/local/mysql</p>
+<p>tar -zxvf mysql-5.7.25-1.el7.x86_64.rpm-bundle.tar.gz -C /usr/local/mysql</p>
+<p><strong>说明：</strong>解压后得到 6 个 rpm 的安装文件</p>
+<p>4、按照顺序安装 rpm 软件包</p>
+<p>rpm -ivh mysql-community-common-5.7.25-1.el7.x86_64.rpm</p>
+<p>rpm -ivh mysql-community-libs-5.7.25-1.el7.x86_64.rpm</p>
+<p>rpm -ivh mysql-community-devel-5.7.25-1.el7.x86_64.rpm</p>
+<p>rpm -ivh mysql-community-libs-compat-5.7.25-1.el7.x86_64.rpm</p>
+<p>rpm -ivh mysql-community-client-5.7.25-1.el7.x86_64.rpm</p>
+<p>yum install net-tools</p>
+<p>rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm</p>
+<p><strong>说明1：</strong>安装过程中提示缺少 net-tools 依赖，使用 yum 安装</p>
+<p><strong>说明2</strong>：可以通过指令升级现有软件及系统内核：yum update</p>
+<p>5、启动 mysql</p>
+<p>systemctl status mysqld 查看 mysql 服务状态</p>
+<p>systemctl start mysqld 启动 mysql 服务</p>
+<p><strong>说明：</strong>可以设置 开机时启动 mysql 服务，避免每次开机启动 mysql</p>
+<p>systemctl enable mysqld 开机启动 mysql 服务</p>
+<p>netstat -tunlp 查看已经启动的服务</p>
+<p>netstat -tunlp | grep mysql</p>
+<p>ps -ef | grep mysql 查看 mysql 进程</p>
+<p>6、登录 mysql 数据库，查阅临时密码</p>
+<p>cat /var/log/mysqld.log 查看文件内容</p>
+<p>cat /var/log/mysqld.log | grep password 查看文件内容中包含 password 的行信息</p>
+<p>grep ‘temporary password’ /var/log/mysqld.log</p>
+<p><strong>注意：</strong>冒号后面的是密码，注意空格</p>
+<p>7、登录 mysql，修改密码，开放访问权限</p>
+<p>mysql -uroot -p 登录 mysql（使用临时密码登录）</p>
+<p><strong>修改密码</strong></p>
+<ul>
+<li>set global validate_password_length=4; 设置密码长度最低位数</li>
+<li>set global validate_password_policy=LOW; 设置密码安全等级低，便于密码可以修改成 root</li>
+<li>set password = password(‘root’); 设置密码为 root</li>
+</ul>
+<p><strong>开启访问权限</strong></p>
+<ul>
+<li>grant all on *.* to ‘root‘@’%’ identified by ‘root’;</li>
+<li>flush privileges;</li>
+</ul>
+<h4 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h4><p>Yum（全称为 Yellow dog Updater,Modified）是一个在 Fedora 和 RedHat 以及 CentOS 中的 Shell 前端软件包管理器。基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包并安装，可以自动处理依赖关系，并且一次安装所有依赖的软件包，无需繁琐地一次次下载、安装。</p>
+<p><strong>期间遇到的问题</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuanzipeng/p/9897549.html">阿里云安装mysql后查看不到初始密码的解决办法</a></p>
+<p>在阿里云安装mysql后用grep ‘A temporary password’ /var/log/mysqld.log命令查看MySQL初始密码，毛线都没有看到，然后直接到/var/log/mysqld.log查看mysqld.log文件发现文件是一片空白，一脸懵逼。</p>
+<p>解决办法如下：</p>
+<p><strong>修改mysql的配置文件，使之可以跳过密码直接用root进入数据库</strong></p>
+<p><strong>（1）*<em>首先找到mysql的配置文件my.cnf 一般在  /etc/my.cnf*</em></strong></p>
+<p><strong><em>*（2）**cd进 /etc 直接 vim my.cnf 编辑他**</em>*</strong></p>
+<p><strong><em>*（3）**在【mysqld】标签下或者文件最下面添加一句skip-grant-tables 即可**</em>*</strong></p>
+<p><em>*<em>*</em>*（4） **esc退出编辑，然后输入冒号：再输入wq保存退出 ，**然后重启服务器 service mysqld restart 让修改生效********</em>*</p>
+<p><em>*<em>*</em>***（5）**mysql -u root 就可以直接进入数据库了********</em>*</p>
+<p>**<em>*</em>***（6）**********然后是修改密码，最好设置密码复杂点，建议：*<em>大写字母+小写字母+符号。*<em>否则后面mysql会报错让你改到符合mysql的安全策略，或者也可以修改mysql安全策略</em></em></p>
+<p>​    <strong>mysql&gt; USE mysql;</strong></p>
+<p>​        *<em>mysql&gt; update mysql.user set authentication_string=password(‘*<em>新密码*</em>‘) where user=’root’;</em>*</p>
+<p>​        <strong>mysql&gt; flush privileges ;</strong></p>
+<p>​        <strong>mysql&gt; quit</strong></p>
+<p>*<em>（7）*<em>改完密码，再将配置文件改回来，就把添加的那句删掉就好了，然后再次重启服务器**********service mysqld restart**********</em>*</em>*</p>
+<p><strong><em>*</em>*********（8）**然后就可以使用 mysql -uroot -p输入你的新密码进入啦*************</strong>*</p>
+<h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><h4 id="手工部署项目"><a href="#手工部署项目" class="headerlink" title="手工部署项目"></a>手工部署项目</h4><ul>
+<li><p>1、在 IDEA 中开发 SpringBoot 项目并打成 jar 包</p>
+</li>
+<li><p>2、将 jar 包上传到 Linux 服务器</p>
+<ul>
+<li>mkdir /usr/local/app 创建项目，将 jar 包放到此目录</li>
+</ul>
+</li>
+<li><p>3、启动 SpringBoot 程序</p>
+<ul>
+<li>java -jar jar包</li>
+</ul>
+</li>
+<li><p>4、检查防火墙，确保 8080 端口对外开放，访问 springboot 项目</p>
+</li>
+<li><p>5、改为后台运行 SpringBoot 程序，并将日志输出到日志文件</p>
+<ul>
+<li><p>目前程序运行的问题</p>
+<ul>
+<li>线上程序不会采用控制台霸屏的形式运行程序，而是将程序在后台运行</li>
+<li>线上程序不会将日志输出到控制台，而是输出到日志文件，方便运维查阅信息</li>
+</ul>
+</li>
+<li><p>nohup 命令：全程 no hang up（不挂起），用于不挂断地运行指定命令，退出终端不会影响程序的运行</p>
+<ul>
+<li><p>语法格式 nohup command [Arg…] [&amp;]</p>
+</li>
+<li><p>参数说明：</p>
+<ul>
+<li>Command：要执行的命令</li>
+<li>Arg：一些参数，可指定输出文件</li>
+<li>&amp;：让命令在后台运行</li>
+</ul>
+</li>
+<li><p>举例</p>
+<ul>
+<li>nohup java -jar boot工程.jar &amp;&gt; hello.log &amp;</li>
+<li>后台运行 java -jar 命令，并将日志输出到 hello.log 文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="通过-Shell-脚本自动部署项目"><a href="#通过-Shell-脚本自动部署项目" class="headerlink" title="通过 Shell 脚本自动部署项目"></a>通过 Shell 脚本自动部署项目</h4><h5 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h5><h6 id="1、在-Linux-中安装-git"><a href="#1、在-Linux-中安装-git" class="headerlink" title="1、在 Linux 中安装 git"></a>1、在 Linux 中安装 git</h6><ul>
+<li>yum list git 列出 git 安装包</li>
+<li>yum install git 在线安装 git</li>
+</ul>
+<h6 id="2、使用-git-克隆代码"><a href="#2、使用-git-克隆代码" class="headerlink" title="2、使用 git 克隆代码"></a>2、使用 git 克隆代码</h6><ul>
+<li>cd /usr/local/</li>
+<li>git clone [url]</li>
+</ul>
+<h6 id="3、在-Linux-中安装-maven"><a href="#3、在-Linux-中安装-maven" class="headerlink" title="3、在 Linux 中安装 maven"></a>3、在 Linux 中安装 maven</h6><ul>
+<li>tar -zxvf apache-maven-3.5.4-bin.tar.gz -C /usr/local</li>
+<li>vim /etc/profile 修改配置文件，加入如下内容<ul>
+<li>export MAVEN_HOME=/usr/local/apache-maven-3.5.4</li>
+<li>export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH</li>
+</ul>
+</li>
+<li>source /etc/profile</li>
+<li>mvn -version</li>
+<li>vim /usr/local/apache-maven-3.5.4/conf/settings.xml 修改配置文件如下<ul>
+<li>&lt;localRepository&gt;/usr/local/repo&lt;/localRepository&gt;</li>
+</ul>
+</li>
+</ul>
+<h6 id="4、编写-Shell-脚本（拉取代码、编译、打包、启动）"><a href="#4、编写-Shell-脚本（拉取代码、编译、打包、启动）" class="headerlink" title="4、编写 Shell 脚本（拉取代码、编译、打包、启动）"></a>4、编写 Shell 脚本（拉取代码、编译、打包、启动）</h6><ul>
+<li>Shell 脚本（shell script），是一种 Linux 系统中的脚本程序。使用 Shell 脚本编程跟 JavaScript、Java 编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。</li>
+</ul>
+<h6 id="5、为用户授予执行-Shell-脚本的权限"><a href="#5、为用户授予执行-Shell-脚本的权限" class="headerlink" title="5、为用户授予执行 Shell 脚本的权限"></a>5、为用户授予执行 Shell 脚本的权限</h6><ul>
+<li>chmod（英文全拼：change mode）命令是控制用户对文件的权限的命令</li>
+<li>Linux 中的权限分为：读（r）、写（w）、执行（x）三种权限</li>
+<li>Linux 的文件调用权限分为三级：文件所有者（Owner）、用户组（Group）、其他用户（Other Users）</li>
+<li>只有文件的所有者和超级用户可以修改文件或目录的权限</li>
+<li>要执行 Shell 脚本需要有对此脚本文件的执行权限，如果没有则不执行</li>
+</ul>
+<p><strong>举例</strong></p>
+<p>只执行 1、只读 4、只写 2</p>
+<ul>
+<li>chmod 777 bootStart.sh 为所有用户授予读、写、执行权限</li>
+<li>chmod 755 bootStart.sh 为文件拥有者授予读、写、执行权限，同组用户和其他用户授予读、执行权限</li>
+<li>chmod 210 bootStart.sh 为文件拥有者授予写权限，同组用户授予执行权限，其他用户没有任何权限</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li><p>第1位表示文件拥有者的权限</p>
+</li>
+<li><p>第2位表示同组用户的权限</p>
+</li>
+<li><p>第3位表示其他用户的权限</p>
+</li>
+</ul>
+<h6 id="6、执行-Shell-脚本"><a href="#6、执行-Shell-脚本" class="headerlink" title="6、执行 Shell 脚本"></a>6、执行 Shell 脚本</h6><h6 id="7、通过-Shell-脚本自动部署项目"><a href="#7、通过-Shell-脚本自动部署项目" class="headerlink" title="7、通过 Shell 脚本自动部署项目"></a>7、通过 Shell 脚本自动部署项目</h6><p>修改文件 /etc/sysconfig/net-work-scripts/ifcfg-ens33，内容如下：</p>
+<p>BOOTPROTO=”static” #使用静态 IP 地址，默认为 dhcp</p>
+<p>IPADDR=”192.168.138.100” # 设置的静态 IP 地址</p>
+<p>NETMASK=”255.255.255.0” # 子网掩码</p>
+<p>GATEWAY=”192.168.138.2” # 网关地址</p>
+<p>DNS1=”192.168.138.2” # DNS 服务器</p>
+<h6 id="8、重启网络服务"><a href="#8、重启网络服务" class="headerlink" title="8、重启网络服务"></a>8、重启网络服务</h6><p>systemctl restart network</p>
+<p><strong>注意：</strong>重启完网络服务后 ip 地址已经发生了改变，此时 FianlShell已经连接不上 Linux 系统，需要创建一个新连接才能连接到 Linux</p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>Redis 是一个基于内存的 key-value 结构数据库</p>
+<ul>
+<li>基于内存存储，读写性能高</li>
+<li>适合存储热点数据（热点商品、资讯、新闻）</li>
+<li>企业应用广泛</li>
+</ul>
+<hr>
+<h3 id="Redis-应用场景"><a href="#Redis-应用场景" class="headerlink" title="Redis 应用场景"></a>Redis 应用场景</h3><ul>
+<li>缓存</li>
+<li>任务队列</li>
+<li>消息队列</li>
+<li>分布式锁</li>
+</ul>
+<h4 id="Redis-下载与安装"><a href="#Redis-下载与安装" class="headerlink" title="Redis 下载与安装"></a>Redis 下载与安装</h4><p>在 Linux 安装 Redis 步骤：</p>
+<p>1、将 Redis 安装包上传到 Linux</p>
+<p>2、解压安装包，命令：tar -zxvf redis-4.0.0.tar.gz -C /usr/local</p>
+<p>3、安装 Redis 依赖环境 gcc，命令：yum install gcc-c++</p>
+<p>4、进入 /usr/local/redis-4.0.0，进行编译，命令：make</p>
+<p>5、进入 redis 的 src 目录，进行安装，命令：make install</p>
+<h4 id="在-Java-中操作-Redis"><a href="#在-Java-中操作-Redis" class="headerlink" title="在 Java 中操作 Redis"></a>在 Java 中操作 Redis</h4><p>Redis 的 java 客户端很多，官方推荐的有三种：</p>
+<ul>
+<li>jedis</li>
+<li>lettuce</li>
+<li>Redisson</li>
+</ul>
+<p>Spring 对 Redis 客户端进行了整合，提供了 Spring Data Redis，在 Spring Boot 项目中还提供了对应的 starter，即 spring-boot-starter-data-redis</p>
+<h5 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h5><p>Jedis 的 maven 坐标</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 Jedis 操作 Redis 的步骤</p>
+<ul>
+<li>1、获取连接</li>
+<li>2、执行操作</li>
+<li>3、关闭连接</li>
+</ul>
+<h5 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h5><p>在 Spring Boot 项目中，可以使用 Spring Data Redis 来简化 Redis 操作，maven 坐标：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>Spring Data Redis 中提供了一个高度封装的类：RedisTemplate，针对 jedis 客户端中大量 api 进行了归类封装，将同一类型操作封装为 operation 接口，具体分类如下：</p>
+<ul>
+<li>ValueOperations：简单 K-V 操作</li>
+<li>SetOperations：set 类型数据操作</li>
+<li>ZSetOperations：zset 类型数据操作</li>
+<li>HashOperations：针对 map 类型的数据操作</li>
+<li>ListOperations：针对 list 类型的数据操作</li>
+</ul>
+<h2 id="缓存优化"><a href="#缓存优化" class="headerlink" title="缓存优化"></a>缓存优化</h2><h3 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h3><p>用户数量多，系统访问量大，频繁访问数据库，系统性能下降，用户体验差</p>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h4 id="maven-坐标"><a href="#maven-坐标" class="headerlink" title="maven 坐标"></a>maven 坐标</h4><p>在项目的 pom.xml 文件中导入 spring data redis 的 maven 坐标：</p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>在项目的 application.yml 中加入 redis 相关配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">	<span class="attr">redis:</span></span><br><span class="line">		<span class="attr">host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">		<span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line">		<span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">		<span class="attr">database:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="配置类"><a href="#配置类" class="headerlink" title="配置类"></a>配置类</h4><p>在项目中加入配置类 RedisConfig：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.reggie.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.StringRedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> <span class="keyword">extends</span> <span class="title">CachingConfigurerSupport</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;Object, Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory connectionFactory)</span> </span>&#123;</span><br><span class="line">        RedisTemplate&lt;Object, Object&gt; redisTemplate = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        <span class="comment">// 默认的 key 序列化器为：JdkSerializationRedisSerializer</span></span><br><span class="line">        redisTemplate.setKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">        redisTemplate.setConnectionFactory(connectionFactory);</span><br><span class="line">        <span class="keyword">return</span> redisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="缓存短信验证码"><a href="#缓存短信验证码" class="headerlink" title="缓存短信验证码"></a>缓存短信验证码</h3><p>前面我们已经实现了移动端手机验证码登录，随机生成的验证码我们是保存再 HttpSession 中的。</p>
+<p>1、在服务端 UserController 中注入 RedisTemplate 对象，用于操作 Redis</p>
+<p>2、在服务端 UserController 的 sendMsg 方法中，将随机生成的验证码缓存</p>
+<p>3、在服务端 UserController 的 login 方法中，从 Redis 中获取缓存的验证码，如果登录成功则删除 Redis 中的验证码</p>
+<h3 id="缓存菜品数据"><a href="#缓存菜品数据" class="headerlink" title="缓存菜品数据"></a>缓存菜品数据</h3><h4 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h4><p>高并发的情况下，频繁查询数据库会导致系统性能下降，服务端响应时间增长。现在需要对此方法进行缓存优化，提高系统的性能。</p>
+<p>具体的实现思路如下：</p>
+<p>1、改造 DishController 的 list 方法，先从 Redis 中获取菜品数据，如果有则直接返回，无需查询数据库；如果没有则查询数据库，并将查询到的菜品数据放入 Redis</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/list&quot;)</span></span><br><span class="line"><span class="keyword">public</span> R&lt;List&lt;DishDto&gt;&gt; list(Dish dish) &#123;</span><br><span class="line">    List&lt;DishDto&gt; dishDtoList = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    String key = <span class="string">&quot;dish&quot;</span> + dish.getCategoryId() + <span class="string">&quot;_&quot;</span> + dish.getStatus(); <span class="comment">//</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 先从 redis 中获取缓存数据</span></span><br><span class="line">    dishDtoList = (List&lt;DishDto&gt;) redisTemplate.opsForValue().get(key);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(dishDtoList != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果存在，直接返回，无需查询数据库</span></span><br><span class="line">        <span class="keyword">return</span> R.success(dishDtoList);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造查询条件</span></span><br><span class="line">    LambdaQueryWrapper&lt;Dish&gt; queryWrapper = <span class="keyword">new</span> LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">    queryWrapper.eq(dish.getCategoryId() != <span class="keyword">null</span>, Dish::getCategoryId, dish.getCategoryId());</span><br><span class="line">    <span class="comment">// 添加条件，查询状态为 1（起售状态）的菜品</span></span><br><span class="line">    queryWrapper.eq(Dish::getStatus, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加排序条件</span></span><br><span class="line">    queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);</span><br><span class="line"></span><br><span class="line">    List&lt;Dish&gt; list = dishService.list(queryWrapper);</span><br><span class="line"></span><br><span class="line">    dishDtoList = list.stream().map((item) -&gt; &#123;</span><br><span class="line">        DishDto dishDto = <span class="keyword">new</span> DishDto();</span><br><span class="line"></span><br><span class="line">        BeanUtils.copyProperties(item, dishDto);</span><br><span class="line">        Long categoryId = item.getCategoryId();<span class="comment">// 分类 id</span></span><br><span class="line">        <span class="comment">// 根据 id 查询分类对象</span></span><br><span class="line">        Category category = categoryService.getById(categoryId);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(category != <span class="keyword">null</span>) &#123;</span><br><span class="line">            String categoryName = category.getName();</span><br><span class="line">            dishDto.setCategoryName(categoryName);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 查询口味数据</span></span><br><span class="line">        <span class="comment">// 当前菜品 id</span></span><br><span class="line">        Long id = item.getId();</span><br><span class="line">        LambdaQueryWrapper&lt;DishFlavor&gt; lambdaQueryWrapper = <span class="keyword">new</span> LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">        lambdaQueryWrapper.eq(DishFlavor::getDishId, id);</span><br><span class="line">        <span class="comment">// SQL: select * from dish_flavor where dish_id = ?</span></span><br><span class="line">        List&lt;DishFlavor&gt; dishFlavorList = dishFlavorService.list(lambdaQueryWrapper);</span><br><span class="line">        dishDto.setFlavors(dishFlavorList);</span><br><span class="line">        <span class="keyword">return</span> dishDto;</span><br><span class="line">    &#125;).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果不存在，需要查询数据库，将查询到的菜品数据缓存到 Redis</span></span><br><span class="line">    redisTemplate.opsForValue().set(key, dishDtoList, <span class="number">60</span>, TimeUnit.MINUTES);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> R.success(dishDtoList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、改造 DishController 的 save 和 update 方法，加入清空缓存的逻辑</p>
+<p><strong>注意：</strong>在使用缓存的过程中，要注意保证数据库中的数据和缓存中的数据一致，如果数据库中的数据发生变化，需要及时清理缓存数据。</p>
+<h3 id="Spring-Cache"><a href="#Spring-Cache" class="headerlink" title="Spring Cache"></a>Spring Cache</h3><h4 id="Spring-Cache-介绍"><a href="#Spring-Cache-介绍" class="headerlink" title="Spring Cache 介绍"></a>Spring Cache 介绍</h4><p>Spring Cache 是一个框架，实现了基于注解的缓存功能，只需要简单地加一个注解，就能实现缓存功能。</p>
+<p>Spring Cache 提供了一层抽象，底层可以切换不同地 cache 实现。具体就是通过 CacheManager 接口来统一不同的缓存技术。</p>
+<p>CacheManager 是 Spring 提供的各种缓存技术抽象接口。</p>
+<p>针对不同的缓存技术需要实现不同的 CacheManager：</p>
+<table>
+<thead>
+<tr>
+<th>CacheManger</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EhCacheCacheManager</td>
+<td>使用 EhCache 作为缓存技术</td>
+</tr>
+<tr>
+<td>GuavaCacheManager</td>
+<td>使用 Google 的 GuavaCache 作为缓存技术</td>
+</tr>
+<tr>
+<td>RedisCacheManager</td>
+<td>使用 Redis 作为缓存技术</td>
+</tr>
+</tbody></table>
+<h4 id="Spring-Cache-常用注解"><a href="#Spring-Cache-常用注解" class="headerlink" title="Spring Cache 常用注解"></a>Spring Cache 常用注解</h4><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@EnableCaching</td>
+<td>开启缓存注解功能</td>
+</tr>
+<tr>
+<td>@Cacheable</td>
+<td>在方法执行前 spring 先查看缓存中是否有数据，如果有数据，则直接返回缓存数据；若没有数据，调用方法并将方法返回值放到缓存中</td>
+</tr>
+<tr>
+<td>@CachePut</td>
+<td>将方法的返回值放到缓存中</td>
+</tr>
+<tr>
+<td>@CacheEvict</td>
+<td>将一条或多条数据从缓存中删除</td>
+</tr>
+</tbody></table>
+<p>在 spring boot 项目中，使用缓存技术只需在项目中导入相关缓存技术的依赖包，并在启动类上使用 @EnableCaching 开启缓存支持即可。</p>
+<p>例如，使用 Redis 作为缓存技术，只需要导入 Spring data Redis 的 maven 坐标即可。</p>
+<h4 id="Spring-Cache-使用方式"><a href="#Spring-Cache-使用方式" class="headerlink" title="Spring Cache 使用方式"></a>Spring Cache 使用方式</h4><p>在 Spring Boot 项目中使用 Spring Cache 的操作步骤（使用 redis 缓存技术）：</p>
+<p>1、导入 maven 坐标</p>
+<ul>
+<li>spring-boot-starter-data-redis、spring-boot-starter-cache</li>
+</ul>
+<p>2、配置 application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">	<span class="attr">cache:</span></span><br><span class="line">		<span class="attr">redis:</span> </span><br><span class="line">			<span class="attr">time-to-live:</span> <span class="number">1800000</span> <span class="comment">#设置缓存有效期</span></span><br></pre></td></tr></table></figure>
+
+<p>3、在启动类上加入 @EnableCaching 注解，开启缓存注解功能</p>
+<p>4、在 Controller 的方法上加入 @Cacheable、@CacheEvict 等注解，进行缓存操作</p>
+<h2 id="读写分离"><a href="#读写分离" class="headerlink" title="读写分离"></a>读写分离</h2><p>读和写所有压力都由一台数据库承担，压力大数据库服务器磁盘损坏则数据丢失，单点故障</p>
+<h3 id="Mysql-主从复制"><a href="#Mysql-主从复制" class="headerlink" title="Mysql 主从复制"></a>Mysql 主从复制</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>Mysql 主从复制是一个异步的复制过程，底层是基于 Mysql 数据库自带的<strong>二进制日志</strong>功能。就是一台或多台 Mysql 数据库（slave，即<strong>从库</strong>）从另一台 Mysql 数据库（master，<strong>即主库</strong>）进行日志的复制然后再解析日志并应用到自身，最终实现<strong>从库</strong>的数据和<strong>主库</strong>的数据保持一致。Mysql 主从复制是 Mysql 数据库自带功能，无需借助第三方工具。</p>
+<hr>
+<p>Mysql 复制过程分为三步：</p>
+<ul>
+<li>master 将改变记录到二进制日志（binary log）</li>
+<li>slave 将 master 的 binary log 拷贝到它的中继日志（relay log）</li>
+<li>slave 重做中继日志中的事件，将改变应用到自己的数据库中</li>
+</ul>
+<h4 id="配置-前置条件"><a href="#配置-前置条件" class="headerlink" title="配置-前置条件"></a>配置-前置条件</h4><p>提前准备好两台服务器，分别安装 Mysql 并启动服务成功</p>
+<ul>
+<li>主库 Master：Master 192.168.138.100</li>
+<li>从库 Slave：192.168.138.101</li>
+</ul>
+<h4 id="配置-主库-Master"><a href="#配置-主库-Master" class="headerlink" title="配置-主库 Master"></a>配置-主库 Master</h4><p>1、第一步：修改 Mysql 数据库的配置文件 /etc/my.cnf</p>
+<p>[mysqld]</p>
+<p>log-bin=mysql-bin #[必须]启用二进制日志</p>
+<p>server-id=100 #[必须]服务器唯一 ID</p>
+<p>2、第二步：重启 Mysql 服务</p>
+<p>systemctl restart mysqld</p>
+<p>3、第三步：登录 Mysql 数据库，执行下面 sql</p>
+<p>GRANT REPLICATION SLAVE ON *.* to ‘xiaoming‘@’%’ identified by ‘Root@123456’;</p>
+<p><strong>注：</strong>上面 SQL 的作用是创建一个用户 xiaoming，密码是 Root@123456，并且给 xiaoming 用户授予 REPLICATION SLAVE 权限。常用于建立复制时所需要用到的用户权限，也就是 slave 必须被 master 授予具有该权限的用户，才能通过该用户复制。</p>
+<p>4、第四步：登录 Mysql 数据库，执行下面 sql，记录下结果中 File 和 Position 的值</p>
+<p>show master status;</p>
+<p><strong>注：</strong>上面 sql 的作用是查看 Master 的状态，执行完此 sql 后不要再执行任何操作</p>
+<h4 id="配置-从库-Slave"><a href="#配置-从库-Slave" class="headerlink" title="配置-从库 Slave"></a>配置-从库 Slave</h4><p>1、第一步：修改 mysql 数据库的配置文件 /etc.my.cnf</p>
+<p>[mysqld]</p>
+<p>server-id=101 #[必须]服务器唯一ID</p>
+<p>2、第二步：重启 mysql 服务</p>
+<p>systemctl restart mysqld</p>
+<p>3、第三步：登陆 mysql 数据库，执行下面 sql</p>
+<p>change master to master_host=’121.40.94.156’,master_user=’xiaoming’,master_password=‘Root@123456’,master_log_file=’mysql-bin.000001’,master_log_pos=439;</p>
+<p>start slave;</p>
+<p><strong>注：</strong>439是在主库执行 show master status 获取的 position</p>
+<p><strong>注意：</strong>可能会遇到报错 ERROR 3021 (HY000): This operation cannot be performed with a running slave io thread; run STOP SLAVE IO_THREAD FOR CHANNEL ‘’ first.</p>
+<p>将之前的从库关闭即可，执行 stop slave;</p>
+<p>4、第四步：登录 mysql 数据库，执行下面 sql，查看从数据库的状态</p>
+<p>show slave status;</p>
+<p>或者</p>
+<p>show slave status\G;</p>
+<h3 id="读写分离案例"><a href="#读写分离案例" class="headerlink" title="读写分离案例"></a>读写分离案例</h3><h4 id="Sharding-JDBC-介绍"><a href="#Sharding-JDBC-介绍" class="headerlink" title="Sharding-JDBC 介绍"></a>Sharding-JDBC 介绍</h4><p>Sharding-JDBC 定位为轻量级 Java 框架，在 Java 的 JDBC 层提供额外服务。它使用客户端直连数据库，以 jar 包形式提供服务，无需额外部署和依赖，可理解为增强版的 JDBC 驱动，完全兼容 JDBC 和 各种 ORM 框架。使用 Sharding-JDBC 可以在程序中轻松的实现数据库读写分离。</p>
+<ul>
+<li>适用于基于 JDBC 的 ORM 框架，如：JPA、Hibernate、Mybatis、Spring JDBC Template 或直接使用 JDBC。</li>
+<li>支持任何第三方的数据库连接池，如：DBCP、C3P0、BoneCP、Druid、HikariCP等。</li>
+<li>支持任意实现 JDBC 规范的数据库。目前支持 Mysql、Oracle、SQLServer、PostgreSQL 以及任何遵循 SQL92标准的数据库</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.shardingsphere<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sharding-jdbc-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.0.0-RC1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h4><p>1、导入 maven 坐标</p>
+<p>2、在配置文件中配置读写分离规则</p>
+<p>3、在配置文件中配置允许 bean 定义覆盖配置项</p>
+<h3 id="项目实现读写分离"><a href="#项目实现读写分离" class="headerlink" title="项目实现读写分离"></a>项目实现读写分离</h3><h4 id="数据库环境准备（主从复制）"><a href="#数据库环境准备（主从复制）" class="headerlink" title="数据库环境准备（主从复制）"></a>数据库环境准备（主从复制）</h4><p>直接使用我们前面在虚拟机中搭建的主从复制的数据库环境即可。</p>
+<p>在主库中创建瑞吉外卖项目的业务数据库 reggie 并导入相关表结构和数据</p>
+<h4 id="代码改造"><a href="#代码改造" class="headerlink" title="代码改造"></a>代码改造</h4><p>在项目中加入 Sharding-JDBC 实现读写分离步骤：</p>
+<p>1、导入 maven 坐标</p>
+<p>2、在配置文件中配置读写分离规则</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">shardingsphere:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">names:</span> </span><br><span class="line">      <span class="string">master,slave</span></span><br><span class="line">    <span class="comment"># 主数据源</span></span><br><span class="line">    <span class="attr">master:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line">      <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">jdbc:mysql://192.168.138.100/reggie?characterEncoding=utf-8</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">root</span></span><br><span class="line">    <span class="comment"># 从数据源</span></span><br><span class="line">    <span class="attr">slave:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line">      <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">jdbc:mysql://192.168.138.101/reggie?characterEncoding=utf-8</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">password:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">masterslave:</span></span><br><span class="line">    <span class="comment"># 读写分离配置</span></span><br><span class="line">    <span class="attr">load-balance-algorithm-type:</span> <span class="string">round_robin</span> <span class="comment"># 轮询</span></span><br><span class="line">    <span class="comment"># 最终的数据源名称</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">dataSource</span></span><br><span class="line">    <span class="comment"># 主库数据源名称</span></span><br><span class="line">    <span class="attr">master-data-source-name:</span> <span class="string">master</span></span><br><span class="line">    <span class="comment"># 从库数据源名称列表，多个逗号分隔</span></span><br><span class="line">    <span class="attr">slave-data-source-names:</span> <span class="string">slave</span></span><br><span class="line">  <span class="attr">props:</span> </span><br><span class="line">    <span class="attr">sql:</span></span><br><span class="line">      <span class="attr">show:</span> <span class="literal">true</span> <span class="comment">#开启 SQL 显示，默认 false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>3、在配置文件中配置允许 bean 定义覆盖配置项</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">allow-bean-definition-overriding:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="Nginx-介绍"><a href="#Nginx-介绍" class="headerlink" title="Nginx 介绍"></a>Nginx 介绍</h3><p>Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。其特点是占有内存少，并发能力强，事实上 nginx 的并发能力在同类型的网页服务器中表现较好，中国大陆使用 nginx 的网站有：百度、京东、新浪、网易、腾讯、淘宝等。</p>
+<hr>
+<p>Nginx 是由<strong>伊戈尔·赛索耶夫</strong>俄罗斯访问量第二的 Rambler.ru 站点开发的，第一个公开版本 0.1.0 发布于 2004 年 10 月 4 日。</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://nginx.org/">https://nginx.org/</a></p>
+<h3 id="Nginx-下载和安装"><a href="#Nginx-下载和安装" class="headerlink" title="Nginx 下载和安装"></a>Nginx 下载和安装</h3><p>可以到 Nginx 官方网站下载 Nginx 的安装包，地址为：<a target="_blank" rel="noopener" href="https://nginx.org/en/download.hmtl">https://nginx.org/en/download.hmtl</a></p>
+<hr>
+<h4 id="安装过程："><a href="#安装过程：" class="headerlink" title="安装过程："></a>安装过程：</h4><p>1、安装依赖包：yum -y install gcc pcre-devel zlib-devel openssl openssl-devel</p>
+<p>2、下载 Nginx 安装包 wget <a target="_blank" rel="noopener" href="https://nginx.org/download/nginx-1.16.1.tar.gz">https://nginx.org/download/nginx-1.16.1.tar.gz</a></p>
+<p>3、解压 tar -zxvf nginx-1.16.1.tar.gz</p>
+<p>4、cd nginx-1.16.1</p>
+<p>5、./configure –prefix=/usr/local/nginx （记得先创建目录）</p>
+<p>6、make &amp;&amp; make install</p>
+<h4 id="Nginx-目录结构"><a href="#Nginx-目录结构" class="headerlink" title="Nginx 目录结构"></a>Nginx 目录结构</h4><p>重点目录/文件：</p>
+<ul>
+<li>conf/nginx.cnf nginx 配置文件</li>
+<li>html 存放静态文件（html、css、js等）</li>
+<li>logs 日志目录，存放日志文件</li>
+<li>sbin/nginx 二进制文件，用于启动、停止 Nginx 服务</li>
+</ul>
+<h3 id="Nginx-命令"><a href="#Nginx-命令" class="headerlink" title="Nginx 命令"></a>Nginx 命令</h3><h4 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h4><p>查看 Nginx 版本可以使用命令：</p>
+<p>在 sbin 目录下运行改命令</p>
+<p>./nginx -V</p>
+<h4 id="检查配置文件正确性"><a href="#检查配置文件正确性" class="headerlink" title="检查配置文件正确性"></a>检查配置文件正确性</h4><p>在启动 Nginx 服务之前，可以先检查一下 conf/nginx.conf 文件配置的是否有错误，命令如下：</p>
+<p>./nginx -t</p>
+<h4 id="启动和停止"><a href="#启动和停止" class="headerlink" title="启动和停止"></a>启动和停止</h4><p>启动 Nginx 服务使用如下命令：</p>
+<p>./nginx</p>
+<p>停止 Nginx 服务使用如下命令：</p>
+<p>./nginx -s stop</p>
+<p>启动完成后可以查看 Nginx 进程：</p>
+<p>ps -ef | grep nginx</p>
+<h4 id="重新加载配置文件"><a href="#重新加载配置文件" class="headerlink" title="重新加载配置文件"></a>重新加载配置文件</h4><p>当修改 Nginx 配置文件后，需要重新加载才能生效，可以使用下面命令重新加载配置文件：</p>
+<p>./nginx -s reload</p>
+<p><strong>注意：</strong>nginx 配置环境变量：vim /etc/profile</p>
+<p>在 PATH 追加/usr/local/nginx/sbin:</p>
+<p>在执行 source /etc/profile 重新加载文件</p>
+<h3 id="Nginx-配置文件结构"><a href="#Nginx-配置文件结构" class="headerlink" title="Nginx 配置文件结构"></a>Nginx 配置文件结构</h3><h4 id="整体结构介绍"><a href="#整体结构介绍" class="headerlink" title="整体结构介绍"></a>整体结构介绍</h4><p>Nginx 配置文件（conf/nginx.conf）整体分为三部分：</p>
+<ul>
+<li>全局块：和 Nginx 运行相关的全局配置</li>
+<li>events 块：和网络连接相关的配置</li>
+<li>http 块：代理、缓存、日志记录、虚拟主机配置<ul>
+<li>http 全局块</li>
+<li>server 块<ul>
+<li>server 全局块</li>
+<li>location 块</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong>http 块中可以配置多个 server 块，每个 server 块中可以配置多个 location 块。</p>
+<h3 id="Nginx-具体应用"><a href="#Nginx-具体应用" class="headerlink" title="Nginx 具体应用"></a>Nginx 具体应用</h3><h4 id="部署静态资源"><a href="#部署静态资源" class="headerlink" title="部署静态资源"></a>部署静态资源</h4><p><strong>Nginx</strong>可以作为静态 web 服务器来部署静态资源。<strong>静态资源</strong>指在服务端真实存在并且能够直接展示的一些文件，比如常见的 html 页面、css 文件、js 文件、图片、视频等资源。</p>
+<p>相对于 Tomcat，Nginx 处理静态资源的能力更加高效，所以在生产环境下，一般都会将静态资源部署到 Nginx 中，将静态资源部署到 Nginx 非常简单，只需要将文件复制到 Nginx 安装目录下的 html 目录中即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen: 80; # 监听端口</span><br><span class="line">	server_name: localhost; # 服务器名称</span><br><span class="line">	location &#123; # 匹配客户端请求 url</span><br><span class="line">		root hmtl; # 指定静态资源根目录</span><br><span class="line">		index index.hmtl; # 指定默认首页</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><ul>
+<li>正向代理</li>
+</ul>
+<p>是一个位于客户端和原始服务器（origin server）之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标（原始服务器），然后代理向原始服务器转交请求并将获得的内容返回给客户端。</p>
+<p>正向代理的典型用途是为在防火墙内的局域网客户端提供访问 Internet 的途径。</p>
+<p>正向代理一般是<strong>在客户端设置代理服务器</strong>，通过代理服务器转发请求，最终访问到目标服务器。</p>
+<ul>
+<li>反向代理</li>
+</ul>
+<p>反向代理服务器位于用户与目标服务器之间，但是对于用户而言，反向代理服务器就相当于目标服务器，即用户直接访问代理服务器就可以获得目标服务器的资源，反向代理服务器负责将请求转发给目标服务器。</p>
+<p>用户不需要知道目标服务器的地址，也无需在用户端做任何设定。</p>
+<ul>
+<li>配置反向代理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">	listen 82;</span><br><span class="line"></span><br><span class="line">	server_name localhost;</span><br><span class="line"></span><br><span class="line">	location &#123;</span><br><span class="line"></span><br><span class="line">		proxy_pass http:&#x2F;&#x2F;192.168.138.101:8080; # 反向代理，将请求转发到指定服务</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p>早期的网站流量和业务功能都比较简单，单台服务器就可以满足基本需求，但是随着互联网的发展，业务流量越来越大且业务逻辑也越来越复杂，单台服务器的性能及单点故障问题就凸显出来了，因此需要多台服务器组成应用集群，进行性能的水平扩展以及避免单点故障出现。</p>
+<ul>
+<li>应用集群：将同意应用部署到多台机器上，组成应用集群，接收负载均衡器发布的请求，进行业务处理并返回响应数据</li>
+<li>负载均衡器：将用户请求根据对应的负载均衡算法分发到应用集群中的一台服务器进行处理</li>
+</ul>
+<hr>
+<h5 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">upstream targetserver &#123; # upstream 指令可以定义一组服务器</span><br><span class="line">	server 192.168.138.101:8080;</span><br><span class="line">	server 192.168.138.101:8081;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	listen 8080;</span><br><span class="line">	server_name localhost;</span><br><span class="line">	location &#123;</span><br><span class="line">	proxy_pass http:&#x2F;&#x2F;targetserver</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h5><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>轮询</td>
+<td>默认方式</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>权重方式</td>
+</tr>
+<tr>
+<td>ip_hash</td>
+<td>根据 ip 分配方式</td>
+</tr>
+<tr>
+<td>least_conn</td>
+<td>根据最少连接方式</td>
+</tr>
+<tr>
+<td>url_hash</td>
+<td>根据 url 分配方式</td>
+</tr>
+<tr>
+<td>fair</td>
+<td>根据响应时间方式</td>
+</tr>
+</tbody></table>
+<h2 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h2><h3 id="问题说明-1"><a href="#问题说明-1" class="headerlink" title="问题说明"></a>问题说明</h3><ul>
+<li>开发人员同时负责前端和后端代码开发，分工不明确</li>
+<li>开发效率低</li>
+<li>前后端代码混合在一个工程中，不便于管理</li>
+<li>对开发人员要求高，人员招聘困难</li>
+</ul>
+<h3 id="前后端分离开发"><a href="#前后端分离开发" class="headerlink" title="前后端分离开发"></a>前后端分离开发</h3><h4 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h4><p>前后端分离开发，就是在项目开发过程中，对于前端代码的开发由专门的前端开发人员负责，后端代码则由后端开发人员负责，这样可以做到分工明确、各司其职，提高开发效率，前后端代码并行开发，可以加快项目开发进度。</p>
+<p>目前，前后端分离开发方式已经被越来越多的公司所采用，称为当前项目开发的主流开发方式。</p>
+<p>前后端分离开发后，从工程结构上也会发生变化，即前后端代码不再混合在同一个 maven 工程中，而是分为前端工程和后端工程。</p>
+<hr>
+<p>后端工程打包部署到 Tomcat上、前端工程打包部署到 Nginx 上</p>
+<h4 id="开发流程-1"><a href="#开发流程-1" class="headerlink" title="开发流程"></a>开发流程</h4><p>前后端分离开发后，面临一个问题，就是前端开发人员和后端开发人员如何进行配合来共同开发一个项目？</p>
+<p>可按照如下流程进行：</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221014203622238.png" alt="image-20221014203622238"></p>
+<p><strong>接口（API 接口）</strong>就是一个 http 的请求地址，主要就是去定义：请求路径、请求方式、请求参数、响应数据等内容。</p>
+<h4 id="前端技术栈"><a href="#前端技术栈" class="headerlink" title="前端技术栈"></a>前端技术栈</h4><h5 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h5><ul>
+<li>Visual Studio Code</li>
+<li>hbuilder</li>
+</ul>
+<h5 id="技术框架"><a href="#技术框架" class="headerlink" title="技术框架"></a>技术框架</h5><ul>
+<li>nodejs</li>
+<li>VUE</li>
+<li>ElementUI</li>
+<li>mock</li>
+<li>webpack</li>
+</ul>
+<h3 id="YApi"><a href="#YApi" class="headerlink" title="YApi"></a>YApi</h3><h4 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h4><p>YApi 是高效、易用、功能强大的 api 管理平台，旨在为开发、产品、测试人员提供更优雅的接口管理服务。可以帮助开发者轻松创建、发布、维护 API，YApi 还为用户提供了优秀的交互体验，开发人员只需要利用平台提供的接口数据写 YApi 让接口开发更简单高效，让接口的管理更具可读性，可维护性，让团队协作更合理。</p>
+<p>源码地址：<a target="_blank" rel="noopener" href="https://github.com/YMEE/yapi">https://github.com/YMEE/yapi</a></p>
+<p>要使用 YApi，需要自己进行部署</p>
+<h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><p>使用 YApi，可以执行下面操作：</p>
+<ul>
+<li>添加项目</li>
+<li>添加分类</li>
+<li>添加接口</li>
+<li>编辑接口</li>
+<li>查看接口</li>
+</ul>
+<h3 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h3><h4 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h4><p>使用 Swagger 你只需要按照它的规范去定义接口及接口相关的信息，再通过 Swagger 衍生出来的一系列项目和工具，就可以做到生成各种格式的接口文档，以及在线接口调试页面等等。</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://swagger.io/">https://swagger.io/</a></p>
+<hr>
+<p>knife4j 是为 Java MVC 框架继承 Swagger 生成 Api 文档的增强解决方案</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.xiaoymin<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>knife4j-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="使用方式-1"><a href="#使用方式-1" class="headerlink" title="使用方式"></a>使用方式</h4><p>操作步骤：</p>
+<p>1、导入 knife4j 的 maven 坐标</p>
+<p>2、导入 knife4j 相关配置类（WebMvcConfig）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2</span></span><br><span class="line"><span class="meta">@EnableKnife4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurationSupport</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置静态资源映射</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;开始进行静态资源映射...&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;doc.html&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/backend/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/backend/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/front/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/front/&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 扩展mvc框架的消息转换器</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> converters</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">extendMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;扩展消息转换器...&quot;</span>);</span><br><span class="line">        <span class="comment">//创建消息转换器对象</span></span><br><span class="line">        MappingJackson2HttpMessageConverter messageConverter = <span class="keyword">new</span> MappingJackson2HttpMessageConverter();</span><br><span class="line">        <span class="comment">//设置对象转换器，底层使用Jackson将Java对象转为json</span></span><br><span class="line">        messageConverter.setObjectMapper(<span class="keyword">new</span> JacksonObjectMapper());</span><br><span class="line">        <span class="comment">//将上面的消息转换器对象追加到mvc框架的转换器集合中</span></span><br><span class="line">        converters.add(<span class="number">0</span>,messageConverter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">createRestApi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 文档类型</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.itheima.reggie.controller&quot;</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">                .title(<span class="string">&quot;瑞吉外卖&quot;</span>)</span><br><span class="line">                .version(<span class="string">&quot;1.0&quot;</span>)</span><br><span class="line">                .description(<span class="string">&quot;瑞吉外卖接口文档&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、设置静态资源，否则接口文档页面无法访问</p>
+<p>WebMvcConfig 类中的 addResourceHandlers 方法，添加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">registry.addResourceHandler(<span class="string">&quot;doc.html&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>4、在 LoginCheckFilter 中设置不需要处理的请求路径</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义不需要处理的请求路径</span></span><br><span class="line">String[] urls = <span class="keyword">new</span> String[] &#123;</span><br><span class="line">    <span class="string">&quot;/doc.html&quot;</span>,</span><br><span class="line">    <span class="string">&quot;webjars/**&quot;</span>,</span><br><span class="line">    <span class="string">&quot;swagger-resources&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/v2/api-docs&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h4><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Api</td>
+<td>用在请求的类上，例如 Controller，表示对类的说明</td>
+</tr>
+<tr>
+<td>@ApiModel</td>
+<td>用在类上，通常是实体类，表示一个返回响应数据的信息</td>
+</tr>
+<tr>
+<td>@ApiModelProperty</td>
+<td>用在属性上，描述响应类的属性</td>
+</tr>
+<tr>
+<td>@ApiOperation</td>
+<td>用在请求的方法上，说明方法的用途、作用</td>
+</tr>
+<tr>
+<td>@ApiImplicitParams</td>
+<td>用在请求的方法上，表示一组参数说明</td>
+</tr>
+<tr>
+<td>@ApiImplicitParam</td>
+<td>用在@ApiImplicitParams 注解中，指定一个请求参数的各个方面</td>
+</tr>
+</tbody></table>
+<h2 id="项目部署-1"><a href="#项目部署-1" class="headerlink" title="项目部署"></a>项目部署</h2><h3 id="部署架构"><a href="#部署架构" class="headerlink" title="部署架构"></a>部署架构</h3><p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221014212850609.png" alt="image-20221014212850609"></p>
+<h4 id="部署环境说明"><a href="#部署环境说明" class="headerlink" title="部署环境说明"></a>部署环境说明</h4><p>服务器：</p>
+<ul>
+<li>192.168.138.100（服务器A）<ul>
+<li>Nginx：部署前端项目、配置反向代理</li>
+<li>Mysql：主从复制结构中的主库</li>
+</ul>
+</li>
+<li>192.168.138.101（服务器B）<ul>
+<li>jdk：运行 Java 项目</li>
+<li>git：版本控制工具</li>
+<li>maven：项目构建工具</li>
+<li>jar：Spring Boot 项目打包成 jar 包基于内置 Tomcat 运行</li>
+<li>Mysql：主从复制结构中的从库</li>
+</ul>
+</li>
+<li>172.17.2.94（服务器C）<ul>
+<li>Redis：缓存中间件</li>
+</ul>
+</li>
+</ul>
+<h3 id="部署前端项目"><a href="#部署前端项目" class="headerlink" title="部署前端项目"></a>部署前端项目</h3><p>第一步：在服务器 A 中安装 Nginx，将 dist 目录中上传到 Nginx 的 html 目录下</p>
+<p>第二步：修改 Nginx 配置文件 nginx.conf</p>
+<h3 id="部署后端项目"><a href="#部署后端项目" class="headerlink" title="部署后端项目"></a>部署后端项目</h3><p>第一步：在服务器 B 中安装 jdk、git、maven、Mysql，使用 git clone 命令将 git 远程仓库的代码克隆下来</p>
+<p>第二步：将 reggieStart.sh 文件上传到服务器 B，通过 chmod 命令设置执行权限</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Water monster</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://manongtaoye.github.io/2022/09/02/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96/">https://manongtaoye.github.io/2022/09/02/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Water monster</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/note/">
+                                    <span class="chip bg-color">note</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'vdbExxBqH65oAeGcqAM3nHBC-gzGzoHsz',
+        appKey: 'A7qpmJgGSTmQjMgR6sKlDHE3',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/10/04/springcloud/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="springcloud">
+                        
+                        <span class="card-title">springcloud</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Water monster
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/note/">
+                        <span class="chip bg-color">note</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/10/git/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
+                        
+                        <span class="card-title">git</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Water monster
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('10')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 水兽的Blog<br />'
+            + '文章作者: Water monster<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Water monster</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">108.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/manongtaoye" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1513591616@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1513591616" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1513591616" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
