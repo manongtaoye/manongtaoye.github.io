@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-04
+                    2022-10-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    51
+                    3.4k
                 </div>
                 
 
@@ -449,7 +449,349 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="微服务技术栈"><a href="#微服务技术栈" class="headerlink" title="微服务技术栈"></a>微服务技术栈</h2><h3 id="微服务治理"><a href="#微服务治理" class="headerlink" title="微服务治理"></a>微服务治理</h3><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h3 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h3><h3 id="分布式搜索"><a href="#分布式搜索" class="headerlink" title="分布式搜索"></a>分布式搜索</h3><h3 id="微服务保护"><a href="#微服务保护" class="headerlink" title="微服务保护"></a>微服务保护</h3><h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h3><h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><h3 id="多级缓存"><a href="#多级缓存" class="headerlink" title="多级缓存"></a>多级缓存</h3><h3 id="可靠消息服务"><a href="#可靠消息服务" class="headerlink" title="可靠消息服务"></a>可靠消息服务</h3><h3 id="Nacos-源码"><a href="#Nacos-源码" class="headerlink" title="Nacos 源码"></a>Nacos 源码</h3><h3 id="Sentinel-源码"><a href="#Sentinel-源码" class="headerlink" title="Sentinel 源码"></a>Sentinel 源码</h3>
+                <h2 id="微服务技术栈"><a href="#微服务技术栈" class="headerlink" title="微服务技术栈"></a>微服务技术栈</h2><h3 id="微服务治理"><a href="#微服务治理" class="headerlink" title="微服务治理"></a>微服务治理</h3><h4 id="认识微服务"><a href="#认识微服务" class="headerlink" title="认识微服务"></a>认识微服务</h4><p> <strong>单体架构：</strong>将业务的所有功能集中在一个项目中开发，打成一个包部署</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>架构简单</li>
+<li>部署成本低</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>耦合度高</li>
+</ul>
+<h5 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h5><p><strong>分布式架构：</strong>根据业务功能对系统进行拆分，每个业务模块作为独立项目开发，就称为一个服务。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>降低服务耦合度</li>
+<li>有利于服务升级拓展</li>
+</ul>
+<h4 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h4><p><strong>分布式架构要考虑的问题：</strong></p>
+<ul>
+<li>服务拆分粒度如何？</li>
+<li>服务集群地址如何维护？</li>
+<li>服务之间如何实现远程调用？</li>
+<li>服务健康状态如何感知？</li>
+</ul>
+<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><p>微服务是一种经过良好架构设计的<strong>分布式</strong>架构方案，微服务架构特征：</p>
+<ul>
+<li>单一职责：微服务拆分粒度更小，每一个服务都对应唯一的业务能力，做到单一职责，避免重复业务开发</li>
+<li>面向服务：微服务对外暴露业务接口</li>
+<li>自治：团队独立、技术独立、数据独立、部署独立</li>
+<li>隔离性强：服务调用做好隔离、容错、降级，避免出现级联问题</li>
+</ul>
+<h4 id="微服务结构"><a href="#微服务结构" class="headerlink" title="微服务结构"></a>微服务结构</h4><p>微服务这种方案需要技术框架来落地，全球的互联网公司都在积极尝试自己的微服务落地技术。在国内最知名的就是 SpringCloud 和 阿里巴巴的 Dubbo。</p>
+<hr>
+<ul>
+<li>注册中心</li>
+<li>配置中心</li>
+<li>服务集群</li>
+<li>服务网关</li>
+</ul>
+<h4 id="微服务技术对比"><a href="#微服务技术对比" class="headerlink" title="微服务技术对比"></a>微服务技术对比</h4><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Dubbo</th>
+<th align="center">SpringCloud</th>
+<th align="center">SpringCloudAlibaba</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">注册中心</td>
+<td align="center">zookeeper、Redis</td>
+<td align="center">Eureka、Consul</td>
+<td align="center">Nacos、Eureka</td>
+</tr>
+<tr>
+<td align="center">服务远程调用</td>
+<td align="center">Dubbo 协议</td>
+<td align="center">Feign（http 协议）</td>
+<td align="center">Dubbo、Fegin</td>
+</tr>
+<tr>
+<td align="center">配置中心</td>
+<td align="center">无</td>
+<td align="center">SpringCloudConfig</td>
+<td align="center">SpringCloudConfig、Nacos</td>
+</tr>
+<tr>
+<td align="center">服务网关</td>
+<td align="center">无</td>
+<td align="center">SpringCloudGateway、Zuul</td>
+<td align="center">SpringCloudGateway、Zuul</td>
+</tr>
+<tr>
+<td align="center">服务监控和保护</td>
+<td align="center">dubbo-admin、功能弱</td>
+<td align="center">Hystrix</td>
+<td align="center">Sentinel</td>
+</tr>
+</tbody></table>
+<h4 id="企业需求"><a href="#企业需求" class="headerlink" title="企业需求"></a>企业需求</h4><ul>
+<li>SpringCloud + Fegin<ul>
+<li>使用 SpringCloud 技术栈</li>
+<li>服务接口使用 Restful 风格</li>
+<li>服务调用采用 Fegin 方式</li>
+</ul>
+</li>
+<li>SpringCloudAlibaba + Dubbo<ul>
+<li>使用 SpringCloudAlibaba 技术栈</li>
+<li>服务接口采用 Dubbo 协议标准</li>
+<li>服务调用采用 Dubbo 方式</li>
+</ul>
+</li>
+<li>SpringCloudAlibaba + Fegin<ul>
+<li>使用 SpringCloudAlibaba 技术栈</li>
+<li>服务接口采用 Restful 风格</li>
+<li>服务调用采用 Fegin 方式</li>
+</ul>
+</li>
+<li>Dubbo 原始模式<ul>
+<li>基于 Dubbo 老旧技术体系</li>
+<li>服务接口采用 Dubbo 协议标准</li>
+<li>服务调用采用 Dubbo 方式</li>
+</ul>
+</li>
+</ul>
+<h3 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h3><ul>
+<li><p>SpringCloud 是目前国内使用最广泛的微服务框架。官网地址：<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud%E3%80%82">https://spring.io/projects/spring-cloud。</a></p>
+</li>
+<li><p>SpringCloud集成了各种微服务功能组件，并基于 SpringBoot 实现了这些组件的自动装配，从而提供了良好的开箱即用体验。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>SpringCloud 与 SpringBoot 的版本兼容关系如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Release Train</th>
+<th>Boot Version</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2020.0.x aka Ilford</td>
+<td>2.4.x</td>
+</tr>
+<tr>
+<td>Hoxton</td>
+<td>2.2.x,2.3.x(Starting with SR5)</td>
+</tr>
+<tr>
+<td>Greenwich</td>
+<td>2.1.x</td>
+</tr>
+<tr>
+<td>Finchley</td>
+<td>2.0.x</td>
+</tr>
+<tr>
+<td>Edgware</td>
+<td>1.5.x</td>
+</tr>
+<tr>
+<td>Dalston</td>
+<td>1.5.x</td>
+</tr>
+</tbody></table>
+<ul>
+<li>本次使用的版本是 Hoxton.SR10，因此对应的 SpringBoot 版本是 2.3.x 版本。</li>
+</ul>
+<h4 id="服务拆分与远程调用"><a href="#服务拆分与远程调用" class="headerlink" title="服务拆分与远程调用"></a>服务拆分与远程调用</h4><p><strong>服务拆分注意事项</strong></p>
+<ul>
+<li>1、不同微服务，不要重复开发相同业务</li>
+<li>2、微服务数据独立，不要访问其他微服务的数据库</li>
+<li>3、微服务可以将自己的业务暴露为接口，供其他微服务调用</li>
+</ul>
+<h5 id="导入服务拆分-Demo"><a href="#导入服务拆分-Demo" class="headerlink" title="导入服务拆分 Demo"></a>导入服务拆分 Demo</h5><ul>
+<li>项目结构<ul>
+<li>cloud-demo<ul>
+<li>order-service（根据 id 查询订单）</li>
+<li>user-service（根据 id 查询用户）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="案例：根据订单-id-查询订单功能"><a href="#案例：根据订单-id-查询订单功能" class="headerlink" title="案例：根据订单 id 查询订单功能"></a>案例：根据订单 id 查询订单功能</h5><p>需求：根据订单 id 查询订单的同时，把订单所属的用户信息一起返回</p>
+<h6 id="远程调用方式分析"><a href="#远程调用方式分析" class="headerlink" title="远程调用方式分析"></a>远程调用方式分析</h6><p>1、注册 RestTemplate</p>
+<p>在 order-service 的 OrderAppplication 中注册 RestTemplate</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MapperScan(&quot;cn.itcast.order.mapper&quot;)</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderApplication</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(OrderApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">restTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、服务远程调用 RestTemplate</p>
+<p>修改 order-service 中的 OrderService 中的 queryOrderById 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Order <span class="title">queryOrderById</span><span class="params">(Long orderId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1.查询订单</span></span><br><span class="line">        Order order = orderMapper.findById(orderId);</span><br><span class="line">        <span class="comment">// 2.查询用户</span></span><br><span class="line">        String url = <span class="string">&quot;http://localhost:8081/user/&quot;</span> + order.getUserId();</span><br><span class="line">        <span class="comment">// 3.封装 user 信息</span></span><br><span class="line">        order.setUser(user);</span><br><span class="line">        <span class="comment">// 4.返回</span></span><br><span class="line">        <span class="keyword">return</span> order;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h4><h5 id="提供者与消费者"><a href="#提供者与消费者" class="headerlink" title="提供者与消费者"></a>提供者与消费者</h5><ul>
+<li>服务提供者：一次约业务中，被其他微服务调用的服务。（提供接口给其他微服务）</li>
+<li>服务消费者：一次业务中，调用其他微服务的服务。（调用其他微服务提供的接口）</li>
+</ul>
+<p><strong>思考：</strong>服务 A 调用 B，服务 B 调用服务 C，那么服务 B 是什么角色？（答：相对而言，业务不同身份不同）</p>
+<h5 id="Eureka-注册中心"><a href="#Eureka-注册中心" class="headerlink" title="Eureka 注册中心"></a>Eureka 注册中心</h5><p><strong>服务调用出现的问题：</strong>“<a target="_blank" rel="noopener" href="http://localhost:8081/user/&quot;">http://localhost:8081/user/&quot;</a> + order.getUserId();</p>
+<ul>
+<li>服务消费者该如何获取服务者提供的地址信息？</li>
+<li>如果有多个服务者，消费者该如何选择？</li>
+<li>消费者如何得知服务提供者的健康状态？</li>
+</ul>
+<h6 id="Eureka-的作用"><a href="#Eureka-的作用" class="headerlink" title="Eureka 的作用"></a>Eureka 的作用</h6><ul>
+<li>消费者如何获取服务提供者的具体信息？<ul>
+<li>服务提供者启动时向 Eureka 注册自己的信息</li>
+<li>Eureka 保存这些信息</li>
+<li>消费者根据服务名称向 Eureka 拉取提供者信息</li>
+</ul>
+</li>
+<li>如果有多个服务者，消费者该如何选择？<ul>
+<li>服务消费者利用负载均衡算法，从服务列表中挑选一个</li>
+</ul>
+</li>
+<li>消费者如何得知服务提供者的健康状态？<ul>
+<li>服务提供者会每隔 30 秒向 EurekaServer 发送心跳请求，报告健康状态</li>
+<li>Eureka 会更新记录到服务列表信息，心跳不正常会被删除</li>
+<li>消费者就可以拉取到最新的信息</li>
+</ul>
+</li>
+</ul>
+<h5 id="动手实践"><a href="#动手实践" class="headerlink" title="动手实践"></a>动手实践</h5><h6 id="搭建-EurekaServer"><a href="#搭建-EurekaServer" class="headerlink" title="搭建 EurekaServer"></a>搭建 EurekaServer</h6><p>搭建 EurekaServer 服务步骤如下：</p>
+<p>1、创建项目，引入 spring-cloud-starter-netfix-eureka-server 的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netfix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、编写启动类，添加 @EnableEurekaServer 注解</p>
+<p>3、添加 application.yml 文件，编写下面配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">10086</span> <span class="comment"># 服务端口</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">eurekaserver</span> <span class="comment"># eureka 的服务名称</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span> <span class="comment"># eureka 的地址信息</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://127.0.0.1:10086/eureka</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    <img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221021163552326.png" alt="image-20221021163552326"></p>
+<h6 id="注册-user-service"><a href="#注册-user-service" class="headerlink" title="注册 user-service"></a>注册 user-service</h6><p>将 user-service 项目引入到 EurekaServer 步骤如下：</p>
+<p>1、在 user-service 项目中引入 spring-cloud-starter-netfix-eureka-client 的依赖</p>
+<p><strong>注意：</strong>记得导入 spring-boot-starter-web 包</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eureka客户端依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">   	&lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、在 application.yml 文件，编写下面的配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">userservice</span> <span class="comment"># user 服务器名称</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span>  <span class="comment"># eureka的地址信息</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://127.0.0.1:10086/eureka</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>另外，我们可以将 user-service 多次启动，模拟多实例部署，但为了避免端口冲突，需要修改端口配置</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221025183507437.png" alt="image-20221025183507437"></p>
+<h6 id="在-order-service-完成服务拉取"><a href="#在-order-service-完成服务拉取" class="headerlink" title="在 order-service 完成服务拉取"></a>在 order-service 完成服务拉取</h6><p>服务器拉取是基于服务名称获取服务列表，然后在对服务列表做负载均衡</p>
+<p>1、修改 OrderService 的代码，修改访问的 url 路径，用服务名代替 ip、端口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">&quot;http://userserice/user&quot;</span> + order.getUserId();</span><br></pre></td></tr></table></figure>
+
+<p>2、在 order-service 项目的启动类 OrderApplication 中的 RestTemplate 添加<strong>负载均衡</strong>注解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@LoadBalanced</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> RestTemplate <span class="title">restTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Ribbon-负载均衡"><a href="#Ribbon-负载均衡" class="headerlink" title="Ribbon 负载均衡"></a>Ribbon 负载均衡</h4><h5 id="负载均衡流程"><a href="#负载均衡流程" class="headerlink" title="负载均衡流程"></a>负载均衡流程</h5><p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221025191630703.png" alt="image-20221025191630703"></p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221025192145321.png" alt="image-20221025192145321"></p>
+<h5 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h5><p>Ribbon 的负载均衡规则是一个叫做 IRule 的接口来定义的，每一个子接口都是一种规则：</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221025192341277.png" alt="image-20221025192341277"></p>
+<table>
+<thead>
+<tr>
+<th align="center">内置负载均衡规则类</th>
+<th align="left">规则描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RoundRobinRule</td>
+<td align="left">简单轮询服务列表来选择服务器。它是 Ribbon 默认的负载均衡规则</td>
+</tr>
+<tr>
+<td align="center">AvailabilityFilteringRule</td>
+<td align="left">对以下两种服务器进行忽略：（1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“”短路“状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级的增加。（2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了 AvailabilityFilteringRule 规则的客户端也会将其忽略。并发连接数的上线，可以由客户端的clientName.clientConfigNamespace.ActiveConnextionsLimit 属性进行配置</td>
+</tr>
+<tr>
+<td align="center">WeightedResponseTimeRule</td>
+<td align="left">为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。</td>
+</tr>
+<tr>
+<td align="center">ZoneAvoidanceRule</td>
+<td align="left">以区域可用的服务器为基础进行服务器的选择。使用 Zone 对服务器进行分类，这个 Zone 可以理解为一个机房、一个机架等。然后再对 Zone 内的多个服务做轮询。</td>
+</tr>
+<tr>
+<td align="center">BestAvailableRule</td>
+<td align="left">忽略那些短路的服务器，选择并发数较低的服务器。</td>
+</tr>
+<tr>
+<td align="center">RandomRule</td>
+<td align="left">随机选择一个可用的服务器</td>
+</tr>
+<tr>
+<td align="center">RetryRule</td>
+<td align="left">重试机制的选择逻辑</td>
+</tr>
+</tbody></table>
+<p>通过定义 IRule 实现可以修改负载均衡规则，有两种方式：</p>
+<p>1、代码方式（全局）：在 order-service 中的 OrderApplication 类中，定义一个新的 Rule:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> IRule <span class="title">randomRule</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// return 一个要实现的方式</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RandomRule();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、配置文件方式（局部）：在 order-service 的 application.yml 文件中，添加新的配置也可以修改规则：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">userservice:</span> <span class="comment"># 针对某个服务</span></span><br><span class="line">	<span class="attr">ribbon:</span></span><br><span class="line">		<span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.netflix.loadbalancer.RandomRule</span> <span class="comment"># 负载均衡规则</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="饥饿加载"><a href="#饥饿加载" class="headerlink" title="饥饿加载"></a>饥饿加载</h5><p>Ribbon 默认是采用懒加载，即第一次访问时才会去创建 LoadBalancerClient，请求的时间会很长。而饥饿加载则会在项目启动时创建，降低第一次访问的耗时，通过下面配置开启饥饿加载：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ribbon:</span></span><br><span class="line">	<span class="attr">eager-load:</span></span><br><span class="line">		<span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># 开启饥饿加载</span></span><br><span class="line">		<span class="attr">clients:</span> <span class="string">userservice</span> <span class="comment"># 指定对 userservice 这个服务饥饿加载</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Nacos-注册中心"><a href="#Nacos-注册中心" class="headerlink" title="Nacos 注册中心"></a>Nacos 注册中心</h4><p>Nacos 是阿里巴巴的产品，现在是 SpringCloud 中的一个组件。相比 Eureka 功能更加丰富，在国内受欢迎的程度较高。</p>
+<h5 id="Nacos-安装指南"><a href="#Nacos-安装指南" class="headerlink" title="Nacos 安装指南"></a>Nacos 安装指南</h5><h6 id="Windows-安装"><a href="#Windows-安装" class="headerlink" title="Windows 安装"></a>Windows 安装</h6><p>开发阶段采用单机安装即可。</p>
+<p>1.1、下载安装包</p>
+<p>在 Nacos 的 github 页面，提供有下载连接，可以下载编译好的 Nacos 服务端或者源码</p>
+<p>github 主页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos</a></p>
+<p>github 的 release 下载页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a></p>
+<p>1.2、解压</p>
+<p>1.3、端口配置</p>
+<p>打开 conf 文件夹下的 application.properties 文件找到 server.port 即可更改端口，默认端口为 8848</p>
+<p>1.4、启动</p>
+<p>启动非常简单，进入 bin 目录，执行命令：startup.cmd -m standalone 即可</p>
+<p><strong>注意：</strong>nacos 默认账户和密码都为 nacos</p>
+<h5 id="服务注册到-Nacos"><a href="#服务注册到-Nacos" class="headerlink" title="服务注册到 Nacos"></a>服务注册到 Nacos</h5><p>1、在父工程中添加 spring-cloud-alibaba 的管理依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--nacos的管理依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-alibaba-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、注释掉所有 eureka 依赖</p>
+<p>3、添加 nacos 的客户端依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nacos 客户端依赖包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>	</span><br></pre></td></tr></table></figure>
+
+<p>4、修改项目配置文件（application.yml），注释掉 eureka 地址，添加 nacos 地址：\</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos 服务地址</span></span><br></pre></td></tr></table></figure>
+
+<p>5、启动并测试</p>
+<h5 id="Nacos-服务分级存储模型"><a href="#Nacos-服务分级存储模型" class="headerlink" title="Nacos 服务分级存储模型"></a>Nacos 服务分级存储模型</h5><p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221026194001296.png" alt="image-20221026194001296"></p>
+<h5 id="服务跨集群调用问题"><a href="#服务跨集群调用问题" class="headerlink" title="服务跨集群调用问题"></a>服务跨集群调用问题</h5><p>服务调用尽可能选择本地集群的服务，跨集群调用延迟较高</p>
+<p>本地集群不可访问时，再去访问其他集群</p>
+<h5 id="服务集群属性"><a href="#服务集群属性" class="headerlink" title="服务集群属性"></a>服务集群属性</h5><p>1、修改 application.yml，添加如下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos 服务地址</span></span><br><span class="line">      <span class="attr">discovery:</span></span><br><span class="line">        <span class="attr">cluster-name:</span> <span class="string">HZ</span> <span class="comment"># 配置集群的名称，也就是机房位置，例如：HZ 杭州</span></span><br></pre></td></tr></table></figure>
+
+<p>2、在 Nacos 控制台可以看到集群变化：</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221026194607991.png" alt="image-20221026194607991"></p>
+<h5 id="根据集群负载均衡"><a href="#根据集群负载均衡" class="headerlink" title="根据集群负载均衡"></a>根据集群负载均衡</h5><p>1、修改 order-service 中的 application.yml，设置集群为 HZ：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos 服务地址</span></span><br><span class="line">      <span class="attr">discovery:</span></span><br><span class="line">        <span class="attr">cluster-name:</span> <span class="string">HZ</span> <span class="comment"># 配置集群的名称，也就是机房位置，例如：HZ 杭州</span></span><br></pre></td></tr></table></figure>
+
+<p>2、然后在 order-service 中设置负载均衡的 IRule 为 NacosRule，这个规则会优先寻找与自己同集群的服务：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">userservice:</span></span><br><span class="line">  <span class="attr">ribbion:</span></span><br><span class="line">    <span class="attr">NFLoadBalancerRuleClassName:</span> <span class="string">com.alibaba.cloud.nacos.NacosRule</span> <span class="comment"># 负载均衡规则</span></span><br></pre></td></tr></table></figure>
+
+<p>3、注意将 user-service 的权重都设置为 1</p>
+<h5 id="根据权重负载均衡"><a href="#根据权重负载均衡" class="headerlink" title="根据权重负载均衡"></a>根据权重负载均衡</h5><p>实际部署中会出现这样的场景：</p>
+<ul>
+<li>服务器设备性能有差异，部分实例所在机器性能较好，另一些较差，我们希望性能好的机器承担更多的用户请求</li>
+</ul>
+<p>Nacos 提供了权重配置来控制访问频率，权重越大则访问频率越高、</p>
+<hr>
+<p>1、在 Nacos 控制台可以设置实例的权重值，首先选中实例后面的编辑按钮</p>
+<p>2、将权重设置为 0.1，测试可以发现 8081 被访问到的频率大大降低（权重为 0 时不会被访问）</p>
+<h5 id="环境隔离-namespace"><a href="#环境隔离-namespace" class="headerlink" title="环境隔离-namespace"></a>环境隔离-namespace</h5><p>Nacos 中服务存储和数据存储的最外层都是一个名为 namespace 的东西，用来做最外层隔离</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221026200337920.png" alt="image-20221026200337920"></p>
+<p>1、在 Nacos 控制台可以创建 namespace，用来隔离不同环境</p>
+<p>2、然后填写一个新的命名空间信息</p>
+<p>3、保存后会在控制台看到这个命名空间的 id</p>
+<p>4、修改 order-service 的 application.yml，添加 namespace</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">  <span class="attr">cloud:</span> </span><br><span class="line">    <span class="attr">nacos:</span> </span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span></span><br><span class="line">      <span class="attr">discovery:</span> </span><br><span class="line">        <span class="attr">cluster-name:</span> <span class="string">SH</span></span><br><span class="line">        <span class="attr">namespace:</span> <span class="string">33741fd3-501d-496d-a1cd-02b086f9c789</span> <span class="comment"># 命名空间，填 ID</span></span><br></pre></td></tr></table></figure>
+
+<p>5、重启 order-service 后，再来查看控制台</p>
+<p>6、此时访问 order-service，因为 namespace 不同，会导致找不到 userservice，控制台会报错</p>
+<h5 id="Nacos-注册中心细节分析"><a href="#Nacos-注册中心细节分析" class="headerlink" title="Nacos 注册中心细节分析"></a>Nacos 注册中心细节分析</h5><p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221026201357963.png" alt="image-20221026201357963"></p>
+<h6 id="临时实例和非临时实例"><a href="#临时实例和非临时实例" class="headerlink" title="临时实例和非临时实例"></a>临时实例和非临时实例</h6><p>服务注册到 Nacos 时，可以选择注册为临时或非临时实例，通过下面的配置来设置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">  <span class="attr">cloud:</span> </span><br><span class="line">    <span class="attr">nacos:</span> </span><br><span class="line">      <span class="attr">discovery:</span></span><br><span class="line">        <span class="attr">ephemeral:</span> <span class="literal">false</span> <span class="comment"># 设置为非临时实例</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h3 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h3><h3 id="分布式搜索"><a href="#分布式搜索" class="headerlink" title="分布式搜索"></a>分布式搜索</h3><h3 id="微服务保护"><a href="#微服务保护" class="headerlink" title="微服务保护"></a>微服务保护</h3><h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h3><h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><h3 id="多级缓存"><a href="#多级缓存" class="headerlink" title="多级缓存"></a>多级缓存</h3><h3 id="可靠消息服务"><a href="#可靠消息服务" class="headerlink" title="可靠消息服务"></a>可靠消息服务</h3><h3 id="Nacos-源码"><a href="#Nacos-源码" class="headerlink" title="Nacos 源码"></a>Nacos 源码</h3><h3 id="Sentinel-源码"><a href="#Sentinel-源码" class="headerlink" title="Sentinel 源码"></a>Sentinel 源码</h3>
                 
             </div>
             <hr/>
@@ -1274,7 +1616,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">108.7k</span>&nbsp;字
+                class="white-color">112k</span>&nbsp;字
             
             
             
