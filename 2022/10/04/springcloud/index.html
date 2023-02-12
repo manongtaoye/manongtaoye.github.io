@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-26
+                    2022-11-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    8.9k
                 </div>
                 
 
@@ -621,7 +621,7 @@
 
 <p>2、服务远程调用 RestTemplate</p>
 <p>修改 order-service 中的 OrderService 中的 queryOrderById 方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Order <span class="title">queryOrderById</span><span class="params">(Long orderId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1.查询订单</span></span><br><span class="line">        Order order = orderMapper.findById(orderId);</span><br><span class="line">        <span class="comment">// 2.查询用户</span></span><br><span class="line">        String url = <span class="string">&quot;http://localhost:8081/user/&quot;</span> + order.getUserId();</span><br><span class="line">        <span class="comment">// 3.封装 user 信息</span></span><br><span class="line">        order.setUser(user);</span><br><span class="line">        <span class="comment">// 4.返回</span></span><br><span class="line">        <span class="keyword">return</span> order;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Order <span class="title">queryOrderById</span><span class="params">(Long orderId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1.查询订单</span></span><br><span class="line">        Order order = orderMapper.findById(orderId);</span><br><span class="line">        <span class="comment">// 2.利用 RestTemplate 发起 http 请求，查询用户</span></span><br><span class="line">        <span class="comment">// 2.1 url 路径</span></span><br><span class="line">        String url = <span class="string">&quot;http://localhost:8081/user/&quot;</span> + order.getUserId();</span><br><span class="line">        <span class="comment">// 2.2 发送 http 请求，实现远程调用</span></span><br><span class="line">        User user = restTemplate.getForObject(url, User.class);</span><br><span class="line">        <span class="comment">// 3.封装 user 信息</span></span><br><span class="line">        order.setUser(user);</span><br><span class="line">        <span class="comment">// 4.返回</span></span><br><span class="line">        <span class="keyword">return</span> order;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h4><h5 id="提供者与消费者"><a href="#提供者与消费者" class="headerlink" title="提供者与消费者"></a>提供者与消费者</h5><ul>
 <li>服务提供者：一次约业务中，被其他微服务调用的服务。（提供接口给其他微服务）</li>
@@ -790,6 +790,399 @@
 <h5 id="Nacos-注册中心细节分析"><a href="#Nacos-注册中心细节分析" class="headerlink" title="Nacos 注册中心细节分析"></a>Nacos 注册中心细节分析</h5><p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221026201357963.png" alt="image-20221026201357963"></p>
 <h6 id="临时实例和非临时实例"><a href="#临时实例和非临时实例" class="headerlink" title="临时实例和非临时实例"></a>临时实例和非临时实例</h6><p>服务注册到 Nacos 时，可以选择注册为临时或非临时实例，通过下面的配置来设置：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">  <span class="attr">cloud:</span> </span><br><span class="line">    <span class="attr">nacos:</span> </span><br><span class="line">      <span class="attr">discovery:</span></span><br><span class="line">        <span class="attr">ephemeral:</span> <span class="literal">false</span> <span class="comment"># 设置为非临时实例</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：</strong></p>
+<p>1、Nacos 与 Euerka 的共同点</p>
+<ul>
+<li>都支持服务注册和服务拉取</li>
+<li>都支持服务提供者心跳方式做健康检测</li>
+</ul>
+<p>2、Nacos 与 Eureka 的区别</p>
+<ul>
+<li>Nacos 支持服务端主动检测提供者状态：临时实例采用心跳模式，非临时实例采用主动检测模式</li>
+<li>临时实例心跳不正常会被剔除，非临时实例则不会被剔除</li>
+<li>Nacos 支持服务列表变更的消息推送模式，服务列表更新及时</li>
+<li>Nacos 集群默认采用 AP 方式，当集群中存在非临时实例时，采用 CP 模式；Eureka 采用 AP 方式</li>
+</ul>
+<h4 id="Nacos-配置管理"><a href="#Nacos-配置管理" class="headerlink" title="Nacos 配置管理"></a>Nacos 配置管理</h4><h5 id="统一配置管理"><a href="#统一配置管理" class="headerlink" title="统一配置管理"></a>统一配置管理</h5><ul>
+<li>配置更改热更新</li>
+</ul>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028115620807.png" alt="image-20221028115620807"></p>
+<p>在 Nacos 中添加配置信息：</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028120212384.png" alt="image-20221028120212384"></p>
+<p>在弹出表单中填写配置信息：</p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028120311235.png" alt="image-20221028120311235"></p>
+<p><strong>注意：</strong>配置内容不要无脑填，要填那些将来会发生变化的内容</p>
+<h5 id="微服务配置拉取"><a href="#微服务配置拉取" class="headerlink" title="微服务配置拉取"></a>微服务配置拉取</h5><p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028120636298.png" alt="image-20221028120636298"></p>
+<p>1、引入 Nacos 的配置管理端客户依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nacos 配置管理依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-config<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、在 userservice 中的 resource 目录添加一个 bootstrap.yml 文件，这个文件是引导文件，优先级高于 application.yml：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">  <span class="attr">application:</span> </span><br><span class="line">    <span class="attr">name:</span> <span class="string">userservice</span></span><br><span class="line">  <span class="attr">profiles:</span> </span><br><span class="line">    <span class="attr">active:</span> <span class="string">dev</span> <span class="comment"># 环境</span></span><br><span class="line">  <span class="attr">cloud:</span> </span><br><span class="line">    <span class="attr">nacos:</span> </span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment">#nacos 地址</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="attr">file-extension:</span> <span class="string">yaml</span> <span class="comment"># 文件后缀名</span></span><br></pre></td></tr></table></figure>
+
+<p>3、测试</p>
+<p>我们在 user-service 中将 pattern.dateformat 这个属性注入到 UserController 中做测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 注入 nacos 中的配置属性</span></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;pattern.dateformat&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String dateformat;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 编写 Controller，通过日期格式化器来格式化现在时间并返回</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/now&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">now</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> LocalDate.now().format(DateTimeFormatter.ofPattern(dateformat, Locale.CHINA));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="配置热更新"><a href="#配置热更新" class="headerlink" title="配置热更新"></a>配置热更新</h5><p>Nacos 中的配置文件变更后，微服务无需添加就可以感知。不过需要通过下面两种配置实现：</p>
+<ul>
+<li>方式一：在 @Value 注入的变量所在类上添加注解 @RefreshScope</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/user&quot;)</span></span><br><span class="line"><span class="meta">@RefreshScope</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 注入 nacos 中的配置属性</span></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;pattern.dateformat&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String dateformat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方式二：使用 @ConfigurationProperties 注解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;pattern&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PatternProperties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String dateformat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="多环境配置共享"><a href="#多环境配置共享" class="headerlink" title="多环境配置共享"></a>多环境配置共享</h5><p>微服务启动时会从 nacos 读取多个配置文件：</p>
+<ul>
+<li>[spring.application.name]-[spring-profiles.active].yaml，例如：userservice-dev.yaml</li>
+<li>[spring-application.name].yaml，例如：userservice.yaml</li>
+</ul>
+<p>无论 profile 如何变化，[spring.application.name].yaml 这个文件一定会加载，因此多环境共享配置可以写入这个文件</p>
+<hr>
+<p><strong>多种配置的优先级：</strong></p>
+<ul>
+<li>服务名-profile.yaml &gt; 服务名称.yaml &gt; 本地配置</li>
+</ul>
+<h5 id="Nacos-集群搭建"><a href="#Nacos-集群搭建" class="headerlink" title="Nacos 集群搭建"></a>Nacos 集群搭建</h5><p>Nacos 生产环境下一定要部署为集群状态</p>
+<p><strong>集群结构图</strong></p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028124737015.png" alt="image-20221028124737015"></p>
+<h6 id="搭建集群"><a href="#搭建集群" class="headerlink" title="搭建集群"></a>搭建集群</h6><p>搭建集群的基本步骤：</p>
+<ul>
+<li>搭建数据库，初始化数据库表结构</li>
+<li>下载 nacos 安装包</li>
+<li>配置 nacos</li>
+<li>启动 nacos 集群</li>
+<li>nginx 反向代理</li>
+</ul>
+<hr>
+<p><strong>初始化数据库</strong></p>
+<p>Nacos默认数据存储在内嵌数据库 Derby 中，不属于生产可用的数据库。</p>
+<p>官方推荐的最佳实践时使用带有主从的高可用数据库集群。</p>
+<p>这里我们以单点的数据库为例来讲解。</p>
+<p>首先新建一个数据库，命名为 nacos，然后导入下面的 sql：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `config_info` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span>,</span><br><span class="line">  `data_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;data_id&#x27;</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `content` longtext <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;content&#x27;</span>,</span><br><span class="line">  `md5` <span class="type">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;md5&#x27;</span>,</span><br><span class="line">  `gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  `src_user` text COMMENT <span class="string">&#x27;source user&#x27;</span>,</span><br><span class="line">  `src_ip` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;source ip&#x27;</span>,</span><br><span class="line">  `app_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;租户字段&#x27;</span>,</span><br><span class="line">  `c_desc` <span class="type">varchar</span>(<span class="number">256</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `c_use` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `effect` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `type` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `c_schema` text,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_configinfo_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;config_info&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = config_info_aggr   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `config_info_aggr` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span>,</span><br><span class="line">  `data_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;data_id&#x27;</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;group_id&#x27;</span>,</span><br><span class="line">  `datum_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;datum_id&#x27;</span>,</span><br><span class="line">  `content` longtext <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;内容&#x27;</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  `app_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;租户字段&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_configinfoaggr_datagrouptenantdatum` (`data_id`,`group_id`,`tenant_id`,`datum_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;增加租户字段&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = config_info_beta   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `config_info_beta` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span>,</span><br><span class="line">  `data_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;data_id&#x27;</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;group_id&#x27;</span>,</span><br><span class="line">  `app_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;app_name&#x27;</span>,</span><br><span class="line">  `content` longtext <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;content&#x27;</span>,</span><br><span class="line">  `beta_ips` <span class="type">varchar</span>(<span class="number">1024</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;betaIps&#x27;</span>,</span><br><span class="line">  `md5` <span class="type">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;md5&#x27;</span>,</span><br><span class="line">  `gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  `src_user` text COMMENT <span class="string">&#x27;source user&#x27;</span>,</span><br><span class="line">  `src_ip` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;source ip&#x27;</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;租户字段&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_configinfobeta_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;config_info_beta&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = config_info_tag   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `config_info_tag` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span>,</span><br><span class="line">  `data_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;data_id&#x27;</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;group_id&#x27;</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;tenant_id&#x27;</span>,</span><br><span class="line">  `tag_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;tag_id&#x27;</span>,</span><br><span class="line">  `app_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;app_name&#x27;</span>,</span><br><span class="line">  `content` longtext <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;content&#x27;</span>,</span><br><span class="line">  `md5` <span class="type">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;md5&#x27;</span>,</span><br><span class="line">  `gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  `src_user` text COMMENT <span class="string">&#x27;source user&#x27;</span>,</span><br><span class="line">  `src_ip` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;source ip&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_configinfotag_datagrouptenanttag` (`data_id`,`group_id`,`tenant_id`,`tag_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;config_info_tag&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = config_tags_relation   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `config_tags_relation` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;id&#x27;</span>,</span><br><span class="line">  `tag_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;tag_name&#x27;</span>,</span><br><span class="line">  `tag_type` <span class="type">varchar</span>(<span class="number">64</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;tag_type&#x27;</span>,</span><br><span class="line">  `data_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;data_id&#x27;</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;group_id&#x27;</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;tenant_id&#x27;</span>,</span><br><span class="line">  `nid` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`nid`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_configtagrelation_configidtag` (`id`,`tag_name`,`tag_type`),</span><br><span class="line">  KEY `idx_tenant_id` (`tenant_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;config_tag_relation&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = group_capacity   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `group_capacity` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;Group ID，空字符表示整个集群&#x27;</span>,</span><br><span class="line">  `quota` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;配额，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `usage` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;使用量&#x27;</span>,</span><br><span class="line">  `max_size` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;单个配置大小上限，单位为字节，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `max_aggr_count` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;聚合子配置最大个数，，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `max_aggr_size` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `max_history_count` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;最大变更历史数量&#x27;</span>,</span><br><span class="line">  `gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_group_id` (`group_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;集群、各Group容量信息表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = his_config_info   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `his_config_info` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">64</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `nid` <span class="type">bigint</span>(<span class="number">20</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  `data_id` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `group_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `app_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;app_name&#x27;</span>,</span><br><span class="line">  `content` longtext <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `md5` <span class="type">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  `src_user` text,</span><br><span class="line">  `src_ip` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `op_type` <span class="type">char</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;租户字段&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`nid`),</span><br><span class="line">  KEY `idx_gmt_create` (`gmt_create`),</span><br><span class="line">  KEY `idx_gmt_modified` (`gmt_modified`),</span><br><span class="line">  KEY `idx_did` (`data_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;多租户改造&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="comment">/*   数据库全名 = nacos_config   */</span></span><br><span class="line"><span class="comment">/*   表名称 = tenant_capacity   */</span></span><br><span class="line"><span class="comment">/******************************************/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `tenant_capacity` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;主键ID&#x27;</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;Tenant ID&#x27;</span>,</span><br><span class="line">  `quota` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;配额，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `usage` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;使用量&#x27;</span>,</span><br><span class="line">  `max_size` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;单个配置大小上限，单位为字节，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `max_aggr_count` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;聚合子配置最大个数&#x27;</span>,</span><br><span class="line">  `max_aggr_size` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值&#x27;</span>,</span><br><span class="line">  `max_history_count` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;0&#x27;</span> COMMENT <span class="string">&#x27;最大变更历史数量&#x27;</span>,</span><br><span class="line">  `gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  `gmt_modified` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_tenant_id` (`tenant_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;租户容量信息表&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `tenant_info` (</span><br><span class="line">  `id` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span>,</span><br><span class="line">  `kp` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;kp&#x27;</span>,</span><br><span class="line">  `tenant_id` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">default</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;tenant_id&#x27;</span>,</span><br><span class="line">  `tenant_name` <span class="type">varchar</span>(<span class="number">128</span>) <span class="keyword">default</span> <span class="string">&#x27;&#x27;</span> COMMENT <span class="string">&#x27;tenant_name&#x27;</span>,</span><br><span class="line">  `tenant_desc` <span class="type">varchar</span>(<span class="number">256</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;tenant_desc&#x27;</span>,</span><br><span class="line">  `create_source` <span class="type">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;create_source&#x27;</span>,</span><br><span class="line">  `gmt_create` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span>,</span><br><span class="line">  `gmt_modified` <span class="type">bigint</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`),</span><br><span class="line">  <span class="keyword">UNIQUE</span> KEY `uk_tenant_info_kptenantid` (`kp`,`tenant_id`),</span><br><span class="line">  KEY `idx_tenant_id` (`tenant_id`)</span><br><span class="line">) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8 <span class="keyword">COLLATE</span><span class="operator">=</span>utf8_bin COMMENT<span class="operator">=</span><span class="string">&#x27;tenant_info&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `users` (</span><br><span class="line">	`username` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">	`password` <span class="type">varchar</span>(<span class="number">500</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	`enabled` <span class="type">boolean</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `roles` (</span><br><span class="line">	`username` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	`role` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	<span class="keyword">UNIQUE</span> INDEX `idx_user_role` (`username` <span class="keyword">ASC</span>, `role` <span class="keyword">ASC</span>) <span class="keyword">USING</span> BTREE</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `permissions` (</span><br><span class="line">    `role` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    `resource` <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    `action` <span class="type">varchar</span>(<span class="number">8</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">    <span class="keyword">UNIQUE</span> INDEX `uk_role_permission` (`role`,`resource`,`action`) <span class="keyword">USING</span> BTREE</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> users (username, password, enabled) <span class="keyword">VALUES</span> (<span class="string">&#x27;nacos&#x27;</span>, <span class="string">&#x27;$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu&#x27;</span>, <span class="literal">TRUE</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> roles (username, role) <span class="keyword">VALUES</span> (<span class="string">&#x27;nacos&#x27;</span>, <span class="string">&#x27;ROLE_ADMIN&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>进入 nacos 的 conf 目录，修改配置文件 cluster.conf.example，命名为 cluster.conf：</p>
+<p>然后添加内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:8845</span><br><span class="line">127.0.0.1:8846</span><br><span class="line">127.0.0.1:8847</span><br></pre></td></tr></table></figure>
+
+<p>然后修改 application.properties</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.datasource.platform</span>=<span class="string">mysql</span></span><br><span class="line"></span><br><span class="line"><span class="meta">db.num</span>=<span class="string">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">db.url.0</span>=<span class="string">jdbc:mysql://127.0.0.1:3306/nacos?characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true&amp;useUnicode=true&amp;useSSL=false&amp;serverTimezone=UTC</span></span><br><span class="line"><span class="meta">db.user.0</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">db.password.0</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
+
+<p>将 nacos 文件夹复制 3 份，分别命名为：nacos1、nacos2、nacos3</p>
+<p>然后分别修改三个文件夹中的 application.properties</p>
+<p>nacos1:</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>:<span class="string">8845</span></span><br></pre></td></tr></table></figure>
+
+<p>nacos2:</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>:<span class="string">8846</span></span><br></pre></td></tr></table></figure>
+
+<p>nacos3:</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>:<span class="string">8847</span></span><br></pre></td></tr></table></figure>
+
+<p>然后分别启动 nacos（注意！！！文件目录有中文可能会报错）</p>
+<p><strong>Nginx 反向代理</strong></p>
+<p>解压 Nginx 安装包到任意非中文目录下：</p>
+<p>修改 conf/nginx.conf 文件，配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">upstream nacos-cluster &#123;</span><br><span class="line">	server 127.0.0.1:8845</span><br><span class="line">	server 127.0.0.1:8846</span><br><span class="line">	server 127.0.0.1:8847</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">	listen		80;</span><br><span class="line">	server_name localhost;</span><br><span class="line">	</span><br><span class="line">	location &#x2F;nacos &#123;</span><br><span class="line">		proxy_pass http:&#x2F;&#x2F;nacos-cluster;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="http-客户端-Feign"><a href="#http-客户端-Feign" class="headerlink" title="http 客户端 Feign"></a>http 客户端 Feign</h4><p>RestTemplate 方式调用存在的问题</p>
+<p>先看看我们以前利用 RestTemplate 发起远程调用的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">&quot;http://userservice/user/&quot;</span> + order.getUserId();</span><br><span class="line">User user = restTemplate.getForObject(url, User.class);</span><br></pre></td></tr></table></figure>
+
+<p>存在下面的问题：</p>
+<ul>
+<li>代码可读性差，编程体验不统一</li>
+<li>参数复杂 URL 难以维护</li>
+</ul>
+<h5 id="Feign-的介绍"><a href="#Feign-的介绍" class="headerlink" title="Feign 的介绍"></a>Feign 的介绍</h5><p>Feign 是一个声明式的 http 客户端，官方地址：<a target="_blank" rel="noopener" href="https://github.com/OpenFeign/feign">https://github.com/OpenFeign/feign</a></p>
+<p>其作用就是帮助我们优雅的实现 http 请求发送，解决上面提到的问题</p>
+<h5 id="定义和使用-Feign-客户端"><a href="#定义和使用-Feign-客户端" class="headerlink" title="定义和使用 Feign 客户端"></a>定义和使用 Feign 客户端</h5><p>使用 Feign 的步骤如下：</p>
+<p>1、引入依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、在 order-service 的启动类添加注解开启 Feign 的功能：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableFeignClients</span></span><br><span class="line"><span class="meta">@MapperScan(&quot;cn.itcast.order.mapper&quot;)</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(OrderApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、编写 Feign 客户端：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient(&quot;userservice&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserClient</span> </span>&#123;</span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="function">User <span class="title">findById</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Long id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主要是基于 SpringMVC 的注解来声明远程调用的信息，比如：</p>
+<ul>
+<li>服务名称：userservice</li>
+<li>请求方式：GET</li>
+<li>请求路径：/user/{id}</li>
+<li>请求参数： Long id</li>
+<li>返回值类型：User</li>
+</ul>
+<p>4、用 Feign 客户端代替 RestTemplate</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> UserClient userClient;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Order <span class="title">queryOrderById</span><span class="params">(Long orderId)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1.查询订单</span></span><br><span class="line">        Order order = orderMapper.findById(orderId);</span><br><span class="line">        <span class="comment">// 2.利用 Feign 发起 http 请求，查询用户</span></span><br><span class="line">    	User user = userClient.findById(order.getUserId());</span><br><span class="line">        <span class="comment">// 3.封装 user 信息</span></span><br><span class="line">        order.setUser(user);</span><br><span class="line">        <span class="comment">// 4.返回</span></span><br><span class="line">        <span class="keyword">return</span> order;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="自定义-Feign-的配置"><a href="#自定义-Feign-的配置" class="headerlink" title="自定义 Feign 的配置"></a>自定义 Feign 的配置</h5><p>Feign 运行自定义配置来覆盖默认配置，可以修改的配置如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">作用</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">feign.Logger.Level</td>
+<td align="center">修改日志级别</td>
+<td align="center">包含四种不同的级别：NONE、BASIC、HEADERS、FULL</td>
+</tr>
+<tr>
+<td align="center">feign.codec.Decoder</td>
+<td align="center">响应结果的解析器</td>
+<td align="center">http远程调用的结果做解析，例如解析json 字符串为 java 对象</td>
+</tr>
+<tr>
+<td align="center">feign.codec.Encoder</td>
+<td align="center">请求参数编码</td>
+<td align="center">将请求参数编码，便于通过 http 请求发送</td>
+</tr>
+<tr>
+<td align="center">feign.Contract</td>
+<td align="center">支持的注解格式</td>
+<td align="center">默认是 SpringMVC 的注解</td>
+</tr>
+<tr>
+<td align="center">feign.Retryer</td>
+<td align="center">失败重试机制</td>
+<td align="center">请求失败的重试机制，默认是没有，不过会使用 Ribbon 的重试</td>
+</tr>
+</tbody></table>
+<p>一般我们需要配置的就是日志级别</p>
+<hr>
+<p>配置 Feign 日志有两种方式：</p>
+<p>方式一：配置文件方式</p>
+<p>1、全局生效：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span> </span><br><span class="line">  <span class="attr">client:</span> </span><br><span class="line">    <span class="attr">config:</span> </span><br><span class="line">       <span class="attr">default:</span> <span class="comment"># 这里用 default 就是全局配置，如果是写服务名称，则是针对某个微服务的配置</span></span><br><span class="line">         <span class="attr">loggerLevel:</span> <span class="string">FULL</span> <span class="comment"># 日志级别</span></span><br></pre></td></tr></table></figure>
+
+<p>2、局部生效</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span> </span><br><span class="line">  <span class="attr">client:</span> </span><br><span class="line">    <span class="attr">config:</span> </span><br><span class="line">      <span class="attr">userservice:</span>  <span class="comment"># 这里用 default 就是全局配置，如果是写服务名称，则是针对某个微服务的配置</span></span><br><span class="line">        <span class="attr">loggerLevel:</span> <span class="string">FULL</span> <span class="comment"># 日志级别</span></span><br></pre></td></tr></table></figure>
+
+<p>方式二：java 代码方式，需要先声明一个 Bean：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FeignClientConfiguration</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Logger.<span class="function">Level <span class="title">feignLogLevle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Logger.Level.BASIC;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1、如果是全局配置，则把它放到 @EnableFeignClients 这个注解中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableFeignClients(defaultConfiguration = FeignClientConfiguration.class)</span></span><br></pre></td></tr></table></figure>
+
+<p>2、如果是局部配置，则把它放到 @FeignClient 这个注解中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient(value = &quot;userservice&quot;, configuration = FeignClientConfiguration.class)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Feign-的性能优化"><a href="#Feign-的性能优化" class="headerlink" title="Feign 的性能优化"></a>Feign 的性能优化</h5><p>Feign 底层的客户端实现：</p>
+<ul>
+<li>URLConnection：默认实现，不支持连接池</li>
+<li>Apache HttpClient：支持连接池</li>
+<li>OKHttp：支持连接池</li>
+</ul>
+<hr>
+<p>因此优化 Feign 的性能主要包括：</p>
+<ul>
+<li>1、使用连接池代替默认的 URLConnection</li>
+<li>2、日志级别，最好用 basic 或 none</li>
+</ul>
+<hr>
+<h6 id="Feign-的性能优化-连接池配置"><a href="#Feign-的性能优化-连接池配置" class="headerlink" title="Feign 的性能优化-连接池配置"></a>Feign 的性能优化-连接池配置</h6><p>引入依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.github.openfeign<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactedId</span>&gt;</span>feign-httpclient<span class="tag">&lt;/<span class="name">artifactedId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>配置连接池：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span> </span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">config:</span> </span><br><span class="line">      <span class="attr">default:</span> <span class="comment"># default 全局的配置</span></span><br><span class="line">        <span class="attr">loggerLevel:</span> <span class="string">BASIC</span> <span class="comment"># 日志级别，BASIC 就是基本的请求和响应信息</span></span><br><span class="line">  <span class="attr">httpclient:</span> </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span> <span class="comment"># 开启 feign 对 httpClient 的支持</span></span><br><span class="line">    <span class="attr">max-connections:</span> <span class="number">200</span> <span class="comment"># 最大的连接数</span></span><br><span class="line">    <span class="attr">max-connections-per-route:</span> <span class="number">50</span> <span class="comment"># 每个路径的最大连接数</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Feign-的实践"><a href="#Feign-的实践" class="headerlink" title="Feign 的实践"></a>Feign 的实践</h5><p>方法一（继承）：给消费者的 FeignClient 和 提供者的 Controller 定义统一的 父接口作为标准。</p>
+<ul>
+<li>服务紧耦合</li>
+<li>父接口参数列表中的映射不会被继承</li>
+</ul>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028155659086.png" alt="image-20221028155659086"></p>
+<p>方式二（抽取）：将 FeignClient抽取为独立模块，并且把接口有关的 POJO、默认的 Feign 配置都放到这个模块中，提供给所有消费者使用 </p>
+<p><img src="C:\Users\water_monster\AppData\Roaming\Typora\typora-user-images\image-20221028160149752.png" alt="image-20221028160149752"></p>
+<h6 id="抽取-FeignClient"><a href="#抽取-FeignClient" class="headerlink" title="抽取 FeignClient"></a>抽取 FeignClient</h6><p>实现最佳实践方式二的步骤如下：</p>
+<p>1、首先创建一个 module，命名为 feign-api，然后引入 feign 的 starter 依赖</p>
+<p>2、将 order-service 中编写的 UserClient、User、DefaultFeignConfiguration 都复制到 feign-api 项目中</p>
+<p>3、在 order-service 中引入 feign-api 的依赖</p>
+<p>4、修改 order-service 中的所有与上述三个组件有关的 import 部分，改成导入 feign-api 中的包</p>
+<p>5、重启测试</p>
+<hr>
+<p>当定义的 FeignClient 不在 SpringBootApplication 的扫描包范围内时，这些 FeignClient 无法使用。有两种方法解决。</p>
+<p>方式一：指定 FeignClient 所在包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableFeignClients(basePackages = &quot;cn.itcast.feign.clients&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<p>方式二：指定 FeignClient 字节码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableFeignClients(clients = &#123;userClients.class&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="统一网关-Gateway"><a href="#统一网关-Gateway" class="headerlink" title="统一网关 Gateway"></a>统一网关 Gateway</h4><h5 id="为什么需要网关"><a href="#为什么需要网关" class="headerlink" title="为什么需要网关"></a>为什么需要网关</h5><p>网关功能：</p>
+<ul>
+<li>身份认证和权限校验</li>
+<li>服务路由、负载均衡</li>
+<li>请求限流</li>
+</ul>
+<h5 id="网关的技术实现"><a href="#网关的技术实现" class="headerlink" title="网关的技术实现"></a>网关的技术实现</h5><p>在 SpringCloud 中网关的实现包括两种：</p>
+<ul>
+<li>gateway</li>
+<li>zuul</li>
+</ul>
+<p>zuul 是基于 Servlet 的实现，属于阻塞式编程。而 SpringCloudGateway 则是基于 Spring5 中提供的 WebFlux，属于响应式编程的实现，具备更好的性能。</p>
+<h5 id="搭建网关服务"><a href="#搭建网关服务" class="headerlink" title="搭建网关服务"></a>搭建网关服务</h5><p>搭建网关服务的步骤：<br>1、创建新的 module，引入 SpringCloudGateway 的依赖和 nacos 的服务发现依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 网关依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>	</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- nacos 服务发现依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span>	</span><br></pre></td></tr></table></figure>
+
+<p>2、编写路由配置及 nacos 地址</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">10010</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">gateway</span> <span class="comment"># 服务名称</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">nacos:</span></span><br><span class="line">      <span class="attr">server-addr:</span> <span class="string">localhost:8848</span> <span class="comment"># nacos 地址</span></span><br><span class="line">    <span class="attr">gateway:</span></span><br><span class="line">      <span class="attr">routes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">user-service</span> <span class="comment"># 路由标识，必须唯一</span></span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://userservice</span> <span class="comment"># 路由的目标地址</span></span><br><span class="line">          <span class="attr">predicates:</span> <span class="comment"># 路由断言，判断请求是否符合规则</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/user/**</span> <span class="comment"># 路径断言，判断路径是否以 /user 开头，如果是则符合</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">order-service</span></span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://orderservice</span></span><br><span class="line">          <span class="attr">predicates:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/order/**</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="路由断言工厂-Route-Predicate-Factory"><a href="#路由断言工厂-Route-Predicate-Factory" class="headerlink" title="路由断言工厂 Route Predicate Factory"></a>路由断言工厂 Route Predicate Factory</h5><p>网关路由可以配置的内容包括：</p>
+<ul>
+<li>路由 id：路由唯一标识</li>
+<li>uri：路由目的地，支持 lb（loadbalanced） 和 http 两种</li>
+<li><strong>predicates：路由断言，判断请求是否符合要求，符合则转发到路由目的地</strong></li>
+<li>filters：路由过滤器，处理请求或响应</li>
+</ul>
+<hr>
+<p>我们在配置文件中写的断言规则只是字符串，这些字符串会被 Predicate Factory 读取并处理，转变为路由判断的条件</p>
+<p>例如 Path=/user/** 是按照路径匹配，这个规则是由 org.springframework.cloud.gateway.handler.predicate.PathRouterPredicateFactory 类来处理的</p>
+<p>像这样的断言工厂在 SpringCloudGateway 还有十几个</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">说明</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">After</td>
+<td align="center">是某个时间点后的请求</td>
+<td align="center">- After=2037-01-20T17:42:47.789-07:00[America/Denver]</td>
+</tr>
+<tr>
+<td align="center">Before</td>
+<td align="center">是某个时间点之前的请求</td>
+<td align="center">- Before=2037-01-20T17:42:47.789-07:00[America/Denver]</td>
+</tr>
+<tr>
+<td align="center">Between</td>
+<td align="center">是某两个时间点之间的请求</td>
+<td align="center">- Between=2037-01-20T17:42:47.789-07:00[America/Denver],2037-02-20T17:42:47.789-07:00[America/Denver]</td>
+</tr>
+<tr>
+<td align="center">Cookie</td>
+<td align="center">请求必须包含某些 Cookie</td>
+<td align="center">- Cookie=chocolate,ch.p</td>
+</tr>
+<tr>
+<td align="center">Header</td>
+<td align="center">请求必须包含某些 header</td>
+<td align="center">- Header=X-Request-Id,\d+</td>
+</tr>
+<tr>
+<td align="center">Host</td>
+<td align="center">请求必须是访问某个 host（域名）</td>
+<td align="center">- Host=**.somehost.org,**.anotherhost.org</td>
+</tr>
+<tr>
+<td align="center">Method</td>
+<td align="center">请求方式必须是指定方式</td>
+<td align="center">- Method=GET,POST</td>
+</tr>
+<tr>
+<td align="center">Path</td>
+<td align="center">请求路径必须符合指定规则</td>
+<td align="center">- Path=/red/{segment},/blue/**</td>
+</tr>
+<tr>
+<td align="center">Query</td>
+<td align="center">请求参数必须包含指定参数</td>
+<td align="center">- Query=name,Jack 或者 - Query=name</td>
+</tr>
+<tr>
+<td align="center">RemoteAddr</td>
+<td align="center">请求者的 ip 必须是指定范围</td>
+<td align="center">- RemoteAddr=192.168.1.1/24</td>
+</tr>
+<tr>
+<td align="center">Weight</td>
+<td align="center">权重处理</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h5 id="路由过滤器-GatewayFilter"><a href="#路由过滤器-GatewayFilter" class="headerlink" title="路由过滤器 GatewayFilter"></a>路由过滤器 GatewayFilter</h5><p>GatewayFilter 是网关中提供的一种过滤器，可以对进入网关的请求和微服务返回的响应做处理：</p>
+<p><img src="E:\myblog\Typora\typora-user-images\image-20221105153418207.png" alt="image-20221105153418207"></p>
+<p>Spring 提供了 31 种不同的路由过滤器工厂。例如：</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">AddRequestHeader</td>
+<td align="center">给当前请求添加一个请求头</td>
+</tr>
+<tr>
+<td align="center">RemoveRequestHeader</td>
+<td align="center">移除请求中的一个请求头</td>
+</tr>
+<tr>
+<td align="center">AddResponseHeader</td>
+<td align="center">从响应结果中添加一个响应头</td>
+</tr>
+<tr>
+<td align="center">RemoveResponseHeader</td>
+<td align="center">从响应结果中移除一个响应头</td>
+</tr>
+<tr>
+<td align="center">RequestRateLimiter</td>
+<td align="center">限制请求的流量</td>
+</tr>
+<tr>
+<td align="center">…</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h5 id="全局过滤器-GlobalFilter"><a href="#全局过滤器-GlobalFilter" class="headerlink" title="全局过滤器 GlobalFilter"></a>全局过滤器 GlobalFilter</h5><p>全局过滤器的作用也是处理一切进入网关的请求和微服务响应，与 GatewayFilter 的作用一样。</p>
+<p>区别在于 GatewayFilter 通过配置定义，处理逻辑是固定的。而 GlobalFilter 的逻辑需要自己写代码实现。</p>
+<p>定义方式是实现 GlobalFilter 接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GlobalFilter</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    *  处理当前请求，有必要的话通过 &#123;<span class="doctag">@link</span> GatewayFilterChain&#125; 将请求交给下一个过滤器处理</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">       <span class="doctag">@param</span> exchange 请求上下文，里面可以获取 Request、Response 等信息</span></span><br><span class="line"><span class="comment">       <span class="doctag">@param</span> chain 用来把请求委托给下一个过滤器</span></span><br><span class="line"><span class="comment">       <span class="doctag">@return</span> &#123;<span class="doctag">@code</span> Mono&lt;Void&gt;&#125; 返回标示当前过滤器业务结束</span></span><br><span class="line"><span class="comment">    **/</span></span><br><span class="line">    <span class="function">Mono&lt;Void&gt; <span class="title">filter</span><span class="params">(ServerWebExchange exchange, GatewayFilterChain chain)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="案例-定义全局过滤器，拦截并判断用户身份"><a href="#案例-定义全局过滤器，拦截并判断用户身份" class="headerlink" title="案例-定义全局过滤器，拦截并判断用户身份"></a>案例-定义全局过滤器，拦截并判断用户身份</h6><p>需求：定义全局过滤器，拦截请求，判断请求的参数是否满足下面条件：</p>
+<ul>
+<li>参数中是否有 authorization</li>
+<li>authorization 参数值是否为 admin</li>
+</ul>
+<p>如果同时满足则放行，否则拦截</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Order(-1)</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthorizeFilter</span> <span class="keyword">implements</span> <span class="title">GlobalFilter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Mono&lt;Void&gt; <span class="title">filter</span><span class="params">(ServerWebExchange exchange, GatewayFilterChain chain)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1.获取请求参数</span></span><br><span class="line">        ServerHttpRequest request = exchange.getRequest();</span><br><span class="line">        MultiValueMap&lt;String, String&gt; params = request.getQueryParams();</span><br><span class="line">        <span class="comment">// 2.获取参数中的 authorization 参数</span></span><br><span class="line">        String auth = params.getFirst(<span class="string">&quot;authorization&quot;</span>);</span><br><span class="line">        <span class="comment">// 3.判断参数值是否等于 admin</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&quot;admin&quot;</span>.equals(auth)) &#123;</span><br><span class="line">            <span class="comment">// 4.是，放行</span></span><br><span class="line">            <span class="keyword">return</span> chain.filter(exchange);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 5.否，拦截</span></span><br><span class="line">        <span class="comment">// 5.1.设置状态码</span></span><br><span class="line">        exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);</span><br><span class="line">        <span class="comment">// 5.2.拦截请求</span></span><br><span class="line">        <span class="keyword">return</span> exchange.getResponse().setComplete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="过滤器执行顺序"><a href="#过滤器执行顺序" class="headerlink" title="过滤器执行顺序"></a>过滤器执行顺序</h5><p>请求进入网关会碰到三类过滤器：当前路由的过滤器、DefaultFilter、GlobalFilter</p>
+<p>请求路由后，会将当前路由过滤器和 DefaultFilter、GlobalFilter，合并到一个过滤器链（集合）中，排序后依次执行每个过滤器</p>
+<hr>
+<ul>
+<li>每一个过滤器都必须指定一个 int 类型的 order 值，<strong>order 值越小，优先级越高，执行顺序越靠前</strong></li>
+<li>GlobalFilter 通过实现 Ordered 接口，或者添加 @Order 注解来指定 order 值，由我们自己指定</li>
+<li>路由过滤器和 defaultFilter 的 order 由 Spring 指定，默认是按照声明顺序从 1 递增</li>
+<li>当过滤器的 order 值一样是，会按照 defaultFilter &gt; 路由过滤器 &gt; GlobalFilter 的顺序执行</li>
+</ul>
+<p>可以参考下面几个类的源码来查看：</p>
+<hr>
+<p>org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator#getFilters() 方法是先加载 defaultFilters，然后再加载某个 route 的 filters，然后合并。</p>
+<p>org.springframework.cloud.gateway.handler.FilteringWebHandler#handle() 方法会加载全局过滤器，与前面的过滤器合并后根据 order 排序，组织过滤器链</p>
+<h5 id="跨域问题处理"><a href="#跨域问题处理" class="headerlink" title="跨域问题处理"></a>跨域问题处理</h5><p>跨域：域名不一致就是跨域，主要包括：</p>
+<ul>
+<li>域名不同：<a target="_blank" rel="noopener" href="http://www.taobao.com/">www.taobao.com</a> 和 <a target="_blank" rel="noopener" href="http://www.taobao.org/">www.taobao.org</a> 和 <a target="_blank" rel="noopener" href="http://www.jd.com/">www.jd.com</a> 和 miaosha.jd.com</li>
+<li>域名相同，端口不同：localhost:8080 和 localhost:8081</li>
+</ul>
+<p><strong>跨域问题：</strong>浏览器禁止请求的发起者与服务端发生跨域 ajax 请求，请求被浏览器拦截的问题</p>
+<p>解决方案：CORS</p>
+<hr>
+<p>网关处理跨域采用的同样是 CORS 方案，并且只需要简单配置即可实现：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span><br><span class="line">  <span class="attr">cloud:</span> </span><br><span class="line">    <span class="attr">gateway:</span> </span><br><span class="line">      <span class="attr">globalcors:</span> <span class="comment"># 全局的跨域处理</span></span><br><span class="line">        <span class="attr">add-to-simple-url-handler-mapping:</span> <span class="literal">true</span> <span class="comment"># 解决 options 请求被拦截问题</span></span><br><span class="line">        <span class="attr">corsConfigurations:</span> </span><br><span class="line">          <span class="string">&#x27;[/**]&#x27;</span><span class="string">:</span> </span><br><span class="line">            <span class="attr">allwoedOrigins:</span> <span class="comment"># 允许哪些网站的跨域请求</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;http://localhost:8090&quot;</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;http://www.leyou.com&quot;</span></span><br><span class="line">            <span class="attr">allowedMethods:</span> <span class="comment"># 允许跨域 ajax 的请求方式</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;GET&quot;</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;POST&quot;</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;DELETE&quot;</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;PUT&quot;</span></span><br><span class="line">              <span class="bullet">-</span> <span class="string">&quot;OPTIONS&quot;</span></span><br><span class="line">            <span class="attr">allowedHeaders:</span> <span class="string">&quot;*&quot;</span> <span class="comment"># 允许在请求中携带的头信息</span></span><br><span class="line">            <span class="attr">allowCredentials:</span> <span class="literal">true</span> <span class="comment"># 是否允许携带 cookie</span></span><br><span class="line">            <span class="attr">maxAge:</span> <span class="number">360000</span> <span class="comment"># 这次跨域检测的有效期</span></span><br></pre></td></tr></table></figure>
+
+
 
 <h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h3 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h3><h3 id="分布式搜索"><a href="#分布式搜索" class="headerlink" title="分布式搜索"></a>分布式搜索</h3><h3 id="微服务保护"><a href="#微服务保护" class="headerlink" title="微服务保护"></a>微服务保护</h3><h3 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h3><h3 id="分布式缓存"><a href="#分布式缓存" class="headerlink" title="分布式缓存"></a>分布式缓存</h3><h3 id="多级缓存"><a href="#多级缓存" class="headerlink" title="多级缓存"></a>多级缓存</h3><h3 id="可靠消息服务"><a href="#可靠消息服务" class="headerlink" title="可靠消息服务"></a>可靠消息服务</h3><h3 id="Nacos-源码"><a href="#Nacos-源码" class="headerlink" title="Nacos 源码"></a>Nacos 源码</h3><h3 id="Sentinel-源码"><a href="#Sentinel-源码" class="headerlink" title="Sentinel 源码"></a>Sentinel 源码</h3>
                 
@@ -1294,18 +1687,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/04/springcloud/">
+                <a href="/2022/11/15/%E5%AE%9E%E4%B9%A0%E8%A7%81%E9%97%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="springcloud">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="实习见闻">
                         
-                        <span class="card-title">springcloud</span>
+                        <span class="card-title">实习见闻</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1315,9 +1707,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1326,7 +1718,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1607,7 +1998,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">Water monster</a>
@@ -1616,7 +2007,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">112k</span>&nbsp;字
+                class="white-color">121.5k</span>&nbsp;字
             
             
             

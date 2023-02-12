@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="minapp, daily">
+    <meta name="keywords" content="c语言, daily">
     <meta name="description" content="日常">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>minapp | 水兽的Blog</title>
+    <title>c语言 | 水兽的Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">minapp</h1>
+                    <h1 class="description center-align post-title">c语言</h1>
                 </div>
             </div>
         </div>
@@ -408,21 +408,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-09
+                    2023-01-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-18
+                    2023-02-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    539
+                    3.3k
                 </div>
                 
 
@@ -449,22 +449,135 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="课堂笔记"><a href="#课堂笔记" class="headerlink" title="课堂笔记"></a>课堂笔记</h5><p>小程序绑定值</p>
-<hr>
-<p>xwml文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 数据绑定 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;data_msg&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;boolean_msg&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;student.std_name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 组件属性的绑定，自定义属性，属性名为defined --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">data-deifined</span>=<span class="string">&quot;&#123;&#123;num&#125;&#125;&quot;</span>&gt;</span>自定义<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 控制属性的绑定 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;num&gt;200&#125;&#125;&quot;</span>&gt;</span>num&gt;200<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:elif</span>=<span class="string">&quot;&#123;&#123;num&gt;100&#125;&#125;&quot;</span>&gt;</span>num&gt;100小于两百<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:else</span>=<span class="string">&quot;&#123;&#123;num&lt;100&#125;&#125;&quot;</span>&gt;</span>num小于100<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1.引言"></a>1.引言</h1><h2 id="1-1-程序设计语言的功能"><a href="#1-1-程序设计语言的功能" class="headerlink" title="1.1 程序设计语言的功能"></a>1.1 程序设计语言的功能</h2><ul>
+<li>1、数据表达（Data Representation）</li>
+<li>2、流程控制（Flow Control）<ul>
+<li>1）顺序控制结构（Sequential Control Structure）：一个程序模块执行完后，按自然顺序执行下一个模块</li>
+<li>2）分支控制结构（Branch Control Structure）：又称选择结构。计算机在执行程序时，一般按语句的顺序执行，但在许多情况下需要根据不同的条件来选所要执行的模块，即判断某种条件，如果条件满足就执行某个模块，否则就执行另一个模块。</li>
+<li>3）循环控制结构（Loop Control Structure）：有时，需要反复地执行某个模块。重复执行这些模块一般是有条件的，即检测某些条件，如果条件满足就重复执行相应的模块。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-1-1-C-语言的主要“单词”"><a href="#1-1-1-C-语言的主要“单词”" class="headerlink" title="1.1.1 C 语言的主要“单词”"></a>1.1.1 C 语言的主要“单词”</h3><ul>
+<li>1）标识符<ul>
+<li>C 语言的标识符由字母、数字和下划线组成，其中第一个字符必须是字母或下划线。</li>
+<li>（C 语言中，最主要的标识符是保留字和用户自定义的标识符）<ul>
+<li>1））保留字，又称关键字，是 C 语言规定的、赋予特定含义和有专门有途的标识符，它们主要与数据类型和语句有关。如 int（整数类型）、float（实数类型）、char（字符类型）、typedef（自定义类型），以及与语句相关的 if、else、while、for、break 等。</li>
+<li>2））用户自定义标识符。用户自定义标识符包括程序中定义的变量名、数据类型名、函数名和符号常量名。一般来说，为了便于程序阅读，经常取有意义的英文单词作为用户自定义标识符（如前面程序中顶i一的 n、fact 等）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2）常量<ul>
+<li>常量是有数据类型的，例如，整数常量 123、实型常量 12.34、字符常量 ‘a’、字符串常量 “hello world!”等。</li>
+</ul>
+</li>
+<li>3）运算符<ul>
+<li>运算符表示对各种数据类型数据对象的运算。如，+、-、*、/、%、&gt;、&gt;=、==、=（赋值）等。运算一般多为双目运算（涉及两个运算对象），也有单目（涉及一个运算对象）和三目（涉及三个运算对象）运算。</li>
+</ul>
+</li>
+<li>4）分隔符<ul>
+<li>如;、[、]、(、)、和 # 等都是分隔符</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-1-2-C语言的主要语法单位"><a href="#1-1-2-C语言的主要语法单位" class="headerlink" title="1.1.2 C语言的主要语法单位"></a>1.1.2 C语言的主要语法单位</h3><ul>
+<li>1）表达式<ul>
+<li>运算符与运算对象（可以是常量、函数、变量等）的有意义组合就形成了表达式，如 2 + 3 * 4 和 i + 2 &lt; j等。表达式中可以包含多种数据类型的运算符，运算符有运算优先级。例如，i + 2 &lt; j 中，+ 比 &lt; 先算。</li>
+</ul>
+</li>
+<li>2）变量定义<ul>
+<li>变量也有数据类型，所以在定义变量时要说明相应变量的类型。变量的类型不同，它在内存中所占的存储空间的大小也会有所不同。变量定义的最基本形式就是：类型名 变量名;</li>
+</ul>
+</li>
+<li>3）语句<ul>
+<li>语句是程序最基本的执行单位，程序的功能就是通过一系列语句来实现的。C 语言中的语句有多种形式。<ul>
+<li>1））最简单的语句（表达式语句）<ul>
+<li>最简单的语句就是表达式加分号 “;”。在 C 语言中赋值也被认为是一种运算，如 i = j + 2（把 j 加 2 的结果赋给变量 i）就是一个包含 + 和 = 两种运算表达式， + 的优先级较高。在上述表达式后加 “;”，就这样成了一个执行赋值过程的语句。</li>
+</ul>
+</li>
+<li>2））分支语句<ul>
+<li>分支语句实现分支控制过程，根据不同的条件执行不同的语句（或语句模块）。具体有两种形式，即双路分支的 if-else 语句与多路分支的 switch 语句。</li>
+</ul>
+</li>
+<li>3））循环语句<ul>
+<li>C 语言实现循环控制的过程具体有 3 种形式，即 while 语句、for 语句和 do-while 语句。</li>
+</ul>
+</li>
+<li>4））复合语句（Compound statement）<ul>
+<li>用一对大括号 {} 将若干语句顺序组合在一起就形成了一个复合语句。</li>
+<li>例如：{ sum = sum + i; i = i + 1;}。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4）函数定义与调用<ul>
+<li>函数是完成特定任务的独立模块，是 C 语言唯一的种子程序形式。函数的目的通常是接收 0 个或多个数据（称为函数的参数），并返回 0 个或 1 个结果（称为函数的返回值）。函数的使用主要涉及函数的定义与调用。</li>
+<li>函数定义的主要内容是用过编写一系列语句来规定其所完成的功能。完整的函数定义涉及函数头和函数体。其中，函数头包括函数的返回值类型、函数名、参数类型；而函数体是一个程序模块，规定了函数所具有的功能。函数调用则通过传递函数的参数并执行函数定义所规定的程序过程，以实现相应功能。以下是函数定义的一个简单的例子。</li>
+<li>函数 max 求两个整数（作为参数）的较大值（作为返回值）。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> <span class="comment">/* 函数头：函数类型 函数名 （函数参数列表） */</span></span></span><br><span class="line"><span class="function"></span>&#123;						<span class="comment">/* 函数体开始 */</span></span><br><span class="line">    <span class="keyword">int</span> x;				<span class="comment">/* 函数种要用到的临时变量 */</span></span><br><span class="line">    <span class="keyword">if</span> (a&gt;b)	x = a;	<span class="comment">/* 判断 a、b 的大小，将 x 赋值为值大的一个 */</span></span><br><span class="line">    <span class="keyword">else</span> x = b;</span><br><span class="line">    <span class="keyword">return</span> x; 			<span class="comment">/* 结束函数调用并返回 */</span></span><br><span class="line">&#125;						<span class="comment">/* 函数体结束 */</span></span><br></pre></td></tr></table></figure>
 
-<p>js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  msg: <span class="string">&#x27;绑定字符串&#x27;</span>,</span><br><span class="line">  data_msg: <span class="number">1</span>,</span><br><span class="line">  boolean_msg: <span class="literal">true</span>,</span><br><span class="line">  student: &#123;</span><br><span class="line">    std_id: <span class="number">1</span>,</span><br><span class="line">    std_name: <span class="string">&#x27;tq&#x27;</span>,</span><br><span class="line">    std_class: <span class="string">&#x27;618&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  num: <span class="number">103</span>,</span><br><span class="line">  condition: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5）输入与输出<ul>
+<li>C 语言没有输入输出语句，它通过调用系统库函数种的有关函数（如 printf() 和 scanf() 函数）实现数据的输入与输出。这种处理方式为 C 语言在不同硬件平台上的可移植性提供了良好的基础。</li>
+<li>例如：printf(“This integer value is %d”, 123);</li>
+<li>将输出：This integer value is 123</li>
+<li>printf() 函数的第一个参数是输出格式说明，%d 表示将后面的数据 123 按十进制整数形式输出，其他字符串按原样输出。又如，以下输入语句：</li>
+<li>scanf(“%d”, &amp;i);</li>
+<li>将从键盘输入中读进一个整数，并把它存到变量 i 中。其中，scanf() 函数的第一个参数是输入格式说明。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-C-语言的发展历史与特点"><a href="#1-2-C-语言的发展历史与特点" class="headerlink" title="1.2 C 语言的发展历史与特点"></a>1.2 C 语言的发展历史与特点</h2><h3 id="C-语言的特点"><a href="#C-语言的特点" class="headerlink" title="C 语言的特点"></a>C 语言的特点</h3><ul>
+<li>1）C 语言是一种结构化语言<ul>
+<li>C 语言的主要成分是函数。函数是 C 语言程序的基本结构模块，程序的许多操作可由不同功能的函数有机组装而成，从而容易达到结构化程序设计中模块的要求。另外，C 语言还提供了一套完整的控制语句（如循环、分支等）和构造数据类型机制（如结构、数组等），使程序流程与数据描述也具有良好的结构性。</li>
+</ul>
+</li>
+<li>2）C 语言语句简洁紧凑，使用方便灵活<ul>
+<li>C 语言一共只有 32 个保留字和 9 种控制语句，程序书写形式自由，压缩了一切不必要的成分。</li>
+<li>例如，用大括号 { 和 } 代替复合语句的开始与结束，用运算符 ++ 和 – 表示加 1 和减 1，用三目运算符 ?: 来表示一个简单的 if-else 语句，一行中可书写多个语句，一个语句可书写在不同行上，可采用宏定义和文件包含等预处理语句，等等。这些都使 C 语言显得非常简洁紧凑。</li>
+</ul>
+</li>
+<li>3）C 语言程序易于移植<ul>
+<li>C语言将与硬件有关的因素从语言主体中分离出来，通过库函数或其他实用程序实现它们。这特别体现在输入输出操作上，因为 C 语言不把输入输出作为语言的一部分，而是作为库函数由具体实用程序实现，这大大提高了程序的可移植性（Portability）。</li>
+</ul>
+</li>
+<li>4）C 语言有强大的处理能力<ul>
+<li>由于 C 语言引入了结构、指针（Pointer）、地址、位运算、寄存器存储等功能，在许多方面具有汇编语言的特点，从而大大提高了语言的处理能力。</li>
+</ul>
+</li>
+<li>5）生成的目标代码质量高，运行效率高<ul>
+<li>用 C 语言编写的程序，经编译后生成的可执行代码比用汇编语言直接编写的代码运行效率仅低 15% ~ 20%。这是其他高级语言无法比拟的。</li>
+<li>当然，C 语言也有一些不足之处，这主要表现在数据类型检查不严格，表达式出现二义性，不能自动检查数据越界，初学者较难掌握运算符的优先级与结核性的概念等。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-实现问题求解的过程"><a href="#1-3-实现问题求解的过程" class="headerlink" title="1.3 实现问题求解的过程"></a>1.3 实现问题求解的过程</h2><h3 id="1-3-1-问题分析与算法设计"><a href="#1-3-1-问题分析与算法设计" class="headerlink" title="1.3.1 问题分析与算法设计"></a>1.3.1 问题分析与算法设计</h3><p><strong>题外话1（算法）：</strong>算法（Algorithm）是一组明确的解决问题的步骤，它产生结果并可在有限的时间内终止。可以用多种方式来描述算法，包括使用自然语言、伪代码（Pseudo Code）或流程图（Flow Chart）。</p>
+<p><strong>题外话2（流程图）：</strong>流程图是算法的图形表示法，它用图的形式掩盖了算法的所有细节，只显示算法从开始到结束的整个过程。</p>
+<h3 id="1-3-2-编辑程序"><a href="#1-3-2-编辑程序" class="headerlink" title="1.3.2 编辑程序"></a>1.3.2 编辑程序</h3><p>当确定了解决问题的步骤后，就可以开始编写程序了。一般是在编译环境中，应用其中的编辑功能直接来编写程序，生成源程序（对 C 语言来说，一般源程序的后缀为 c）。</p>
+<h3 id="1-3-3-编译"><a href="#1-3-3-编译" class="headerlink" title="1.3.3 编译"></a>1.3.3 编译</h3><p>当编辑好程序后，下一步的工作就是应用该语言的编译程序对其进行编译，以生成二进制代码表示的目标程序（一个二进制文件，文件后缀为 obj）。</p>
+<p>实际上，还不能直接运行该目标程序，它需要与编程环境提供的库函数进行连接（Link），形成可执行的程序（文件后缀为 exe）。</p>
+<p>当然，如果程序有语法错误，编译程序就会指出该语法错误所在，而不形成二进制代码。</p>
+<h3 id="1-4-4-运行与测试"><a href="#1-4-4-运行与测试" class="headerlink" title="1.4.4 运行与测试"></a>1.4.4 运行与测试</h3><p>当程序通过了语法检查、编译生成执行文件后，就可以在编译环境或操作系统环境中运行（Run）该程序。</p>
+<p>当然，一旦程序中存在语义错误（逻辑错误），程序运行时所产生的结果有可能不是想要的结果。</p>
+<p>如果程序有语义错误就需要对程序进行调试。调试是在程序中查找错误并修改错误的过程。调试最主要的工作是找出错误发生的地方。</p>
+<p>一般程序的编程环境都提供相应的调试手段。调试最主要的方法是：设置断点并观察变量。</p>
+<p><strong>1）设置断点（Breaking Point Setting）：</strong>可以在程序的任何一个语句上做断点标记，将来程序运行到这里时会停下来。</p>
+<p><strong>2）观察变量（Variable Watching）：</strong>当程序运行到断点的地方停下来后，可以观察各种变量的值，判断此时的变量值是不是所希望的。如果不是，说明该断点之前肯定有错误发生。这样，就可以把找错的范围集中在断点之前的程序段上。</p>
+<p>另外，还有一种常用的调试方法是单步跟踪（Trace Step by Step），即一步一步跟踪程序的执行过程，同时观察变量的变化情况。</p>
+<h1 id="2-用-C-语言编写程序"><a href="#2-用-C-语言编写程序" class="headerlink" title="2. 用 C 语言编写程序"></a>2. 用 C 语言编写程序</h1><h2 id="2-1-在屏幕上显示-Hello-World！"><a href="#2-1-在屏幕上显示-Hello-World！" class="headerlink" title="2.1 在屏幕上显示 Hello World！"></a>2.1 在屏幕上显示 Hello World！</h2><p><strong>例 2-1：</strong>在屏幕上显示一个语句 “Hello World!”</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 显示 &quot;Hello World!&quot; */</span>				<span class="comment">/* 注释文本 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span>					 <span class="comment">/* 编译预处理命令 */</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span>						 <span class="comment">/* 定义主函数 main() */</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);		 <span class="comment">/* 调用 printf() 函数输出文字 */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;						 <span class="comment">/* 返回一个整数 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="列表的渲染"><a href="#列表的渲染" class="headerlink" title="列表的渲染"></a>列表的渲染</h5><p>wxml文件部分</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 列表的渲染</span></span><br><span class="line"><span class="comment">    item指的是数据里面的每一个元素（固有的）</span></span><br><span class="line"><span class="comment">    index指的是数组的下标（固有的）</span></span><br><span class="line"><span class="comment">    取别名：wx:for-item=&quot;别名&quot;给数组里每一个元素取别名</span></span><br><span class="line"><span class="comment">    wx:for-index=&quot;别名&quot;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">&quot;&#123;&#123;users&#125;&#125;&quot;</span> <span class="attr">wx:for-item</span>=<span class="string">&quot;std&quot;</span> <span class="attr">wx:for-index</span>=<span class="string">&quot;outdex&quot;</span> <span class="attr">wx:key</span>=<span class="string">&quot;outdex&quot;</span>&gt;</span></span><br><span class="line">学生姓名：&#123;&#123;std.user_name&#125;&#125;</span><br><span class="line">学生部门：&#123;&#123;std.user_department&#125;&#125;</span><br><span class="line">数组的下标：&#123;&#123;outdex&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">&quot;message&quot;</span> <span class="attr">data-var</span>=<span class="string">&quot;20&quot;</span>&gt;</span>点我传递参数<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>js部分：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pages/wxml/wxml.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&#x27;绑定字符串&#x27;</span>,</span><br><span class="line">    data_msg: <span class="number">1</span>,</span><br><span class="line">    boolean_msg: <span class="literal">true</span>,</span><br><span class="line">    student: &#123;</span><br><span class="line">      std_id: <span class="number">1</span>,</span><br><span class="line">      std_name: <span class="string">&#x27;tq&#x27;</span>,</span><br><span class="line">      std_class: <span class="string">&#x27;618&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    num: <span class="number">103</span>,</span><br><span class="line">    condition: <span class="literal">true</span>,</span><br><span class="line">    users: [</span><br><span class="line">      &#123;</span><br><span class="line">        user_name: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">        user_department: <span class="string">&#x27;软件学院&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        user_name: <span class="string">&#x27;李四&#x27;</span>,</span><br><span class="line">        user_department: <span class="string">&#x27;软件学院&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        user_name: <span class="string">&#x27;王五&#x27;</span>,</span><br><span class="line">        user_department: <span class="string">&#x27;软件学院&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        user_name: <span class="string">&#x27;赵六&#x27;</span>,</span><br><span class="line">        user_department: <span class="string">&#x27;软件学院&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        user_name: <span class="string">&#x27;孙七&#x27;</span>,</span><br><span class="line">        user_department: <span class="string">&#x27;软件学院&#x27;</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        user_name: <span class="string">&#x27;周八&#x27;</span>,</span><br><span class="line">        user_department: <span class="string">&#x27;软件学院&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">    &#125;,</span><br><span class="line">    message: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> a = e.currentTarget.dataset.var;</span><br><span class="line">      wx.showToast(&#123;</span><br><span class="line">        title: a</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="navigator超链接导航组件"><a href="#navigator超链接导航组件" class="headerlink" title="navigator超链接导航组件"></a>navigator超链接导航组件</h4><p>target可以在小程序之间跳转</p>
-<p>url当前小程序跳转</p>
+<p><strong>注释（第一行）：</strong>用来说明程序的功能，注释文本必须在 /* 和 */ 之间。注释是对程序的注解，它可以是任何可显示字符，不影响程序的编译和运行，程序编译时会忽略这些内容。</p>
+<p><strong>#include&lt;stdio.h&gt;（第二行）：</strong>它是编译预处理命令，因为后面调用的 printf() 函数是 C 语言提供的标准输出函数，在系统文件 stdio.h 中声明。<strong>注意：编译预处理命令的末尾不加分号。</strong></p>
+<p><strong>int main (void)（第三行）：</strong>定义了一个名字为 main 的函数，该函数的返回值是整型数（int），参数在函数名后的一对括号中定义，这里的关键字 void 表示 main() 函数不需要参数。在 C 语言中，main() 是一个特殊函数，被称为“主函数”，任何一个程序都必须有而且只能有一个 main() 函数，当程序运行时，首先从 main() 函数开始执行。</p>
+<p><strong>一对大括号把构成函数的语句括起来，称为函数体。</strong></p>
+<p><strong>例 2-1 的函数体共有两条语句（第五第六行）：</strong>第一条语句为：printf(“Hello World!\n”); 它由两部分组成</p>
 
                 
             </div>
@@ -491,7 +604,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://manongtaoye.github.io/2022/03/09/minapp/">https://manongtaoye.github.io/2022/03/09/minapp/</a>
+                    <a href="https://manongtaoye.github.io/2023/01/11/c%E8%AF%AD%E8%A8%80/">https://manongtaoye.github.io/2023/01/11/c%E8%AF%AD%E8%A8%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -968,17 +1081,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/13/ssm%E9%9B%86%E6%88%90/">
+                <a href="/2023/01/11/c%E8%AF%AD%E8%A8%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="ssm集成">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="c语言">
                         
-                        <span class="card-title">ssm集成</span>
+                        <span class="card-title">c语言</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -988,9 +1102,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -999,6 +1113,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1017,13 +1132,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/26/UML%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">
+                <a href="/2022/11/15/%E5%AE%9E%E4%B9%A0%E8%A7%81%E9%97%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="UML面向对象分析与设计">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="实习见闻">
                         
-                        <span class="card-title">UML面向对象分析与设计</span>
+                        <span class="card-title">实习见闻</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1034,7 +1149,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-15
                             </span>
                         <span class="publish-author">
                             
