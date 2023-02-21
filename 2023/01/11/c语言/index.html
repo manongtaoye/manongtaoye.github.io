@@ -415,14 +415,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-12
+                    2023-02-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    9.3k
                 </div>
                 
 
@@ -577,7 +577,255 @@
 <p><strong>#include&lt;stdio.h&gt;（第二行）：</strong>它是编译预处理命令，因为后面调用的 printf() 函数是 C 语言提供的标准输出函数，在系统文件 stdio.h 中声明。<strong>注意：编译预处理命令的末尾不加分号。</strong></p>
 <p><strong>int main (void)（第三行）：</strong>定义了一个名字为 main 的函数，该函数的返回值是整型数（int），参数在函数名后的一对括号中定义，这里的关键字 void 表示 main() 函数不需要参数。在 C 语言中，main() 是一个特殊函数，被称为“主函数”，任何一个程序都必须有而且只能有一个 main() 函数，当程序运行时，首先从 main() 函数开始执行。</p>
 <p><strong>一对大括号把构成函数的语句括起来，称为函数体。</strong></p>
-<p><strong>例 2-1 的函数体共有两条语句（第五第六行）：</strong>第一条语句为：printf(“Hello World!\n”); 它由两部分组成</p>
+<p><strong>例 2-1 的函数体共有两条语句（第五第六行）：</strong>第一条语句为：printf(“Hello World!\n”); 它由两部分组成：函数调用和分号。printf(“Hello World!\n”) 是一个函数调用，它的作用是将双引号中的内容原样输出，\n 是换行符，即在输出 Hello World! 后换行；而分号表示该语句的结束。</p>
+<p><strong>C 语言中的所有语句都必须以分号结束。程序中所有的标点符号都是英文符号。</strong></p>
+<p>main() 函数的最后一条语句是：</p>
+<p>**return 0;**它结束 main() 函数的运行，并向系统返回一个整数 0，作为程序的结束状态。由于 main() 函数的返回值是整型数，因此，任何整数都可以作为返回值。按照惯例，如果 main() 函数返回 0，说明程序运行正常，返回其他数字则用于表示各种不同的错误情况。系统可以通过检查返回值来判断程序的运行是否成功。</p>
+<h2 id="2-2-求华氏温度-100°F-对应的摄氏温度"><a href="#2-2-求华氏温度-100°F-对应的摄氏温度" class="headerlink" title="2.2 求华氏温度 100°F 对应的摄氏温度"></a>2.2 求华氏温度 100°F 对应的摄氏温度</h2><h3 id="2-2-1-程序解析"><a href="#2-2-1-程序解析" class="headerlink" title="2.2.1 程序解析"></a>2.2.1 程序解析</h3><p><strong>例 2-3：</strong>求华氏温度 100°F 对应的摄氏温度。计算公式如下：</p>
+<p><strong>c = 5 * ( f - 32 ) / 9</strong> 式中：c 表示摄氏温度，f 表示华氏温度。</p>
+<p><strong>源程序：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将华氏温度转换为摄氏温度 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* 定义两个整型变量，celsius 表示摄氏度，fahr 表示华氏度 */</span></span><br><span class="line">    <span class="keyword">int</span> celsius, fahr;</span><br><span class="line">    							<span class="comment">/* 空行，用于分隔变量定义和可执行语句 */</span></span><br><span class="line">    fahr = <span class="number">100</span>;					<span class="comment">/* 对变量 fahr 赋值 */</span></span><br><span class="line">    celsius = <span class="number">5</span> * ( fahr <span class="number">-32</span> ) / <span class="number">9</span>;	<span class="comment">/* 温度转换计算 */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fahr = %d, celsius = %d\n&quot;</span>, fahr, celsius);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong>fahr = 100, celisius = 37;</p>
+<p>程序中调用 printf() 函数输出结果时，将双引号内除 %d 以外的内容原样输出，并在第一个 %d 的位置上输出变量 fahr 的值，在第二个 %d 的位置上输出变量 celsius 的值。</p>
+<p>可见，使用 printf() 函数不但能够输出固定不变的内容，如例 2-1 中的 Hello World!，还可以输出变量的值，如本例中变量 hahr 和 celsius 的值。</p>
+<p><strong>在程序中，适当地添加空行和空格，使程序清楚易读。</strong></p>
+<h3 id="2-2-2-常量、变量和数据类型"><a href="#2-2-2-常量、变量和数据类型" class="headerlink" title="2.2.2 常量、变量和数据类型"></a>2.2.2 常量、变量和数据类型</h3><p>例 2-3 中使用了哪些数据？它们的类型是什么？</p>
+<p>在 C 语言中，数据有常量和变量之分。在程序运行过程中，其值不能被改变的量称为常量，其值可以被改变的量称为变量。</p>
+<p>常量和变量都有类型，常量的类型通常由书写格式决定。</p>
+<p><strong>变量定义的一般形式是：</strong> 类型名 变量名表;</p>
+<p>类型名必须是有效的数据类型，变量名表中可以有一个变量名或逗号间隔的多个变量名。</p>
+<p><strong>例如：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> celsius, fahr;				<span class="comment">/* 定义两个整型变量 celsius 和 fahr，用于存放整数 */</span></span><br><span class="line"><span class="keyword">float</span> x;						<span class="comment">/* 定义一个单精度浮点型变量 x，用于存放实数 */</span></span><br><span class="line"><span class="keyword">double</span> area, length;			<span class="comment">/* 定义两个双精度浮点型变量 area 和 length，用于存放实数。 */</span></span><br></pre></td></tr></table></figure>
+
+<p>C 语言中最常用的数据类型包括 int （整型）、char（字符型）、float（单精度浮点型）和 double（双精度浮点型）。其中 float 和 double 都是浮点型（实型），用于存放浮点数（实数），区别在于 double 型数据占用空间更大，精度更高，取值范围更大。</p>
+<p><strong>tips：</strong>给变量起名尽量做到 “见名知义”，使别人一看就知道它的含义。变量名中的英文字母一贯用小写字母。</p>
+<p>C 语言中的变量在使用前，都必须先定义。定义变量时要确定变量的名字和数据类型。每个变量必须有一个名字作为标识，变量名代表内存中的一个存储单元，用于存放该变量的值，而该存储单元的大小由变量的类型决定。</p>
+<p><strong>整型变量所需存储空间与编译系统有关，在 Visual C++ 中，int 型变量占用 4 个字节。定义变量后，就可以使用它，即使用该变量所代表的存储单元。</strong></p>
+<p>例如： fahr = 100;</p>
+<p>表示将 100 写入 fahr 所代表的存储单元中。</p>
+<p><strong>C 语言中变量的含义和数学中变量的含义不同。C 语言中的变量代表保存数据的存储单元，而数学中的变量代表未知数。例如， x = x + 1 在数学上是错误的，在 C 语言中却表示把变量 x 的值加 1，然后再保存到 x 中。</strong></p>
+<p><strong>C 语言区分大小写字母，它认为 fahr 和 Fahr 是不一样的。</strong></p>
+<h3 id="2-2-3-算术运算和赋值运算"><a href="#2-2-3-算术运算和赋值运算" class="headerlink" title="2.2.3 算术运算和赋值运算"></a>2.2.3 算术运算和赋值运算</h3><ul>
+<li>1）算术运算<ul>
+<li>算数运算包括加、减、乘、除、求余和其他一些操作，前者对应双目运算符，双目运算符需要两个操作数。</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th>+</th>
+<th align="center">-</th>
+<th align="center">*</th>
+<th align="center">/</th>
+<th align="center">%</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">名称</td>
+<td>加</td>
+<td align="center">减</td>
+<td align="center">乘</td>
+<td align="center">除</td>
+<td align="center">模（求余）</td>
+</tr>
+<tr>
+<td align="center">优先级</td>
+<td>低</td>
+<td align="center">低</td>
+<td align="center">高</td>
+<td align="center">高</td>
+<td align="center">高</td>
+</tr>
+</tbody></table>
+<p>用算数运算符将运算对象连接起来的符合 C 语言语法规则的式子称为算数表达式。例如：例 2-3 中进行温度转换计算时，就用到了算数表达式 5 * (fahr - 32) / 9。</p>
+<hr>
+<p>在使用算数运算符时，请注意以下几点。</p>
+<ul>
+<li><p>1））如果两个整型数据作除法运算，其结果一定是整数</p>
+<ul>
+<li>例如，表达式 10 / 4 的值为 2，1 / 3 的值为 0。</li>
+</ul>
+</li>
+<li><p>2））求余运算符取整型数据相除的余数，它不能用于实型数据的运算。</p>
+<ul>
+<li>例如：表达式 5 % 6 的值为 5，9 % 4 的值为 1， 100 % 4 的值为 0（表示 100 能被 4整除）。</li>
+</ul>
+</li>
+<li><p>3））+ 和 - 还可以作为单目运算符，用于表达数值常量的符号，如 +10 和 -10。</p>
+</li>
+<li><p>4））双目运算符两侧操作数的类型要相同，否则，系统自动进行类型转换，使它们具有相同的类型，然后再运算。</p>
+<ul>
+<li>例如，求解表达式 10.0 / 4 时，先自动将其转换为 10.0 / 4.0，再算出其值为 2.5。</li>
+</ul>
+</li>
+<li><p>2）赋值运算</p>
+<ul>
+<li>C 语言将赋值作为一种运算，定义了赋值运算符 = ，它的作用是把一个表达式的值赋给一个变量，如 fahr = 100。<strong>赋值运算符的优先级比算数运算符低。</strong></li>
+<li>用赋值运算符将一个变量和一个表达式连接起来的式子称为<strong>赋值表达式</strong>。</li>
+<li>赋值表达式的简单形式是：<ul>
+<li>变量 = 表达式;</li>
+<li>在例 2-3 中，fahr = 100 和 celsius = 5 * (fahr -32) / 9 都是赋值表达式。</li>
+</ul>
+</li>
+<li><strong>赋值运算符的左边必须是一个变量。</strong></li>
+<li>赋值表达式的<strong>基本运算过程是：</strong><ul>
+<li>1））计算赋值运算符右侧表达式的值。</li>
+<li>2））将赋值运算符右侧表达式的值给赋值运算符左侧的变量。</li>
+</ul>
+</li>
+<li>在赋值运算时，如果赋值运算符两侧的数据类型不同，在上述运算过程的<strong>第 2））步</strong>，系统首先将赋值运算符右侧表达式的类型自动转换成赋值运算符左侧变量的类型，再给变量赋值。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-4-格式化输出函数-printf"><a href="#2-2-4-格式化输出函数-printf" class="headerlink" title="2.2.4 格式化输出函数 printf()"></a>2.2.4 格式化输出函数 printf()</h3><p>在 C 语言中，数据的输出时用过函数调用实现的。这里先简要介绍常用的格式化输出函数 printf() 的基本用法，它是系统提供的库函数，在系统文件 stdio.h 中声明，所以在源程序开始时要使用<strong>编译预处理命令</strong>#include&lt;stdio.h&gt;、</p>
+<hr>
+<p>函数 printf() 的一般调用格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(格式控制字符串, 输出参数<span class="number">1</span>, ..., 输出参数n);</span><br></pre></td></tr></table></figure>
+
+<p>格式控制字符串用双引号括起来，表示输出的格式；而输出参数则时一些要输出的数据，这些数据可以是<strong>常量、变量或表达式。</strong></p>
+<p>格式控制字符串中包含两种信息，<strong>格式控制说明</strong>和<strong>普通字符。</strong></p>
+<ul>
+<li>1）格式控制说明：按指定的格式输出数据，它包含以 % 开头的格式控制字符，不同类型的数据采用不同的格式控制字符。例如，int 型数据使用 %d，float 和 double 型数据都使用 %f。</li>
+<li>2）普通字符：在输出数据时，需要原样输出的字符。例如：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;fahr = %d, celsius = %d\n&quot;</span>, fahr, celsius);</span><br></pre></td></tr></table></figure>
+
+<p>在格式控制字符串中包括<strong>格式控制说明</strong>（两个 %d）和一些普通字符（如等号、逗号和换行符）。输出时，所有普通字符都被原样输出，在两个 %d 的位置上，依次输出变量 fahr 和 celsius 的值。</p>
+<p>printf() 函数的输出参数必须和格式控制字符串中的控制说明相对应，并且它们的类型、个数和位置要一一对应。例如，fahr 和 celsius 都是整型变量，输出时要用 %d，且 fahr 和第一个 %d 对应，celsius 和第二个 %d 对应。celsius 和 第二个 %d 对应。</p>
+<h2 id="2-3-计算分段函数"><a href="#2-3-计算分段函数" class="headerlink" title="2.3 计算分段函数"></a>2.3 计算分段函数</h2><h3 id="2-3-1-程序解析"><a href="#2-3-1-程序解析" class="headerlink" title="2.3.1 程序解析"></a>2.3.1 程序解析</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 计算二分段函数 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x, y;					<span class="comment">/* 定义两个双精度浮点型变量 */</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter x (x&gt;=0);\n&quot;</span>);	<span class="comment">/* 输入提示 */</span></span><br><span class="line">    <span class="comment">/* 调用 scanf() 函数输入数据，变量名 x 前加 &amp;，%lf 中的 l 是 long 的首字母 */</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>, &amp;x);</span><br><span class="line">    <span class="comment">/* if-else 语句 */</span></span><br><span class="line">    <span class="keyword">if</span>(x&lt;=<span class="number">15</span>) &#123;</span><br><span class="line">        y = <span class="number">4</span> * x / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        y = <span class="number">2.5</span> * x = <span class="number">10.5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;y = f(%f) = %.2f \n&quot;</span>, x, y);	<span class="comment">/* 调用 printf() 函数输出结果 */</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序中调用 scanf() 函数读入 x；再根据事先设定的条件，选择分段函数中的相应公式计算 y 的值，这是经典的二分支结构，用 if-else 语句实现；最后调用 printf() 函数输出结果。</p>
+<p>printf() 函数的格式控制说明 %f 指定以小数形式输出浮点型数据（保留 6 位小数），而 %.2f 则指定输出时保留两位小数。</p>
+<h3 id="2-3-2-关系运算"><a href="#2-3-2-关系运算" class="headerlink" title="2.3.2 关系运算"></a>2.3.2 关系运算</h3><p>例 2-4 程序的 if-else 语句中，用 x &lt;= 15 比较 x 和 15 的大小，这是一种关系运算。在 C 语言中，关系运算就是比较运算，对两个操作数进行比较，运算的结果是“真”或“假”。</p>
+<p>C 语言共提供了 6 种关系运算符，它们都是双目运算符。用关系运算符将两个表达式连接起来的式子，称为关系表达式。例如，x &lt;= 15、 x == 0 和 x != 10 都是合法的关系表达式。</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">&lt;</th>
+<th align="center">&lt;=</th>
+<th align="center">&gt;</th>
+<th align="center">&gt;=</th>
+<th align="center">==</th>
+<th align="center">!=</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">名称</td>
+<td align="center">小于</td>
+<td align="center">小于或等于</td>
+<td align="center">大于</td>
+<td align="center">大于或等于</td>
+<td align="center">等于</td>
+<td align="center">不等于</td>
+</tr>
+</tbody></table>
+<p><strong>== 是关系运算符，用于比较两个操作数是否相等；而 = 是赋值运算符，表示对变量赋值。</strong></p>
+<p>在 C 语言中，可以用关系表达式来描述给定的一些条件。</p>
+<h3 id="2-3-3-if-else-语句"><a href="#2-3-3-if-else-语句" class="headerlink" title="2.3.3 if-else 语句"></a>2.3.3 if-else 语句</h3><p>if-else 语句的一般形式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(表达式)</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    语句<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>该语句用于实现分支结构，根据表达式的值选择语句 1 或 语句 2 中的一条执行。</p>
+<p>针对给定的问题编写 C 语言程序后，需要通过运行程序来发现程序中存在的错误，并改正错误，也就是测试程序和调试程序。具体做法是，精心设计一批测试用例（包括输入数据和与之相应的预期输出结果），然后分别用这些测试用例运行程序，看程序的实际运行结果与预期输出结果是否一致，这就是软件测试的基本思想。如果发现运行结果有错误，就要调试程序，即查找并改正程序中的错误。程序的测试和调试需要反复进行。</p>
+<p>显然，程序测试的时候，使用的测试用例越多，就越容易发现隐藏的错误，但是，穷举所有的测试用力在实际应用中是不可行的。因此通常可以根据程序的逻辑结果和功能，设计一些有代表性的测试用例，测试用例的格式是 [输入数据, 预期输出结果]。</p>
+<h3 id="2-3-4-格式化输入函数-scanf"><a href="#2-3-4-格式化输入函数-scanf" class="headerlink" title="2.3.4 格式化输入函数 scanf()"></a>2.3.4 格式化输入函数 scanf()</h3><p>与 printf() 函数类似，scanf() 函数是系统提供的用于输入的库函数，也在系统 stdio.h 中声明。该函数用于从键盘输入数据，其调用格式与函数 printf() 类似：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(格式控制字符串, 输入参数<span class="number">1</span>, ..., 输入参数n);</span><br></pre></td></tr></table></figure>
+
+<p>格式控制字符串表示输入的格式，输入参数是变量地址（变量名前加 &amp;）。</p>
+<p><strong>输入参数的形式为：变量名前加 &amp;，如 &amp;x。</strong></p>
+<p>格式控制字符串中包含两种信息：格式控制说明和普通字符。</p>
+<ul>
+<li>1）格式控制说明：按指定的格式读入数据，它包含以 % 开头的格式控制字符，不同类型的数据采用不同的格式控制字符。int 型数据使用 %d，float 型数据使用 %f，而 double 型数据使用 %lf。</li>
+</ul>
+<p><strong>double 型数据使用格式控制说明 %lf，其中的 l 是 long 的首字母，不是数字 1</strong></p>
+<p>scanf() 函数的输入参数必须和格式控制字符串中的格式控制说明相对应，并且它们的类型、个数和位置要一一对应。</p>
+<ul>
+<li>2）普通字符：在输入数据时，需要原样输入的字符。</li>
+</ul>
+<h3 id="2-3-5-常用数学函数"><a href="#2-3-5-常用数学函数" class="headerlink" title="2.3.5 常用数学函数"></a>2.3.5 常用数学函数</h3><p>C 语言处理系统提供了许多事先编好的函数，供用户在编程时调用，这些函数称为<strong>库函数</strong>，其中一些必须的信息在相应的系统文件（头文件）中声明。所以，用户调用库函数时，一定要用 #include 命令将相应的头文件包含到源程序中。例如，调用输入输出函数，要加 #include&lt;stdio.h&gt;；调用数学函数，则需加入 #include&lt;math.h&gt;。</p>
+<hr>
+<p>常用的数学函数有：</p>
+<ul>
+<li>1）平方根函数 sqrt(x)：计算根号x。如 sqrt(4.0) 的值为 2.0。</li>
+<li>2）绝对值函数 fabs(x)：计算 |x|。如 fabs(-3.56) 的值为 3.56。</li>
+<li>3）幂函数 pow(x, n)：计算 x 的 n 次幂。如 pow(1.1, 2) 的值为 1.21（即 1.1²）。</li>
+<li>4）指数函数 exp(x)：计算 e 的 x 次幂。如 exp(2.3) 的值为 9.974182。</li>
+<li>5）以 e 为底的对数函数 log(x)：计算 lnx。如 log(123.45) 的值为 4.815836。</li>
+</ul>
+<p><strong>例 2.5</strong> 计算银行存款的本息。输入存款金额 money、存期 year 和年利率 rate，根据下列公式计算存款到期时的本息合计 sum（税前），输出时保留两位小数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 计算存款的本息 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span>				<span class="comment">/* 程序中调用了数学函数，需包含头文件 math.h */</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> money, year;			<span class="comment">/* 定义两个整型变量 */</span></span><br><span class="line">    <span class="keyword">double</span> rate, sum;			<span class="comment">/* 定义两个双精度浮点型变量 */</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter money：&quot;</span>);		<span class="comment">/* 提示输入 money */</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;money);		<span class="comment">/* 调用 scanf() 函数输入 money */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter year：&quot;</span>);		<span class="comment">/* 提示输入 year */</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;year);			<span class="comment">/* 调用 scanf() 函数输入 year */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter rate：&quot;</span>);		<span class="comment">/* 提示输入 rate */</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>, &amp;rate);		<span class="comment">/* 调用 scanf() 函数输入 rate */</span></span><br><span class="line">    sum = money * <span class="built_in">pow</span>(<span class="number">1</span>+rate, year);	<span class="comment">/* 调用幂函数 pow() 计算 */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;sum = %.2f\n&quot;</span>, sum);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序中调用了三次 scanf() 函数分别输入三个数据，也可以只调用一次 scanf() 函数：scanf(“%d %d %lf”, &amp;money, &amp;year, &amp;rate);</p>
+<p>调用 scanf() 函数输入多个数据时，需要多个输入参数和多个格式控制说明，而且输入参宿和的类型、个数和位置要与格式控制说明一一对应。</p>
+<p>在程序运行时，输入的多个数据之间必须有间隔，可以用一个或多个空格作为间隔，也可以用回车或制表符（Tab）作为间隔。</p>
+<h2 id="2-4-输出华氏-摄氏温度转换表"><a href="#2-4-输出华氏-摄氏温度转换表" class="headerlink" title="2.4 输出华氏-摄氏温度转换表"></a>2.4 输出华氏-摄氏温度转换表</h2><h3 id="2-4-1-程序解析"><a href="#2-4-1-程序解析" class="headerlink" title="2.4.1 程序解析"></a>2.4.1 程序解析</h3><p>**例 2-6 **输入两个整数 lower 和 upper，输出一张华氏-摄氏温度转换表，华氏温度的取值范围时 [lower, upper]，每次增加 1℉。计算公式如下：</p>
+<p>c = 5 * (f - 32) / 9;</p>
+<p>式中 c 表示摄氏温度，f 表示华氏温度。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 略</span></span><br></pre></td></tr></table></figure>
+
+<p>在格式控制说明中，可以加宽度限定词，指定数据的输出宽度。例如，整型数据的输出格式控制说明 %md，指定了数据的输出宽度为 m（包括符号位）。若数据的实际位数（含符号位）小于 m，则左端补空格；若大于 m，则按实际位数输出。实型数据的输出格式控制说明 %m.nf，指定了输出浮点型数据时保留 n 位小数，切输出宽度是 m （包括符号位和小数点）。若数据的实际位数小于 m，左端补空格；若大于 m，按实际位数输出。</p>
+<h3 id="2-4-2-for语句"><a href="#2-4-2-for语句" class="headerlink" title="2.4.2 for语句"></a>2.4.2 for语句</h3><p>在 C 语言中，for 语句被称为循环语句，它可以实现 C 语句的重复执行。</p>
+<p>for 语句的一般形式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(表达式<span class="number">1</span>; 表达式<span class="number">2</span>; 表达式<span class="number">3</span>)</span><br><span class="line">    循环体语句</span><br></pre></td></tr></table></figure>
+
+<p><strong>for 语句中，用两个分号分隔三个表达式，但 for 的后面没有分号，因为 for 与其后的循环体语句合起来作为一条完整的语句。</strong></p>
+<p>![](E:\myblog\images\屏幕截图 2023-02-21 163515.png)</p>
+<p><strong>for 语句中的三个表达式以及循环体语句的执行顺序和书写顺序有所不同，计算表达式 3 在执行循环体语句之后。</strong></p>
+<p>图 2.3 清楚地表明：在 for 语句的执行过程中，表达式2、循环体语句和表达式 3 将重复执行，而表达式 1 只在进入循环前<strong>执行一次</strong>。</p>
+<p>在 for 语句中，常常通过改变和判断某个变量的值来控制循环的执行，这样的变量被称为<strong>循环控制变量</strong>。</p>
+<p>for 语句中三个表达式可以是<strong>任意合法</strong>的表达式，循环体语句只能是一条语句。</p>
+<p>下面结合例 2-6 讨论 for 语句中三个表达式和循环体语句的含义和功能：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(fahr = lower; fahr &lt;= upper; fahr ++) &#123;</span><br><span class="line">    celsius = (<span class="number">5.0</span> / <span class="number">9.0</span>) * (fahr - <span class="number">32</span>); </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d%6.1f\n&quot;</span>, fahr, celsius);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1）表达式1：<strong>初值表达式</strong>，对循环变量赋初值，从而指定循环的起点。如 fahr = lower，置 fahr 的初值为温度取值范围的下限值 lower，即循环从 lower 开始。</li>
+<li>2）表达式2：<strong>条件表达式</strong>，给出循环的条件，通常判断循环是否超过循环的终点。若该表达式的值为“真”，则继续循环；为“假”，则结束循环。如 fahr &lt;= upper，upper 作为温度取值范围的上限值，一旦 fahr 的值超过 upper，表达式 2 为“假”，循环随之结束。</li>
+<li>3）表达式3：<strong>步长表达式</strong>，设置循环的步长，改变循环变量的值，从而可改变表达式 2 的结果。如 fahr++，使 fahr 的值增 1，这样，最终 fahr &gt; upper，表达式 2 为“假“，循环正常结束。</li>
+<li>4）循环体语句：被反复执行的语句，只能是一条语句</li>
+</ul>
+<p>for 语句反映了循环（重复执行）的规则，从哪儿开始（起点），到哪儿结束（终点），每次跨多大的步子（步长），重复做什么。</p>
+<p>上述 for 语句中，循环体语句用一对大括号括起来了，这是因为温度的转换和输出由两条语句实现，但根据 for 语句的语法规定，循环体语句只能是一条语句，故用大括号将这两条语句括起来，组成<strong>复合语句</strong>，复合语句在语法上被认为是一条语句。</p>
+<p>如果将上述 for 语句改为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(fahr = lower; fahr &lt;= upper; fahr ++) &#123;</span><br><span class="line">    celsius = (<span class="number">5.0</span> / <span class="number">9.0</span>) * (fahr - <span class="number">32</span>); <span class="comment">/* 语句1 */</span> </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d%6.1f\n&quot;</span>, fahr, celsius);  <span class="comment">/* 语句2 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>则循环体语句只包括语句1，而语句2被当作 for 的下一条语句，不参加循环。因为按照 C 语言的语法规定，<strong>循环体语句只能是一条语句</strong>。这是初学者常犯的错误，而且在程序运行的时候系统没有任何错误提示。</p>
+<p><strong>如果循环体语句由多条语句组成，必须用大括号把它们括起来，变成一条复合语句。</strong></p>
+<p>在 C 语言中，仅由一个分号（；）构成的语句称为<strong>空语句</strong>，它什么也不做。</p>
+<p>如果将上述 for 语句改为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(fahr = lower; fahr &lt;= upper; fahr ++); <span class="comment">// 分号代表空语句</span></span><br><span class="line">    celsius = (<span class="number">5.0</span> / <span class="number">9.0</span>) * (fahr - <span class="number">32</span>); </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d%6.1f\n&quot;</span>, fahr, celsius);  </span><br></pre></td></tr></table></figure>
+
+<p>则循环体语句就是<strong>空语句</strong>，真正要反复执行的温度的转换和输出都被当作了 for 的下一条语句。</p>
+<p><strong>不要在 for 语句中随意加分号</strong></p>
+<h3 id="2-4-3-指定次数的循环程序设计"><a href="#2-4-3-指定次数的循环程序设计" class="headerlink" title="2.4.3 指定次数的循环程序设计"></a>2.4.3 指定次数的循环程序设计</h3><p><strong>例 2-7 输入一个正整数 n，求 （略）</strong></p>
+<p>为解决这个问题，首先抽取出具有共性的算式（称为循环不变式）；</p>
+<p><strong>循环体语句向右缩进对齐，可以明确标识循环体的范围，这和 if 语句的风格一致。</strong></p>
+<p>从上述示例中可以看到，指定次数的循环程序设计一般包含 4 个部分。</p>
+<ul>
+<li>1）<strong>初始化</strong>：指定循环七点，给循环变量赋初值，如 i = 1，以及在进入循环之前设置相关变量的初值，如 sum = 0 等;</li>
+<li>2）<strong>条件控制</strong>：只要循环变量的值未到达指定的上限，就继续循环。如上例中，只要满足 i &lt;= n，循环就继续。</li>
+<li>3）<strong>工作</strong>：指重复执行的语句（循环体）。它必须是一条语句，可以是复合语句或空语句，如 sum = sum + i。</li>
+<li>4）<strong>改变循环变量</strong>：在每次循环中改变循环变量的值，如 i++，从而改变循环条件的真假。</li>
+</ul>
+<p>除初始化部分在进入循环之前执行（只执行一次），其他三个部分都会重复执行。</p>
+<h2 id="2-5-生成乘方表与阶乘表"><a href="#2-5-生成乘方表与阶乘表" class="headerlink" title="2.5 生成乘方表与阶乘表"></a>2.5 生成乘方表与阶乘表</h2><p><strong>例 2-10</strong>输入一个正整数 n，生成一张 2 的乘方表，输出 2⁰ 到 2的 n 次幂的值，可以调用幂函数计算 2 的乘方。</p>
+<p><strong>源程序</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 调用幂函数 pow() 生成乘方表 */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, n;</span><br><span class="line">    <span class="keyword">double</span> power;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enter n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        power = <span class="built_in">pow</span>(<span class="number">2</span>, i); <span class="comment">/* 调用幂函数 pow(2, i) 计算 2 的 i 次方 */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;pow(2, %d) = %.0f\n&quot;</span>, i, power);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从 2-10 和 2-11（偷懒省略掉了，有一个自定义函数）中可以看到，C 语言中有两种类型函数——<strong>标准库函数</strong>与<strong>自定义函数</strong>。函数可以做到一次定义、多次调用，这和数学上的函数概念是一致的。</p>
+<p>使用自定义的函数程序框架如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span>...</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fact</span><span class="params">(<span class="keyword">int</span> n)</span></span>;					<span class="comment">/* 声明自定义函数，以分号结束 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">double</span> result;</span><br><span class="line">    result = fact(i);				<span class="comment">/* 调用自定义函数 fact(i) 计算 i!（阶乘） */</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 定义求 n! 的函数 */</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">fact</span><span class="params">(<span class="keyword">int</span> n)</span>					<span class="comment">/* 函数首部，无需分号 */</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> product;					<span class="comment">/* 定义变量 product 用于存放结果（阶乘的值） */</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> product;					<span class="comment">/* 将结果回送主函数 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自定义函数的概念和应用将在第 5 章详细说明，读者目前只需对此有初步的认识即可。</p>
+<h1 id="3-分支结构"><a href="#3-分支结构" class="headerlink" title="3.分支结构"></a>3.分支结构</h1><p><strong>本章要点</strong></p>
+<ul>
+<li>什么是分支结构？它的作用是什么？</li>
+<li>switch 语句中的 break 起什么作用？</li>
+<li>逻辑运算和关系运算的相同之处是什么？它们之间又有什么不同？</li>
+<li>字符型数据在内存中是如何存储的？</li>
+</ul>
 
                 
             </div>
@@ -1081,18 +1329,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/11/c%E8%AF%AD%E8%A8%80/">
+                <a href="/2023/02/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="c语言">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据结构">
                         
-                        <span class="card-title">c语言</span>
+                        <span class="card-title">数据结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1102,9 +1349,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1112,15 +1359,6 @@
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/note/">
-                        <span class="chip bg-color">note</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1403,7 +1641,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">121.5k</span>&nbsp;字
+                class="white-color">127.4k</span>&nbsp;字
             
             
             
